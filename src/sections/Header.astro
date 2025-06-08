@@ -1,0 +1,124 @@
+<header id='header'>
+  <div class='body-lines-wrap pointer-events-none fixed inset-x-11 inset-y-0 h-full 2xl:inset-[3.75rem]'>
+    <div class='body-line left'></div>
+    <div class='body-line left-middle hidden 2md:block'></div>
+    <div class='body-line center hidden 2md:block'></div>
+    <div class='body-line right-middle hidden 2md:block'></div>
+    <div class='body-line right'></div>
+  </div>
+
+  <div class='fixed h-20 w-full'>
+    <div class='header-clip-wrapper header-clip-wrapper-left'>
+      <div class='header-clip header-clip-left'></div>
+    </div>
+
+    <div class='border-b-grey bg-lightgrey mx-[1.42rem] h-20 border-b 2xl:px-[2.33rem]'>
+      <div class='header-inner grid h-full grid-cols-[1fr_2fr_1fr] items-center'>
+        <div class='brand-wrap'>
+          <a href='/' class='brand w-nav-brand' aria-label='home'
+            ><img
+              width='134'
+              height='44'
+              alt=''
+              src='https://cdn.prod.website-files.com/664753c2515af09bef5b9826/664868fe3f77a27d20305c31_logo-color.svg'
+              loading='lazy'
+              class='brand-image'
+            /></a
+          >
+        </div>
+
+        <div class='header-secondary border-x-grey flex h-full items-center  2md:border-x px-4'>
+          yanguadev
+        </div>
+
+        <div class='header-actions'></div>
+      </div>
+    </div>
+
+    <div class='header-clip-wrapper header-clip-wrapper-right'>
+      <div class='header-clip header-clip-right'></div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header-clip-wrapper {
+    background-color: var(--color-lightgrey);
+    width: calc(1.42rem + 1px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+  .header-clip-wrapper.header-clip-wrapper-left {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 1.42rem 100%, 0 calc(100% - 1.42rem));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 1.42rem 100%, 0 calc(100% - 1.42rem));
+    left: 0;
+  }
+
+  .header-clip-wrapper.header-clip-wrapper-right {
+    -webkit-clip-path: polygon(
+      100% 0,
+      100% calc(100% - 1.42rem),
+      calc(100% - 1.42rem) 100%,
+      0 100%,
+      0 0
+    );
+    clip-path: polygon(100% 0, 100% calc(100% - 1.42rem), calc(100% - 1.42rem) 100%, 0 100%, 0 0);
+    right: 0;
+  }
+
+  .header-clip {
+    z-index: 2;
+    aspect-ratio: 1;
+    background-color: var(--color-grey);
+    width: 100%;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    position: absolute;
+  }
+
+  .header-clip.header-clip-left {
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    margin-bottom: 0;
+    margin-right: 0;
+    position: absolute;
+    inset: auto auto 0% 0%;
+  }
+
+  .header-clip.header-clip-right {
+    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    margin-bottom: 0;
+    margin-right: 0;
+    inset: auto 0% 0% auto;
+  }
+
+  .body-line {
+    background-color: var(--color-grey);
+    width: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  .body-line.left {
+    left: 0;
+  }
+
+  .body-line.left-middle {
+    left: 25%;
+  }
+
+  .body-line.center {
+    left: 50%;
+  }
+
+  .body-line.right-middle {
+    right: 25%;
+  }
+
+  .body-line.right {
+    right: 0;
+  }
+</style>

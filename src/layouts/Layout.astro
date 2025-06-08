@@ -1,0 +1,65 @@
+---
+import { ClientRouter } from 'astro:transitions'
+import Analytics from '@vercel/analytics/astro'
+import '@/styles/global.css'
+
+interface Props {
+  title: string
+  description?: string
+  canonical?: string
+  robots?: string
+}
+
+const {
+  title = 'Title',
+  description = 'Description of landing page',
+  canonical,
+  robots,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{title}</title>
+
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+    <!-- Preload fonts so that the font change is not visible when the page loads -->
+    <link
+      rel='preload'
+      href='/fonts/Inter-variable.woff2'
+      as='font'
+      type='font/woff2'
+      crossorigin='anonymous'
+    />
+
+    <meta name='description' content={description} />
+    {canonical && <link rel='canonical' href={canonical} />}
+    {robots && <meta name='robots' content={robots} />}
+
+    <!-- METATAGS -->
+    <meta property='og:url' content='https://www.[dominio].com' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content='Landing Page Title' />
+    <meta property='og:description' content='Landing page description' />
+    <meta property='og:image' content='https://www.[dominio].com/og.jpg' />
+    <meta property='og:locale' content='en_EN' />
+    <meta property='og:site_name' content='Site Name' />
+
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:site' content='@username' />
+    <meta name='twitter:creator' content='@username' />
+    <meta name='twitter:title' content='Landing Page Title' />
+    <meta name='twitter:description' content='Landing page description' />
+    <meta name='twitter:image' content='https://www.[dominio].com/og.jpg' />
+
+    <ClientRouter />
+    <Analytics />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
