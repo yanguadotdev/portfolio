@@ -1,0 +1,10 @@
+<svg class="invisible absolute" viewBox="0 0 24 24" width='0' height='0' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+  <defs>
+    <filter id='rounded-corners'>
+      <feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'></feGaussianBlur>
+      <feColorMatrix in='blur' mode='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9' result='flt_tag'>
+      </feColorMatrix>
+      <feComposite in='SourceGraphic' in2='flt_tag' operator='atop'></feComposite>
+    </filter>
+  </defs>
+</svg>

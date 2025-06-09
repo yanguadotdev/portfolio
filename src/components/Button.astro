@@ -1,0 +1,40 @@
+<a
+  href='/contact'
+  class='text-dark filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug'
+>
+  <div class='button-primary-border bg-primary'>
+    <div
+      scramble-text=''
+      class='button-primary-text bg-primary font-12px-size group-hover:bg-lightgrey relative whitespace-nowrap uppercase transition-colors duration-300'
+    >
+      <slot />
+    </div>
+  </div>
+</a>
+
+<style>
+  .button-primary-border,
+  .button-primary-text {
+    -webkit-clip-path: polygon(
+      10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px
+    );
+    clip-path: polygon(
+      10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px
+    );
+    padding: 1.5px;
+  }
+
+  .button-primary-text {
+    padding: 0.6rem 1.5rem;
+  }
+</style>

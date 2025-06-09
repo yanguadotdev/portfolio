@@ -8,12 +8,30 @@
   --font-secondary: 'AT Amiga';
 
   --color-lightgrey: #e4e4e4;
+  --color-lightergrey: #bebebe;
+  --color-light: #f6f6f6;
   --color-primary: #ff7120;
   --color-grey: #9e9e9e;
   --color-dark: #0e0e0e;
+  --color-darkgrey: #848484;
+  --color-dark-60: #636363;
+  --color-darklighter: #1b1b1b;
 
   --breakpoint-2xl: 90rem;
   --breakpoint-2md: 62rem;
+
+  --font-16px-size: 1rem;
+  --font-12px-size: 0.75rem;
+  --font-14px-size: 0.875rem;
+  --font-18px-static: 18px;
+  --font-12px-mob-size: 0.857rem;
+  --font-48px-size: 3rem;
+  --font-64px-size: 4rem;
+  --font-72px-size: 4.5rem;
+  --font-14px-mob-size: 1rem;
+  --font-11px-size: 0.6875rem;
+  --font-18px-size: 1.125rem;
+  --font-20px-size: 1.25rem;
 }
 
 @layer base {

@@ -1,6 +1,8 @@
 ---
 import HeaderClip from '@/components/HeaderClip.astro'
 import BodyLines from '@/components/BodyLines.astro'
+import RoundedCorners from '@/assets/roundedCorners.svg'
+import Button from '@/components/Button.astro'
 ---
 
 <header id='header'>
@@ -48,11 +50,7 @@ import BodyLines from '@/components/BodyLines.astro'
         </div>
 
         <div class='header-actions flex justify-end'>
-          <a href='#contact' class='button-primary inline-block'
-            ><div class='button-primary-border'>
-              <div scramble-text='' class='button-primary-text'>HABLEMOS</div>
-            </div></a
-          >
+          <Button> HABLEMOS </Button>
         </div>
       </div>
     </div>
@@ -60,97 +58,5 @@ import BodyLines from '@/components/BodyLines.astro'
     <HeaderClip position='right' />
   </div>
 
-  <svg
-    style='visibility: hidden; position: absolute;'
-    width='0'
-    height='0'
-    xmlns='http://www.w3.org/2000/svg'
-    version='1.1'
-  >
-    <defs>
-      <filter id='rounded-corners'>
-        <feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'></feGaussianBlur>
-        <feColorMatrix
-          in='blur'
-          mode='matrix'
-          values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9'
-          result='flt_tag'></feColorMatrix>
-        <feComposite in='SourceGraphic' in2='flt_tag' operator='atop'></feComposite>
-      </filter>
-    </defs>
-  </svg>
+  <RoundedCorners />
 </header>
-
-<style>
-  .button-primary {
-    color: var(--color-dark);
-    /* font-size: var(--14px-size); */
-    text-align: center;
-    cursor: pointer;
-    filter: url('#rounded-corners');
-    line-height: 114%;
-    text-decoration: none;
-    transition-property: opacity;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    position: relative;
-  }
-
-  .button-primary-border {
-    background-color: var(--color-primary);
-    -webkit-clip-path: polygon(
-      10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px
-    );
-    clip-path: polygon(
-      10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px
-    );
-    padding: 1px;
-  }
-
-  .button-primary-text {
-    z-index: 2;
-    background-color: var(--color-primary);
-    font-size: var(--12px-size);
-    text-transform: uppercase;
-    white-space: nowrap;
-    -webkit-clip-path: polygon(
-      10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px
-    );
-    clip-path: polygon(
-      10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px
-    );
-    border-radius: 14px 3px 16px;
-    justify-content: center;
-    align-items: center;
-    padding: 0.6rem 1.5rem;
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    display: block;
-    position: relative;
-  }
-
-  .button-primary-text:hover {
-    background-color: var(--color-lightgrey);
-  }
-</style>
