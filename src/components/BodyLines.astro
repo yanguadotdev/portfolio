@@ -1,0 +1,38 @@
+<div
+  class='body-lines-wrap pointer-events-none fixed inset-x-6 inset-y-0 md:inset-x-11 2xl:inset-x-16'
+>
+  <div class='body-line left'></div>
+  <div class='body-line left-middle 2md:block hidden'></div>
+  <div class='body-line center 2md:block hidden'></div>
+  <div class='body-line right-middle 2md:block hidden'></div>
+  <div class='body-line right'></div>
+</div>
+
+<style>
+  .body-line {
+    background-color: var(--color-grey);
+    width: 1px;
+    position: absolute;
+    inset-block: 0;
+  }
+
+  .body-line.left {
+    left: 0;
+  }
+
+  .body-line.left-middle {
+    left: 25%;
+  }
+
+  .body-line.center {
+    left: 50%;
+  }
+
+  .body-line.right-middle {
+    right: 25%;
+  }
+
+  .body-line.right {
+    right: 0;
+  }
+</style>

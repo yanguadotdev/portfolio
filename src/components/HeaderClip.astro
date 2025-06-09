@@ -1,0 +1,73 @@
+---
+import { cn } from '@/lib/utils'
+
+interface Props {
+  position: 'left' | 'right'
+}
+
+const { position }: Props = Astro.props
+---
+
+<div
+  class={cn(
+    `header-clip-wrapper header-clip-wrapper-${position} h-full absolute bg-lightgrey top-0`,
+    position === 'left' ? 'left-0' : 'right-0',
+  )}
+>
+  <div
+    class={cn(
+      `header-clip header-clip-${position} z-[2] aspect-square bg-grey w-full top-auto bottom-0 absolute`,
+      position === 'left' ? 'right-auto left-0' : 'right-0 left-auto',
+    )}
+  >
+  </div>
+</div>
+
+<style>
+  .header-clip-wrapper {
+    --w-wrapper: 1.5rem;
+    width: calc(var(--w-wrapper) + 1.75px);
+  }
+  .header-clip-wrapper.header-clip-wrapper-left {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      var(--w-wrapper) 100%,
+      0 calc(100% - var(--w-wrapper))
+    );
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      var(--w-wrapper) 100%,
+      0 calc(100% - var(--w-wrapper))
+    );
+  }
+
+  .header-clip-wrapper.header-clip-wrapper-right {
+    -webkit-clip-path: polygon(
+      100% 0,
+      100% calc(100% - var(--w-wrapper)),
+      calc(100% - var(--w-wrapper)) 100%,
+      0 100%,
+      0 0
+    );
+    clip-path: polygon(
+      100% 0,
+      100% calc(100% - var(--w-wrapper)),
+      calc(100% - var(--w-wrapper)) 100%,
+      0 100%,
+      0 0
+    );
+  }
+  .header-clip.header-clip-left {
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  }
+
+  .header-clip.header-clip-right {
+    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  }
+</style>

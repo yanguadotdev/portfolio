@@ -1,124 +1,156 @@
+---
+import HeaderClip from '@/components/HeaderClip.astro'
+import BodyLines from '@/components/BodyLines.astro'
+---
+
 <header id='header'>
-  <div class='body-lines-wrap pointer-events-none fixed inset-x-11 inset-y-0 h-full 2xl:inset-[3.75rem]'>
-    <div class='body-line left'></div>
-    <div class='body-line left-middle hidden 2md:block'></div>
-    <div class='body-line center hidden 2md:block'></div>
-    <div class='body-line right-middle hidden 2md:block'></div>
-    <div class='body-line right'></div>
-  </div>
+  <BodyLines />
 
-  <div class='fixed h-20 w-full'>
-    <div class='header-clip-wrapper header-clip-wrapper-left'>
-      <div class='header-clip header-clip-left'></div>
-    </div>
+  <div class='fixed w-full'>
+    <HeaderClip position='left' />
 
-    <div class='border-b-grey bg-lightgrey mx-[1.42rem] h-20 border-b 2xl:px-[2.33rem]'>
-      <div class='header-inner grid h-full grid-cols-[1fr_2fr_1fr] items-center'>
+    <div class='border-b-grey bg-lightgrey mx-6 border-b px-5 2xl:px-10'>
+      <div class='header-inner relative grid h-20 grid-cols-[1fr_2fr_1fr] items-center'>
         <div class='brand-wrap'>
-          <a href='/' class='brand w-nav-brand' aria-label='home'
+          <a
+            href='/'
+            class='brand w-nav-brand flex items-center gap-1 leading-none'
+            aria-label='home'
             ><img
-              width='134'
-              height='44'
+              width='auto'
+              height='64'
               alt=''
-              src='https://cdn.prod.website-files.com/664753c2515af09bef5b9826/664868fe3f77a27d20305c31_logo-color.svg'
+              src='/favicon.svg'
               loading='lazy'
-              class='brand-image'
-            /></a
+              class='brand-image h-12'
+            />
+            <div class='text-lg leading-none'>
+              Yangua
+              <div class='font-secondary text-3xl'>DEV.</div>
+            </div>
+          </a>
+        </div>
+
+        <div class='header-secondary 2md:border-x border-x-grey flex h-full items-center px-4'>
+          <nav class='w-full'>
+            <ul class='flex w-full items-center justify-evenly'>
+              <li>
+                <a href='#'>Proyectos</a>
+              </li>
+              <li>
+                <a href='#'>Acerca de me</a>
+              </li>
+              <li>
+                <a href='#'>Contactame</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class='header-actions flex justify-end'>
+          <a href='#contact' class='button-primary inline-block'
+            ><div class='button-primary-border'>
+              <div scramble-text='' class='button-primary-text'>HABLEMOS</div>
+            </div></a
           >
         </div>
-
-        <div class='header-secondary border-x-grey flex h-full items-center  2md:border-x px-4'>
-          yanguadev
-        </div>
-
-        <div class='header-actions'></div>
       </div>
     </div>
 
-    <div class='header-clip-wrapper header-clip-wrapper-right'>
-      <div class='header-clip header-clip-right'></div>
-    </div>
+    <HeaderClip position='right' />
   </div>
+
+  <svg
+    style='visibility: hidden; position: absolute;'
+    width='0'
+    height='0'
+    xmlns='http://www.w3.org/2000/svg'
+    version='1.1'
+  >
+    <defs>
+      <filter id='rounded-corners'>
+        <feGaussianBlur in='SourceGraphic' stdDeviation='1' result='blur'></feGaussianBlur>
+        <feColorMatrix
+          in='blur'
+          mode='matrix'
+          values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9'
+          result='flt_tag'></feColorMatrix>
+        <feComposite in='SourceGraphic' in2='flt_tag' operator='atop'></feComposite>
+      </filter>
+    </defs>
+  </svg>
 </header>
 
 <style>
-  .header-clip-wrapper {
-    background-color: var(--color-lightgrey);
-    width: calc(1.42rem + 1px);
-    height: 100%;
-    position: absolute;
-    top: 0;
-  }
-  .header-clip-wrapper.header-clip-wrapper-left {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 1.42rem 100%, 0 calc(100% - 1.42rem));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 1.42rem 100%, 0 calc(100% - 1.42rem));
-    left: 0;
+  .button-primary {
+    color: var(--color-dark);
+    /* font-size: var(--14px-size); */
+    text-align: center;
+    cursor: pointer;
+    filter: url('#rounded-corners');
+    line-height: 114%;
+    text-decoration: none;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    position: relative;
   }
 
-  .header-clip-wrapper.header-clip-wrapper-right {
+  .button-primary-border {
+    background-color: var(--color-primary);
     -webkit-clip-path: polygon(
+      10px 0,
       100% 0,
-      100% calc(100% - 1.42rem),
-      calc(100% - 1.42rem) 100%,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
       0 100%,
-      0 0
+      0 10px
     );
-    clip-path: polygon(100% 0, 100% calc(100% - 1.42rem), calc(100% - 1.42rem) 100%, 0 100%, 0 0);
-    right: 0;
+    clip-path: polygon(
+      10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px
+    );
+    padding: 1px;
   }
 
-  .header-clip {
+  .button-primary-text {
     z-index: 2;
-    aspect-ratio: 1;
-    background-color: var(--color-grey);
-    width: 100%;
-    margin-bottom: 1px;
-    margin-right: 1px;
-    position: absolute;
+    background-color: var(--color-primary);
+    font-size: var(--12px-size);
+    text-transform: uppercase;
+    white-space: nowrap;
+    -webkit-clip-path: polygon(
+      10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px
+    );
+    clip-path: polygon(
+      10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px
+    );
+    border-radius: 14px 3px 16px;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    display: block;
+    position: relative;
   }
 
-  .header-clip.header-clip-left {
-    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
-    margin-bottom: 0;
-    margin-right: 0;
-    position: absolute;
-    inset: auto auto 0% 0%;
-  }
-
-  .header-clip.header-clip-right {
-    -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-    margin-bottom: 0;
-    margin-right: 0;
-    inset: auto 0% 0% auto;
-  }
-
-  .body-line {
-    background-color: var(--color-grey);
-    width: 1px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-  }
-
-  .body-line.left {
-    left: 0;
-  }
-
-  .body-line.left-middle {
-    left: 25%;
-  }
-
-  .body-line.center {
-    left: 50%;
-  }
-
-  .body-line.right-middle {
-    right: 25%;
-  }
-
-  .body-line.right {
-    right: 0;
+  .button-primary-text:hover {
+    background-color: var(--color-lightgrey);
   }
 </style>

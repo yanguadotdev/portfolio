@@ -4,7 +4,8 @@
   --font-fallback:
     'Adjusted Arial Fallback', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
     'Noto Sans', helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --font-primary: 'Inter';
+  --font-primary: 'Roboto Mono';
+  --font-secondary: 'AT Amiga';
 
   --color-lightgrey: #e4e4e4;
   --color-primary: #ff7120;
@@ -44,9 +45,13 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-variable.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'Roboto Mono';
+  src: url('/fonts/RobotoMono-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AT Amiga';
+  src: url('/fonts/AtAmiga-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -54,8 +59,11 @@
   /* color-scheme: light dark; */
 }
 
-html {
-  font-family: 'Inter', var(--font-fallback);
+html,
+body {
+  font-size: calc(16px + 6 * ((100vw - 1440px) / 720));
+  font-family: 'Roboto Mono', var(--font-fallback);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
