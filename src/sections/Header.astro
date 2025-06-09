@@ -3,6 +3,7 @@ import HeaderClip from '@/components/HeaderClip.astro'
 import BodyLines from '@/components/BodyLines.astro'
 import RoundedCorners from '@/assets/roundedCorners.svg'
 import Button from '@/components/Button.astro'
+import Brand from '@/components/Brand.astro'
 ---
 
 <header id='header'>
@@ -13,25 +14,7 @@ import Button from '@/components/Button.astro'
 
     <div class='border-b-grey bg-lightgrey mx-6 border-b px-5 2xl:px-10'>
       <div class='header-inner relative grid h-20 grid-cols-[1fr_2fr_1fr] items-center'>
-        <div class='brand-wrap'>
-          <a
-            href='/'
-            class='brand w-nav-brand flex items-center gap-1 leading-none'
-            aria-label='home'
-            ><img
-              width='auto'
-              height='64'
-              alt=''
-              src='/favicon.svg'
-              loading='lazy'
-              class='brand-image h-12'
-            />
-            <div class='text-lg leading-none'>
-              Yangua
-              <div class='font-secondary text-3xl'>DEV.</div>
-            </div>
-          </a>
-        </div>
+        <Brand />
 
         <div class='header-secondary 2md:border-x border-x-grey flex h-full items-center px-4'>
           <nav class='w-full'>
@@ -40,7 +23,7 @@ import Button from '@/components/Button.astro'
                 <a href='#'>Proyectos</a>
               </li>
               <li>
-                <a href='#'>Acerca de me</a>
+                <a href='#'>Acerca de mi</a>
               </li>
               <li>
                 <a href='#'>Contactame</a>
