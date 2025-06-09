@@ -20,18 +20,18 @@
   --breakpoint-2xl: 90rem;
   --breakpoint-2md: 62rem;
 
-  --font-16px-size: 1rem;
-  --font-12px-size: 0.75rem;
-  --font-14px-size: 0.875rem;
-  --font-18px-static: 18px;
-  --font-12px-mob-size: 0.857rem;
-  --font-48px-size: 3rem;
-  --font-64px-size: 4rem;
-  --font-72px-size: 4.5rem;
-  --font-14px-mob-size: 1rem;
-  --font-11px-size: 0.6875rem;
-  --font-18px-size: 1.125rem;
-  --font-20px-size: 1.25rem;
+  --text-16px-size: 1rem;
+  --text-12px-size: 0.75rem;
+  --text-14px-size: 0.875rem;
+  --text-18px-static: 18px;
+  --text-12px-mob-size: 0.857rem;
+  --text-48px-size: 3rem;
+  --text-64px-size: 4rem;
+  --text-72px-size: 4.5rem;
+  --text-14px-mob-size: 1rem;
+  --text-11px-size: 0.6875rem;
+  --text-18px-size: 1.125rem;
+  --text-20px-size: 1.25rem;
 }
 
 @layer base {
@@ -79,8 +79,9 @@
 
 html,
 body {
-  font-size: calc(16px + 6 * ((100vw - 1440px) / 720));
+  min-height: 100vh;
   font-family: 'Roboto Mono', var(--font-fallback);
+  font-size: calc(16px + 6 * ((100vw - 1440px) / 720));
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
