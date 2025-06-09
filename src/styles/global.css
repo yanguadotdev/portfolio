@@ -77,6 +77,11 @@
   /* color-scheme: light dark; */
 }
 
+::selection {
+  color: var(--color-dark);
+  background: var(--color-primary);
+}
+
 html,
 body {
   min-height: 100vh;
