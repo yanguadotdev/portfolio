@@ -1,0 +1,68 @@
+---
+import SearchIcon from '@/assets/search.svg'
+import CloseIcon from '@/assets/close.svg'
+
+const categories = [
+  { id: 'all', label: 'All', checked: true },
+  { id: 'landing', label: 'Landing pages' },
+  { id: 'webApp', label: 'Web apps' },
+  { id: 'clone', label: 'Clones' },
+]
+---
+
+<div class="bg-lightgrey border-b-grey relative mx-[1px] border-b">
+  <form
+    id="filters-form"
+    name="filters-form"
+    method="get"
+    class="flex items-start justify-between px-7 py-4"
+    aria-label="Filter form"
+  >
+    <div class="flex gap-3">
+      {
+        categories.map((category) => {
+          return (
+            <label
+              class="has-checked:bg-dark border-grey hover:border-dark group relative cursor-pointer border p-3 transition-colors duration-300"
+              for={category.id}
+            >
+              <input
+                class="peer absolute -z-10 opacity-0"
+                type="radio"
+                name="Categories"
+                id={category.id}
+                data-name="Categories"
+                value={category.id}
+                checked={category.checked}
+              />
+              <span class="peer-checked:text-light group-hover:text-dark text-dark-60 text-sm transition-colors">
+                {category.label}
+              </span>
+            </label>
+          )
+        })
+      }
+    </div>
+
+    <div class="max-w-2/5 relative w-full">
+      <!-- Accessible tag but not visible -->
+      <label for="search" class="sr-only">Busqueda</label>
+      <input
+        class="border-grey bg-lightgrey text-dark hover:border-dark focus:border-dark peer w-full border px-11 py-3 text-sm transition-colors duration-300"
+        maxlength="25"
+        name="search"
+        data-name="search"
+        placeholder="search"
+        type="text"
+        id="search"
+      />
+      <SearchIcon class="absolute inset-y-0 left-3 my-auto size-5 opacity-60" />
+      <button
+        type="reset"
+        class="absolute inset-y-0 right-3 my-auto inline-block size-6 cursor-pointer peer-placeholder-shown:pointer-events-none peer-placeholder-shown:invisible peer-placeholder-shown:opacity-0"
+      >
+        <CloseIcon class="size-6" />
+      </button>
+    </div>
+  </form>
+</div>
