@@ -2,6 +2,7 @@
 import BlockDecoration from '@/components/BlockDecoration.astro'
 import Arrow from '@/assets/arrow.svg'
 import { heroCopy } from '@/data/site-data'
+import photo from '@/assets/photo.png'
 
 const { slogan, name, description, details, socialLinks } = heroCopy
 ---
@@ -36,10 +37,10 @@ const { slogan, name, description, details, socialLinks } = heroCopy
       </div>
 
       <!-- IMAGE -->
-      <div class="flex items-start justify-end">
-        <div class="border-grey relative flex justify-center border-b border-l p-10">
+      <div class="flex items-start">
+        <div class="border-grey w-full relative flex justify-center border-b border-l p-10">
           <img
-            src="https://cdn.prod.website-files.com/664753c2515af09bef5b9826/6670441b4c34c5e26b475445_ico-incubation.svg"
+            src={photo.src}
             alt="Image"
           />
 
