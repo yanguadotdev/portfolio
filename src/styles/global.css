@@ -32,6 +32,13 @@
   --text-11px-size: 0.6875rem;
   --text-18px-size: 1.125rem;
   --text-20px-size: 1.25rem;
+
+  --animate-marquee: marquee 20s infinite linear;
+  @keyframes marquee {
+    to {
+      transform: translateX(-100%)
+    }
+  }
 }
 
 @layer base {

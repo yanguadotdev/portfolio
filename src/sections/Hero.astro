@@ -1,7 +1,125 @@
+---
+import BlockDecoration from '@/components/BlockDecoration.astro'
+import Arrow from '@/assets/arrow.svg'
+---
+
 <section id="hero" class="overflow-hidden">
-  <div class="container mx-11 2xl:mx-16">
-    <header class="border-b border-b-grey relative">
-      <h1 class="text-[13vw] font-secondary tracking-[-2px]">FRONT-END</h1>
+  <div>
+    <header class="border-b-grey relative border-b">
+      <div class="inline-block overflow-hidden whitespace-nowrap" data-slider>
+        <h1
+          data-slider-content
+          aria-label="Yangua Ruiz Samir Kenyi"
+          class="font-secondary mx-4 inline-block whitespace-nowrap text-[13vw] tracking-tighter"
+        >
+          YANGUA SAMIR
+        </h1>
+      </div>
     </header>
+
+    <!-- body -->
+    <div class="relative grid grid-cols-[1fr_1fr_2fr]">
+      <!-- SLOGAN -->
+      <div class="flex flex-col justify-between">
+        <div id="slogan" class="flex gap-4 p-6 leading-none">
+          <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
+          <p class="text-18px-size leading-tight">Conoce mis proyectos mas&nbsp;recientes</p>
+        </div>
+
+        <!-- TOTAL PROJECTS  -->
+        <div class="border-t-grey flex flex-col gap-3 border-t px-6 py-4 leading-none">
+          <h2>Proyectos</h2>
+          <span class="font-secondary text-6xl">16</span>
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="flex items-start justify-end">
+        <div class="border-grey relative flex justify-center border-b border-l p-10">
+          <img
+            src="https://cdn.prod.website-files.com/664753c2515af09bef5b9826/6670441b4c34c5e26b475445_ico-incubation.svg"
+            alt="Image"
+          />
+
+          <BlockDecoration />
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div>
+        <article class="relative mx-[1px] flex flex-col border-b border-b-grey pb-16">
+          <div class="bg-light">
+            <header
+              class="text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none"
+            >
+              <span class="bg-primary border-primary inline-block border px-3 py-1.5">RR.SS</span>
+              <a
+                class="border-grey inline-block border-b px-3 py-1.5"
+                href="https://www.linkedin.com/in/yanguadotdev/"
+                target="_blank"
+                rel="noopener noreferrer">Linkedin</a
+              >
+              <a
+                class="border-grey inline-block border-b px-3 py-1.5"
+                href="https://github.com/yanguadotdev"
+                target="_blank"
+                rel="noopener noreferrer">Github</a
+              >
+            </header>
+          </div>
+
+          <div class="bg-light h-full px-8 py-10 text-sm">
+            <p>
+              <span class="text-primary">Diseño web con intención. Desarrollo con precisión.</span> Creo
+              interfaces digitales limpias, modernas y funcionales que combinan diseño minimalista, animaciones
+              sutiles y desarrollo en React para una experiencia impactante y coherente.
+            </p>
+          </div>
+
+          <footer class="border-y-grey bg-light flex border-y">
+            <div class="grid grid-cols-4 px-4 py-6 leading-none">
+              <div class="flex flex-col gap-2 px-4">
+                <span>+01</span>
+                <span class="text-dark-60 text-sm font-light">Experiencia</span>
+              </div>
+              <div class="flex flex-col gap-2 px-4">
+                <span>Front-End</span>
+                <span class="text-dark-60 text-sm">Especialidad</span>
+              </div>
+              <div class="flex flex-col gap-2 px-4">
+                <span>22</span>
+                <span class="text-dark-60 text-sm">Edad Actual</span>
+              </div>
+
+              <div class="flex flex-col gap-2 px-4">
+                <span>Perú</span>
+                <span class="text-dark-60 text-sm">País</span>
+              </div>
+            </div>
+
+            <!-- LINK ITEM -->
+            <a href="/about-me" class="peer absolute inset-0 top-7 z-10"></a>
+
+            <div
+              class="border-l-grey peer-hover:bg-primary relative flex flex-1 items-center justify-center overflow-hidden border-l transition-colors duration-500 peer-hover:[&>:nth-child(1)]:-translate-x-1/2 peer-hover:[&>:nth-child(2)]:translate-x-32"
+            >
+              <Arrow
+                class="-translate-1/2 absolute inset-1/2 -translate-x-32 transition-transform duration-500"
+              />
+              <Arrow class="-translate-1/2 absolute inset-1/2 transition-transform duration-500" />
+            </div>
+          </footer>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  import createInfiniteSlider from '@/lib/create-infinite-slider'
+  import { $ } from '@/lib/dom-selector'
+
+  const slider = $('[data-slider]') as HTMLElement
+  const sliderContent = slider?.firstElementChild as HTMLElement
+  createInfiniteSlider({ slider, sliderContent })
+</script>

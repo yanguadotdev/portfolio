@@ -1,0 +1,39 @@
+<>
+  <div class="block-decoration decoration-top-left"></div>
+  <div class="block-decoration decoration-top-right"></div>
+  <div class="block-decoration decoration-bottom-left"></div>
+  <div class="block-decoration decoration-bottom-right"></div>
+</>
+
+<style>
+  .block-decoration {
+    border: 2px solid var(--color-lightergrey);
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+  }
+  .decoration-top-left {
+    border-bottom-width: 0;
+    border-right-width: 0;
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+  .decoration-top-right {
+    border-bottom-width: 0;
+    border-left-width: 0;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+  .decoration-bottom-left {
+    border-top-width: 0;
+    border-right-width: 0;
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+  .decoration-bottom-right {
+    border-top-width: 0;
+    border-left-width: 0;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+</style>
