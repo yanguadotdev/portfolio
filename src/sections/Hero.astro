@@ -1,6 +1,9 @@
 ---
 import BlockDecoration from '@/components/BlockDecoration.astro'
 import Arrow from '@/assets/arrow.svg'
+import { heroCopy } from '@/data/site-data'
+
+const { slogan, name, description, details, socialLinks } = heroCopy
 ---
 
 <section id="hero" class="overflow-hidden">
@@ -18,15 +21,14 @@ import Arrow from '@/assets/arrow.svg'
     </header>
 
     <!-- body -->
-    <div class="relative grid grid-cols-[1fr_1fr_2fr]">
-      <!-- SLOGAN -->
+    <div class="border-b-grey relative grid grid-cols-[1fr_1fr_2fr] border-b">
+      <!-- TOTAL PROJECTS  -->
       <div class="flex flex-col justify-between">
         <div id="slogan" class="flex gap-4 p-6 leading-none">
           <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
           <p class="text-18px-size leading-tight">Conoce mis proyectos mas&nbsp;recientes</p>
         </div>
 
-        <!-- TOTAL PROJECTS  -->
         <div class="border-t-grey flex flex-col gap-3 border-t px-6 py-4 leading-none">
           <h2>Proyectos</h2>
           <span class="font-secondary text-6xl">16</span>
@@ -47,56 +49,50 @@ import Arrow from '@/assets/arrow.svg'
 
       <!-- DESCRIPTION -->
       <div>
-        <article class="border-b-grey relative mx-[1px] flex flex-col border-b pb-16">
+        <article class="relative mx-[1px] flex flex-col pb-16">
           <div class="bg-light">
             <header
               class="text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none"
             >
               <span class="bg-primary border-primary inline-block border px-3 py-1.5">RR.SS</span>
-              <a
-                class="border-grey inline-block border-b px-3 py-1.5"
-                href="https://www.linkedin.com/in/yanguadotdev/"
-                target="_blank"
-                rel="noopener noreferrer">Linkedin</a
-              >
-              <a
-                class="border-grey inline-block border-b px-3 py-1.5"
-                href="https://github.com/yanguadotdev"
-                target="_blank"
-                rel="noopener noreferrer">Github</a
-              >
+              {
+                socialLinks.map((link) => {
+                  return (
+                    <a
+                      scramble-text
+                      class="border-grey inline-block border-b px-3 py-1.5"
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                    </a>
+                  )
+                })
+              }
             </header>
           </div>
 
           <div class="bg-light h-full px-8 py-10 text-sm">
             <p>
-              <span class="text-primary">Diseño que capta la atención. Desarrollo que retiene.</span
-              > Hola, soy&nbsp;<span class="font-semibold">Samir Yangua</span>. Ayudo a negocios y productos digitales a
-              destacarse a través de interfaces limpias, modernas y funcionales. Diseño y desarrollo
-              experiencias digitales que comunican con claridad, conectan con tu audiencia y
-              convierten con propósito.
+              <span class="text-primary">{slogan}</span> Hola, soy&nbsp;<span class="font-semibold"
+                >{name}</span
+              >y{description}
             </p>
           </div>
 
           <footer class="border-y-grey bg-light flex border-y">
-            <div class="divide-grey grid grid-cols-4 divide-x px-4 leading-none flex-1">
-              <div class="flex flex-col gap-2 px-4 py-6">
-                <span>+01</span>
-                <span class="text-dark-60 text-sm font-light">Experiencia</span>
-              </div>
-              <div class="flex flex-col gap-2 px-4 py-6">
-                <span>Front-End</span>
-                <span class="text-dark-60 text-sm">Especialidad</span>
-              </div>
-              <div class="flex flex-col gap-2 px-4 py-6">
-                <span>22</span>
-                <span class="text-dark-60 text-sm">Edad Actual</span>
-              </div>
-
-              <div class="flex flex-col gap-2 px-4 py-6">
-                <span>Perú</span>
-                <span class="text-dark-60 text-sm">País</span>
-              </div>
+            <div class="divide-grey grid flex-1 grid-cols-4 divide-x px-4 leading-none">
+              {
+                details.map((detail) => {
+                  return (
+                    <div class="flex flex-col gap-2 px-4 py-6">
+                      <span>{detail.value}</span>
+                      <span class="text-dark-60 text-sm">{detail.label}</span>
+                    </div>
+                  )
+                })
+              }
             </div>
 
             <!-- LINK ITEM -->
@@ -106,9 +102,11 @@ import Arrow from '@/assets/arrow.svg'
               class="border-l-grey peer-hover:bg-primary relative flex w-24 items-center justify-center overflow-hidden border-l transition-colors duration-500 peer-hover:[&>:nth-child(1)]:-translate-x-1/2 peer-hover:[&>:nth-child(2)]:translate-x-32"
             >
               <Arrow
-                class="-translate-1/2 absolute inset-1/2 -translate-x-32 transition-transform duration-500 w-6 h-auto"
+                class="-translate-1/2 absolute inset-1/2 h-auto w-6 -translate-x-32 transition-transform duration-500"
               />
-              <Arrow class="-translate-1/2 absolute inset-1/2 transition-transform duration-500 w-6 h-auto" />
+              <Arrow
+                class="-translate-1/2 absolute inset-1/2 h-auto w-6 transition-transform duration-500"
+              />
             </div>
           </footer>
         </article>
