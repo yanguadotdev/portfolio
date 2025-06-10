@@ -6,17 +6,17 @@ import Button from '@/components/Button.astro'
 import Brand from '@/components/Brand.astro'
 ---
 
-<header id='header' class="z-10">
+<header id='header'>
   <BodyLines />
 
-  <div class='fixed w-full top-0'>
+  <div class='fixed w-full top-0 z-10'>
     <HeaderClip position='left' />
 
     <div class='border-b-grey bg-lightgrey mx-6 border-b px-5 2xl:px-10'>
       <div class='header-inner relative grid h-20 grid-cols-[1fr_2fr_1fr] items-center'>
         <Brand />
 
-        <div class='header-secondary 2md:border-x border-x-grey flex h-full items-center px-4'>
+        <div class='header-secondary 2md:border-x-[1.5px] border-x-grey flex h-full items-center px-4'>
           <nav class='w-full hidden 2md:block'>
             <ul class='flex w-full items-center justify-evenly'>
               <li>
