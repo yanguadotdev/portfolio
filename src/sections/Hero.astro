@@ -24,7 +24,7 @@ const { slogan, name, description, details, socialLinks } = heroCopy
     <!-- body -->
     <div class="border-b-grey relative grid grid-cols-[1fr_1fr_2fr] border-b">
       <!-- TOTAL PROJECTS  -->
-      <div class="flex flex-col justify-between">
+      <div class="flex w-full flex-col justify-between">
         <div id="slogan" class="flex gap-4 p-6 leading-none">
           <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
           <p class="text-18px-size leading-tight">Conoce mis proyectos mas&nbsp;recientes</p>
@@ -37,19 +37,16 @@ const { slogan, name, description, details, socialLinks } = heroCopy
       </div>
 
       <!-- IMAGE -->
-      <div class="flex items-start">
-        <div class="border-grey w-full relative flex justify-center border-b border-l p-10">
-          <img
-            src={photo.src}
-            alt="Image"
-          />
+      <div class="flex w-full items-start">
+        <div class="border-grey relative flex w-full justify-center border-b border-l p-10">
+          <img src={photo.src} alt="Image" />
 
           <BlockDecoration />
         </div>
       </div>
 
       <!-- DESCRIPTION -->
-      <div>
+      <div class="flex w-full">
         <article class="relative mx-[1px] flex flex-col pb-16">
           <div class="bg-light">
             <header
@@ -83,17 +80,29 @@ const { slogan, name, description, details, socialLinks } = heroCopy
           </div>
 
           <footer class="border-y-grey bg-light flex border-y">
-            <div class="divide-grey grid flex-1 grid-cols-4 divide-x px-4 leading-none">
-              {
-                details.map((detail) => {
-                  return (
-                    <div class="flex flex-col gap-2 px-4 py-6">
-                      <span>{detail.value}</span>
-                      <span class="text-dark-60 text-sm">{detail.label}</span>
-                    </div>
-                  )
-                })
-              }
+            <div class="relative flex-1">
+              <div
+                class="divide-grey grid grid-cols-2 grid-rows-2 px-4 leading-none xl:grid-cols-4 xl:grid-rows-1 xl:divide-x"
+              >
+                {
+                  details.map((detail) => {
+                    return (
+                      <div class="flex flex-col gap-2 whitespace-nowrap px-4 py-6">
+                        <span>{detail.value}</span>
+                        <span class="text-dark-60 text-sm">{detail.label}</span>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+              <!-- Lines -->
+              <div
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 flex w-full justify-center xl:hidden"
+              >
+                <div class="bg-grey absolute inset-y-0 top-0 w-[1px]"></div>
+                <div class="bg-grey absolute inset-x-0 left-0 top-1/2 h-[1px]"></div>
+              </div>
             </div>
 
             <!-- LINK ITEM -->

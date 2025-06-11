@@ -34,6 +34,7 @@
   --text-20px-size: 1.25rem;
 
   --animate-marquee: marquee 18s infinite linear;
+
   @keyframes marquee {
     to {
       transform: translateX(-100%)
@@ -42,29 +43,30 @@
 }
 
 @layer base {
+
   /* Webkit Browsers (Chrome, Safari, Edge) */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background:;
+    background: ;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color:;
+    background-color: ;
     border-radius: 5px;
     border: 2px solid oklch(67.65% 0.1539 329.18 / 0.4);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color:;
+    background-color: ;
     /* Efecto hover */
   }
 
   /* Firefox */
   * {
-    scrollbar-color:;
+    scrollbar-color: ;
     scrollbar-width: thin;
   }
 }
@@ -74,6 +76,7 @@
   src: url('/fonts/RobotoMono-Regular.woff2') format('woff2');
   font-display: swap;
 }
+
 @font-face {
   font-family: 'AT Amiga';
   src: url('/fonts/AtAmiga-Regular.woff2') format('woff2');
@@ -93,7 +96,7 @@ html,
 body {
   min-height: 100vh;
   font-family: 'Roboto Mono', var(--font-fallback);
-  font-size: calc(16px + 6 * ((100vw - 1440px) / 720));
+  font-size: calc(14px + 2 * ((100vw - 320px) / 1000));
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,6 +106,12 @@ body {
 
 input:focus {
   outline: none;
+}
+
+@media screen and (width > 1440px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 1440px) / 720));
+  }
 }
 
 @utility mask-fade-bottom {
