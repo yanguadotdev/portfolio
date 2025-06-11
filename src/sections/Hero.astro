@@ -3,6 +3,7 @@ import BlockDecoration from '@/components/BlockDecoration.astro'
 import Arrow from '@/assets/arrow.svg'
 import { heroCopy } from '@/data/site-data'
 import photo from '@/assets/photo.png'
+import DiagonalArrow from '@/assets/diagonalArrow.svg'
 
 const { slogan, name, description, details, socialLinks } = heroCopy
 ---
@@ -61,13 +62,13 @@ const { slogan, name, description, details, socialLinks } = heroCopy
                 socialLinks.map((link) => {
                   return (
                     <a
-                      scramble-text
-                      class="border-grey inline-block border-b px-3 py-1.5"
+                      class="border-grey inline-flex gap-2 group items-center border-b px-3 py-1.5"
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {link.label}
+                      <span>{link.label}</span>
+                      <DiagonalArrow class='group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 ease-linear' />
                     </a>
                   )
                 })
