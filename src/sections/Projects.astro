@@ -40,7 +40,7 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
                       <>
                         {detail.type === 'link' ? (
                           <a
-                            class="hover:text-dark hover:bg-primary pointer-coarse:text-dark xs:h-auto flex size-full h-min items-center justify-center gap-2 px-4 py-7 text-left transition-colors duration-300 hover:[&>svg]:-translate-y-1 hover:[&>svg]:translate-x-1"
+                            class="hover:text-dark hover:bg-primary focus:bg-primary focus:text-dark pointer-coarse:text-dark xs:h-auto flex size-full h-min items-center justify-center gap-2 px-4 py-7 text-left transition-colors duration-300 hover:[&>svg]:-translate-y-1 hover:[&>svg]:translate-x-1"
                             href={detail.value}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -137,6 +137,5 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
     elementTotalProjects.textContent = `${shown.length}`.padStart(2, '0')
   }
 
-  // Inicia con el estado actual (por si hay valores en URL o inputs precargados)
   filterProjects()
 </script>

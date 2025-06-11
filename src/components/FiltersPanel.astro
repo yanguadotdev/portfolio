@@ -24,10 +24,13 @@ const categories = [
         categories.map((category) => {
           return (
             <label
-              class="has-checked:bg-dark border-grey hover:border-dark group relative cursor-pointer border p-3 transition-colors duration-300"
+              class="has-checked:bg-dark border-grey focus:border-dark hover:border-dark group relative cursor-pointer border p-3 transition-colors duration-300"
               for={category.id}
+              tabindex={0}
+              aria-label={category.label}
             >
               <input
+                tabindex={-1}
                 class="peer absolute -z-10 opacity-0"
                 type="radio"
                 name="Categories"

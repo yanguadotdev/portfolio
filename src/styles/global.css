@@ -106,7 +106,7 @@ body {
   @apply bg-lightgrey text-dark;
 }
 
-input:focus {
+*:focus {
   outline: none;
 }
 
