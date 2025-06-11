@@ -1,0 +1,43 @@
+---
+import BlockDecoration from '@/components/BlockDecoration.astro'
+import FiltersPanel from '@/components/FiltersPanel.astro'
+import { projectsList } from '@/data/site-data'
+---
+
+<section id="projects">
+  <FiltersPanel />
+
+  <div class="relative">
+    <div class="grid grid-cols-2 gap-x-6 p-10 xl:gap-x-8 gap-y-12">
+      {
+        projectsList.toReversed().map((project) => {
+          const { title, repository, category, preview, cover, id } = project
+
+          return (
+            <div class="bg-light border border-grey">
+              <a href={`/project/${id}`} class="group">
+                <div class="relative">
+                  <div class="p-10">
+                    <div class="size-full overflow-hidden rounded-sm">
+                      <img
+                        class="grayscale-50 aspect-video w-full object-cover transition-all group-hover:scale-105 group-hover:grayscale-0 duration-300"
+                        src={cover}
+                        alt={title}
+                      />
+                    </div>
+                  </div>
+
+                  <BlockDecoration />
+                </div>
+
+                <footer class="text-sm text-dark-60 text-center py-10 border-t border-t-grey">
+                  {title}
+                </footer>
+              </a>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+</section>
