@@ -8,7 +8,7 @@ import { projectsList } from '@/data/site-data'
   <FiltersPanel />
 
   <div class="relative">
-    <div class="grid grid-cols-2 gap-x-6 p-10 xl:gap-x-8 gap-y-12">
+    <div class="grid md:grid-cols-2 gap-x-6 p-10 xl:gap-x-8 gap-y-12">
       {
         projectsList.toReversed().map((project) => {
           const { title, repository, category, preview, cover, id } = project
@@ -17,10 +17,10 @@ import { projectsList } from '@/data/site-data'
             <div class="bg-light border border-grey">
               <a href={`/project/${id}`} class="group">
                 <div class="relative">
-                  <div class="p-10">
-                    <div class="size-full overflow-hidden rounded-sm">
+                  <div class="p-10 md:p-5 lg:p-8 xl:p-10">
+                    <div class="size-full overflow-hidden">
                       <img
-                        class="grayscale-50 aspect-video w-full object-cover transition-all group-hover:scale-105 group-hover:grayscale-0 duration-300"
+                        class="grayscale-50 aspect-video w-full object-cover transition-all pointer-coarse:grayscale-0 group-hover:scale-105 group-hover:grayscale-0 duration-300"
                         src={cover}
                         alt={title}
                       />

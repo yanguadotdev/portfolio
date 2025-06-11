@@ -10,15 +10,15 @@ const categories = [
 ]
 ---
 
-<div class="bg-lightgrey border-b-grey relative mx-[1px] border-b">
+<div class="bg-lightgrey border-b-grey sticky top-[calc(5rem-1px)] z-[1] mx-[1px] border-b">
   <form
     id="filters-form"
     name="filters-form"
     method="get"
-    class="flex items-start justify-between px-7 py-4"
+    class="flex items-start justify-between px-10 py-4"
     aria-label="Filter form"
   >
-    <div class="flex gap-3">
+    <div class="2md:w-max flex w-full gap-3">
       {
         categories.map((category) => {
           return (
@@ -44,7 +44,7 @@ const categories = [
       }
     </div>
 
-    <div class="max-w-2/5 relative w-full">
+    <div class="max-w-2/5 2md:block relative hidden w-full">
       <!-- Accessible tag but not visible -->
       <label for="search" class="sr-only">Busqueda</label>
       <input
