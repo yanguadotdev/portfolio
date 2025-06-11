@@ -37,121 +37,346 @@ export const projectsList = [
     {
         id: 'css-clamp-visualizer',
         cover: '/projects/project_01.jpg',
-        title: 'CSS Clamp Visualizer',
-        repository: 'https://github.com/yanguadotdev/css-clamp-visualizer',
-        preview: 'https://css-clamp-visualizer.netlify.app/',
-        category: 'tool'
+        category: 'tool',
+        description: 'Un visualizador interactivo de la propiedad CSS clamp().',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'CSS Clamp Visualizer',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/css-clamp-visualizer',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://css-clamp-visualizer.netlify.app/',
+            }
+        ]
     },
     {
         id: 'transform-origin-visualizer',
         cover: '/projects/project_02.jpg',
-        title: 'Tranform Origin Visualizer',
-        repository: 'https://github.com/yanguadotdev/transform-origin-visualizer',
-        preview: 'https://transform-origin-visualizer.netlify.app/',
-        category: 'tool'
+        category: 'tool',
+        description: 'Un visualizador interactivo de la propiedad CSS transform-origin.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Origin Visualizer',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/transform-origin-visualizer',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://transform-origin-visualizer.netlify.app/',
+            }
+        ]
     },
     {
         id: 'world-pets',
         cover: '/projects/project_03.jpg',
-        title: 'World Pets',
-        repository: 'https://github.com/yanguadotdev/worldpets',
-        preview: 'https://worldpets.netlify.app/',
-        category: 'webApp'
+        category: 'webApp',
+        description: 'Se utilizo la API theDOGapi para mostrar imagenes de mascotas',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'World Pets',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/worldpets',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://worldpets.netlify.app/',
+            }
+        ]
     },
     {
         id: 'spotify-clone',
         cover: '/projects/project_04.jpg',
-        title: 'Spotify Clone',
-        repository: 'https://github.com/yanguadotdev/spotify-clone',
-        preview: 'https://spotify-clone-pi-pink.vercel.app/',
-        category: 'clone'
+        category: 'clone',
+        description:'Clone de la app de musica Spotify relaizado con React y Tailwind CSS',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Spotify Clone',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/spotify-clone',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://spotify-clone-pi-pink.vercel.app/',
+            }
+        ]
     },
     {
         id: 'brainwave',
         cover: '/projects/project_05.jpg',
-        title: 'Brainwave',
-        repository: 'https://github.com/yanguadotdev/brainwave',
-        preview: 'https://brainwave-beryl-ten.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una Chat con Inteligencia Artificial ',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Brainwave',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/brainwave',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://brainwave-beryl-ten.vercel.app/',
+            }
+        ]
     },
     {
         id: 'tic-tac-toe',
         cover: '/projects/project_06.jpg',
-        title: 'Tic-Tac-Toe',
-        repository: 'https://github.com/yanguadotdev/tic-tac-toe-react',
-        preview: 'https://tic-tac-toe-full-react.netlify.app/',
-        category: 'webApp'
+        category: 'webApp',
+        description: 'Juego de Tic-Tac-Toe relaizado con React y Tailwind CSS',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Tic-Tac-Toe',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/tic-tac-toe-react',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://tic-tac-toe-full-react.netlify.app/',
+            }
+        ]
     },
     {
         id: 'questions-answers',
         cover: '/projects/project_15.jpg',
-        title: 'Preguntas sobre JS',
-        repository: 'https://github.com/yanguadotdev/javascript-this-exercises',
-        preview: 'https://yanguadotdev.github.io/javascript-this-exercises/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page que muestra preguntas sobre el objeto this en JavaScript',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Preguntas sobre JS',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/javascript-this-exercises',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://yanguadotdev.github.io/javascript-this-exercises/',
+            }
+        ]
     },
     {
         id: 'pulse',
         cover: '/projects/project_08.jpg',
-        title: 'Pulse',
-        repository: 'https://github.com/yanguadotdev/pulse',
-        preview: 'https://pulse-brand.netlify.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una marca deportiva motivacional',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Pulse',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/pulse',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://pulse-brand.netlify.app/',
+            }
+        ]
     },
     {
         id: 'layers',
         cover: '/projects/project_09.jpg',
-        title: 'Layers',
-        repository: 'https://github.com/yanguadotdev/saas-landing-page',
-        preview: 'https://saas-landing-page-ten-nu.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una Software as a Service',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Layers',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/saas-landing-page',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://saas-landing-page-ten-nu.vercel.app/',
+            }
+        ]
     },
     {
         id: 'ecoscrap',
         cover: '/projects/project_10.jpg',
-        title: 'Pulse',
-        repository: 'https://github.com/yanguadotdev/eco-scrap',
-        preview: 'https://eco-scrap-umber.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una empresa de reciclaje',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Ecoscrap',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/eco-scrap',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://eco-scrap-umber.vercel.app/',
+            }
+        ]
     },
     {
         id: 'halloween-hackaton',
         cover: '/projects/project_11.jpg',
-        title: 'Hackaton Cloudinary',
-        repository: 'https://github.com/yanguadotdev/landing-cloudinary-hackathon',
-        preview: 'https://spooke-ia-cloudinary.netlify.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para un promocionar algun evento en particular.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Hackaton Cloudinary',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/landing-cloudinary-hackathon',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://spooke-ia-cloudinary.netlify.app/',
+            }
+        ]
     },
     {
         id: 'movies-app',
         cover: '/projects/project_12.jpg',
-        title: 'Movies DB',
-        repository: 'https://github.com/yanguadotdev/movies-app',
-        preview: 'https://movies-app-eight-pearl-90.vercel.app/',
-        category: 'webApp'
+        category: 'webApp',
+        description: 'Aplicacion web para buscar películas y series de distintas categorias.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Movies DB',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/movies-app',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://movies-app-eight-pearl-90.vercel.app/',
+            }
+        ]
     },
     {
         id: 'hirace',
         cover: '/projects/project_13.jpg',
-        title: 'Hirace',
-        repository: 'https://github.com/yanguadotdev/hirace',
-        preview: 'https://hirace.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para empresas que conectan empleadores con candidatos.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Hirace',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/hirace',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://hirace.vercel.app/',
+            }
+        ]
     },
     {
         id: 'barbersteel',
         cover: '/projects/project_14.jpg',
-        title: 'BarberSteel',
-        repository: 'https://github.com/yanguadotdev/barbersteel',
-        preview: 'https://barbersteel.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una barberia con un diseño bastante moderno.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'BarberSteel',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/barbersteel',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://barbersteel.vercel.app/',
+            }
+        ]
     },
     {
         id: 'fit-life',
         cover: '/projects/project_07.jpg',
-        title: 'Fit and Life',
-        repository: 'https://github.com/yanguadotdev/fitandlife',
-        preview: 'https://fitandlife.vercel.app/',
-        category: 'landing'
+        category: 'landing',
+        description: 'Landing page para una gym con un diseño bastante atractivo.',
+        details: [
+            {
+                type: 'text',
+                label: 'Nombre',
+                value: 'Fit and Life',
+            },
+            {
+                type: 'link',
+                label: 'Respositorio',
+                value: 'https://github.com/yanguadotdev/fitandlife',
+            },
+            {
+                type: 'link',
+                label: 'Preview',
+                value: 'https://fitandlife.vercel.app/',
+            }
+        ]
     }
 ]
