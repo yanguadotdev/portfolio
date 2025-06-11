@@ -17,7 +17,9 @@
   --color-dark-60: #636363;
   --color-darklighter: #1b1b1b;
 
+  --breakpoint-xs: 27rem;
   --breakpoint-2xl: 90rem;
+  --breakpoint-1.5md: 56rem;
   --breakpoint-2md: 62rem;
 
   --text-16px-size: 1rem;

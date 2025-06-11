@@ -9,15 +9,15 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
   <FiltersPanel />
 
   <div class="relative">
-    <div class="grid gap-x-20 gap-y-12 p-10 md:grid-cols-2">
+    <div class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10">
       {
         projectsList.toReversed().map((project) => {
           const { details, category, cover, description } = project
 
           return (
-            <div data-category={category} class="bg-light border-grey group border">
+            <div data-category={category} class="bg-light border-grey group flex flex-col border">
               <div class="relative">
-                <div class="p-10 md:p-5 lg:p-8 xl:p-10">
+                <div class="p-5 xs:p-10 md:p-5 lg:p-8 xl:p-10">
                   <div class="size-full overflow-hidden">
                     <img
                       class="grayscale-50 pointer-coarse:grayscale-0 aspect-video w-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
@@ -29,25 +29,25 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
 
                 <BlockDecoration />
               </div>
-              <div class="relative">
-                <footer class="text-dark-60 border-t-grey grid grid-cols-2 grid-rows-2 border-t text-center text-sm">
+              <div class="relative flex-1">
+                <footer class="text-dark-60 border-t-grey divide-y xs:divide-y-0 divide-grey xs:grid-cols-2 xs:grid-rows-2 grid grid-rows-[1fr_auto_auto] border-t text-center text-sm">
                   {details.map((detail) => {
                     return (
                       <>
                         {detail.type === 'link' ? (
                           <a
-                            class="flex size-full items-center gap-2 px-4 py-7 text-left hover:text-dark justify-center transition-colors duration-300 hover:bg-primary hover:[&>svg]:translate-x-1 hover:[&>svg]:-translate-y-1"
+                            class="hover:text-dark hover:bg-primary pointer-coarse:text-dark flex size-full items-center justify-center gap-2 h-min xs:h-auto px-4 py-7 text-left transition-colors duration-300 hover:[&>svg]:-translate-y-1 hover:[&>svg]:translate-x-1"
                             href={detail.value}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <span>{detail.label}</span>
-                            <DiagonalArrow class='transition-transform duration-300' />
+                            <DiagonalArrow class="transition-transform duration-300" />
                           </a>
                         ) : (
-                          <div class="row-span-2 flex flex-col gap-2 px-4 py-7 text-left">
+                          <div class="xs:col-span-2 flex flex-col gap-2 px-4 py-7 text-left xl:col-span-1 xl:row-span-2">
                             <span class="text-dark">{detail.value}</span>
-                            <span class="text-xs">{description}</span>
+                            <span class="text-balance text-xs">{description}</span>
                           </div>
                         )}
                       </>
@@ -57,10 +57,10 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
 
                 <div
                   aria-hidden="true"
-                  class="pointer-events-none absolute inset-0 flex w-full justify-center"
+                  class="pointer-events-none absolute inset-0 hidden xs:flex w-full justify-center"
                 >
-                  <div class="bg-grey absolute inset-y-0 left-1/2 top-0 w-[1px]" />
-                  <div class="bg-grey absolute inset-x-0 left-1/2 top-1/2 h-[1px]" />
+                  <div class="bg-grey absolute inset-y-0 left-1/2 top-1/2 w-[1px] xl:top-0" />
+                  <div class="bg-grey absolute inset-x-0 left-0 top-1/2 h-[1px] xl:left-1/2" />
                 </div>
               </div>
             </div>
