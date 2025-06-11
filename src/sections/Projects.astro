@@ -17,6 +17,7 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
           return (
             <div
               data-category={category}
+              data-title={details[0].value}
               class="project bg-light border-grey group flex flex-col border"
             >
               <div class="relative">
@@ -76,32 +77,66 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
 
 <script>
   import { $, $$ } from '@/lib/dom-selector'
+  import { debounce } from '@/lib/utils'
 
   const form = $('#filters-form')
   const projectsWrapper = $('#projects-wrapper') as HTMLElement
+  const searchInput = $('#search') as HTMLInputElement
 
+  // Init state of filters
+  let currentCategory = 'all'
+  let currentSearch = ''
+
+  // When change category
   form?.addEventListener('change', (e) => {
     const target = e.target as HTMLInputElement
-    const inputType = target.type
-    const category = target.value
-
-    if (inputType === 'radio') {
-      for (const project of projectsWrapper.children) {
-        const cat = (project as HTMLElement).dataset.category
-        project.classList.toggle('hidden', category !== 'all' && cat !== category)
-        project.setAttribute(
-          'aria-hidden',
-          category !== 'all' && cat !== category ? 'true' : 'false',
-        )
-      }
-
-      updateResultsCount()
+    if (target.type === 'radio') {
+      currentCategory = target.value
+      filterProjects()
     }
   })
 
+  // Búsqueda con debounce
+  searchInput?.addEventListener(
+    'input',
+    debounce((e: Event) => {
+      currentSearch = (e.target as HTMLInputElement).value
+        .toLowerCase()
+        .trim()
+      filterProjects()
+    }, 300)
+  )
+
+  // La función que aplica ambos filtros
+  function filterProjects() {
+    for (const projectNode of projectsWrapper.children) {
+      const project = projectNode as HTMLElement
+      const cat = project.dataset.category
+      const title = (
+        project.dataset.title || project.textContent || ''
+      ).toLowerCase()
+
+      const matchesCategory =
+        currentCategory === 'all' || cat === currentCategory
+      const matchesSearch =
+        !currentSearch ||
+        title.includes(currentSearch)
+
+      const show = matchesCategory && matchesSearch
+
+      project.classList.toggle('hidden', !show)
+      project.setAttribute('aria-hidden', !show ? 'true' : 'false')
+    }
+
+    updateResultsCount()
+  }
+
   function updateResultsCount() {
     const shown = $$('.project:not(.hidden)')
-    const elementTotalProjets = $('#total-projects') as HTMLElement
-    elementTotalProjets.textContent = `${shown.length}`.padStart(2, '0')
+    const elementTotalProjects = $('#total-projects') as HTMLElement
+    elementTotalProjects.textContent = `${shown.length}`.padStart(2, '0')
   }
+
+  // Inicia con el estado actual (por si hay valores en URL o inputs precargados)
+  filterProjects()
 </script>
