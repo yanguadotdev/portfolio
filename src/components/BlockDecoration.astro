@@ -7,7 +7,7 @@
 
 <style>
   .block-decoration {
-    border: 2px solid var(--color-lightergrey);
+    border: 2px solid currentColor;
     width: 0.5rem;
     height: 0.5rem;
     position: absolute;
@@ -15,25 +15,25 @@
   .decoration-top-left {
     border-bottom-width: 0;
     border-right-width: 0;
-    top: 0.75rem;
-    left: 0.75rem;
+    top: var(--separation, .75rem);
+    left: var(--separation, .75rem);
   }
   .decoration-top-right {
     border-bottom-width: 0;
     border-left-width: 0;
-    top: 0.75rem;
-    right: 0.75rem;
+    top: var(--separation, .75rem);
+    right: var(--separation, .75rem);
   }
   .decoration-bottom-left {
     border-top-width: 0;
     border-right-width: 0;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    bottom: var(--separation, .75rem);
+    left: var(--separation, .75rem);
   }
   .decoration-bottom-right {
     border-top-width: 0;
     border-left-width: 0;
-    bottom: 0.75rem;
-    right: 0.75rem;
+    bottom: var(--separation, .75rem);
+    right: var(--separation, .75rem);
   }
 </style>

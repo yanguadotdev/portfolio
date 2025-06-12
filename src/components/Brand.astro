@@ -1,4 +1,12 @@
-<div id='brandWrap'>
+---
+interface Props {
+ className: string   
+}
+
+const { className } = Astro.props
+---
+
+<div id='brandWrap' class={className}>
   <a href='/' class='flex items-center gap-1 leading-none' aria-label='home'>
     <img
       width='auto'
