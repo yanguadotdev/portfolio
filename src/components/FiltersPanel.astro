@@ -1,13 +1,14 @@
 ---
 import SearchIcon from '@/assets/search.svg'
 import CloseIcon from '@/assets/close.svg'
+import Select from './Select'
 
 const categories = [
   { id: 'all', label: 'All', checked: true },
   { id: 'landing', label: 'Landing pages' },
   { id: 'webApp', label: 'Web apps' },
   { id: 'clone', label: 'Clones' },
-  {id: 'tool', label: 'Herramientas'}
+  { id: 'tool', label: 'Herramientas' },
 ]
 ---
 
@@ -19,7 +20,8 @@ const categories = [
     class="flex items-start justify-between px-10 py-4"
     aria-label="Filter form"
   >
-    <div class="2md:w-max flex w-full gap-3">
+    <Select client:load className='flex 2lg:hidden min-w-3xs w-max' categories={categories} />
+    <div class="2md:w-max hidden w-full gap-3 2lg:flex">
       {
         categories.map((category) => {
           return (
@@ -48,7 +50,7 @@ const categories = [
       }
     </div>
 
-    <div class="max-w-2/5 2md:block relative hidden w-full">
+    <div class="max-w-2/5 sm:block relative hidden w-full">
       <!-- Accessible tag but not visible -->
       <label for="search" class="sr-only">Busqueda</label>
       <input
