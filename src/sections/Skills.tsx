@@ -6,9 +6,9 @@ import {
     SiAstro,
     SiJavascript,
     SiFigma,
-    SiNpm,
+    SiTypescript,
     SiHtml5
-  } from "react-icons/si";
+  } from "@/components/Icons";
   import { useAnimate } from "motion/react";
   import type {ReactNode, MouseEvent } from "react";
   
@@ -40,7 +40,7 @@ import {
           </div>
           <div className="grid grid-cols-3 divide-x divide-grey">
             <LinkBox Icon={SiHtml5}>{children}</LinkBox>
-            <LinkBox Icon={SiNpm}>{children}</LinkBox>
+            <LinkBox Icon={SiTypescript}>{children}</LinkBox>
             <LinkBox Icon={SiGit}>{children}</LinkBox>
           </div>
         </div>

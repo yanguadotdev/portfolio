@@ -12,7 +12,7 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
     <div id="projects-wrapper" class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10">
       {
         projectsList.toReversed().map((project) => {
-          const { details, category, cover, description } = project
+          const { details, category, cover, description, stack } = project
 
           return (
             <div
@@ -31,7 +31,7 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
                   </div>
                 </div>
 
-                <div class="absolute inset-0 text-lightergrey">
+                <div class="text-lightergrey absolute inset-0">
                   <BlockDecoration />
                 </div>
               </div>
@@ -54,6 +54,19 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
                           <div class="xs:col-span-2 flex flex-col gap-2 px-4 py-7 text-left xl:col-span-1 xl:row-span-2">
                             <span class="text-dark">{detail.value}</span>
                             <span class="text-balance text-xs">{description}</span>
+                            {/* STACK */}
+                            <div class="mt-2 flex gap-3">
+                              {stack?.map((Icon) => {
+                                return (
+                                  <div class="relative">
+                                    <Icon className="hover:text-dark text-base peer" />
+                                    <span class="bg-light text-dark border-lightergrey pointer-events-none absolute bottom-[150%] left-1/2 inline-block -translate-x-1/2 translate-y-2 border px-2 py-1 text-xs uppercase opacity-0 transition-all duration-300 peer-hover:translate-y-0 peer-hover:opacity-100">
+                                      {Icon.name.replace('Si', '')}
+                                    </span>
+                                  </div>
+                                )
+                              })}
+                            </div>
                           </div>
                         )}
                       </>
@@ -102,11 +115,9 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
   searchInput?.addEventListener(
     'input',
     debounce((e: Event) => {
-      currentSearch = (e.target as HTMLInputElement).value
-        .toLowerCase()
-        .trim()
+      currentSearch = (e.target as HTMLInputElement).value.toLowerCase().trim()
       filterProjects()
-    }, 300)
+    }, 300),
   )
 
   // La función que aplica ambos filtros
@@ -114,15 +125,10 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
     for (const projectNode of projectsWrapper.children) {
       const project = projectNode as HTMLElement
       const cat = project.dataset.category
-      const title = (
-        project.dataset.title || project.textContent || ''
-      ).toLowerCase()
+      const title = (project.dataset.title || project.textContent || '').toLowerCase()
 
-      const matchesCategory =
-        currentCategory === 'all' || cat === currentCategory
-      const matchesSearch =
-        !currentSearch ||
-        title.includes(currentSearch)
+      const matchesCategory = currentCategory === 'all' || cat === currentCategory
+      const matchesSearch = !currentSearch || title.includes(currentSearch)
 
       const show = matchesCategory && matchesSearch
 

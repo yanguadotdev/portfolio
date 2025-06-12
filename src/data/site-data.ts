@@ -1,3 +1,6 @@
+import { SiReact, SiTailwindcss, SiNextdotjs, SiGit, SiAstro, SiJavascript, SiFigma, SiTypescript, SiHtml5, SiVite, SiCss3, SiReactrouter } from '@/components/Icons'
+
+
 export const heroCopy = {
     slogan: 'Diseño que capta la atención. Desarrollo que retiene.',
     name: 'Samir Yangua ',
@@ -55,13 +58,15 @@ export const projectsList = [
                 label: 'Preview',
                 value: 'https://css-clamp-visualizer.netlify.app/',
             }
-        ]
+        ],
+        stack: [SiJavascript, SiHtml5, SiCss3]
     },
     {
         id: 'transform-origin-visualizer',
         cover: '/projects/project_02.jpg',
         category: 'tool',
         description: 'Un visualizador interactivo de la propiedad CSS transform-origin.',
+        stack: [SiJavascript, SiHtml5, SiCss3],
         details: [
             {
                 type: 'text',
@@ -85,6 +90,7 @@ export const projectsList = [
         cover: '/projects/project_03.jpg',
         category: 'webApp',
         description: 'Se utilizo la API theDOGapi para mostrar imagenes de mascotas',
+        stack: [SiJavascript, SiHtml5, SiCss3],
         details: [
             {
                 type: 'text',
@@ -107,7 +113,8 @@ export const projectsList = [
         id: 'spotify-clone',
         cover: '/projects/project_04.jpg',
         category: 'clone',
-        description:'Clone de la app de musica Spotify relaizado con React y Tailwind CSS',
+        description: 'Clone de la app de musica Spotify relaizado con React y Tailwind CSS',
+        stack: [SiReact, SiVite, SiTailwindcss],
         details: [
             {
                 type: 'text',
@@ -131,6 +138,7 @@ export const projectsList = [
         cover: '/projects/project_05.jpg',
         category: 'landing',
         description: 'Landing page para una Chat con Inteligencia Artificial ',
+        stack: [SiAstro, SiTailwindcss, SiTypescript],
         details: [
             {
                 type: 'text',
@@ -154,6 +162,7 @@ export const projectsList = [
         cover: '/projects/project_06.jpg',
         category: 'webApp',
         description: 'Juego de Tic-Tac-Toe relaizado con React y Tailwind CSS',
+        stack: [SiReact, SiVite, SiTailwindcss],
         details: [
             {
                 type: 'text',
@@ -177,6 +186,7 @@ export const projectsList = [
         cover: '/projects/project_15.jpg',
         category: 'landing',
         description: 'Landing page que muestra preguntas sobre el objeto this en JavaScript',
+        stack: [SiJavascript, SiHtml5, SiCss3],
         details: [
             {
                 type: 'text',
@@ -200,6 +210,7 @@ export const projectsList = [
         cover: '/projects/project_08.jpg',
         category: 'landing',
         description: 'Landing page para una marca deportiva motivacional',
+        stack: [SiJavascript, SiHtml5, SiCss3],
         details: [
             {
                 type: 'text',
@@ -223,6 +234,7 @@ export const projectsList = [
         cover: '/projects/project_09.jpg',
         category: 'landing',
         description: 'Landing page para una Software as a Service',
+        stack: [SiReact, SiNextdotjs, SiTailwindcss, SiTypescript],
         details: [
             {
                 type: 'text',
@@ -246,6 +258,7 @@ export const projectsList = [
         cover: '/projects/project_10.jpg',
         category: 'landing',
         description: 'Landing page para una empresa de reciclaje',
+        stack: [SiAstro, SiTypescript, SiTailwindcss],
         details: [
             {
                 type: 'text',
@@ -269,6 +282,7 @@ export const projectsList = [
         cover: '/projects/project_11.jpg',
         category: 'landing',
         description: 'Landing page para un promocionar algun evento en particular.',
+        stack: [SiJavascript, SiHtml5, SiCss3],
         details: [
             {
                 type: 'text',
@@ -292,6 +306,7 @@ export const projectsList = [
         cover: '/projects/project_12.jpg',
         category: 'webApp',
         description: 'Aplicacion web para buscar películas y series de distintas categorias.',
+        stack: [SiReact, SiReactrouter, SiVite, SiCss3],
         details: [
             {
                 type: 'text',
@@ -315,6 +330,7 @@ export const projectsList = [
         cover: '/projects/project_13.jpg',
         category: 'landing',
         description: 'Landing page para empresas que conectan empleadores con candidatos.',
+        stack: [SiAstro, SiTypescript, SiTailwindcss],
         details: [
             {
                 type: 'text',
@@ -338,6 +354,7 @@ export const projectsList = [
         cover: '/projects/project_14.jpg',
         category: 'landing',
         description: 'Landing page para una barberia con un diseño bastante moderno.',
+        stack: [SiAstro, SiTypescript, SiTailwindcss],
         details: [
             {
                 type: 'text',
@@ -361,6 +378,7 @@ export const projectsList = [
         cover: '/projects/project_07.jpg',
         category: 'landing',
         description: 'Landing page para una gym con un diseño bastante atractivo.',
+        stack: [SiAstro, SiTypescript, SiTailwindcss],
         details: [
             {
                 type: 'text',
