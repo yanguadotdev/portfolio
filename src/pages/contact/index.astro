@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Blade from '@/assets/blade.svg'
+---
+
+<Layout title="Cuentame tu idea">
+  <!-- Heading -->
+  <div class="border-b-grey relative grid grid-cols-[2fr_1fr_1fr] border-b">
+    <div class="relative inline-flex overflow-hidden whitespace-nowrap" data-slider>
+      <h1
+        data-slider-content
+        aria-label="Yangua Ruiz Samir Kenyi"
+        class="font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter"
+      >
+        CONTACTAME
+      </h1>
+    </div>
+
+    <div></div>
+
+    <div class="flex items-center">
+      <div class="2md:p-6 flex gap-4 leading-none">
+        <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
+        <p class="text-18px-size leading-tight">
+          Rellena este breve formulario para contactar&nbsp;conmigo
+        </p>
+      </div>
+    </div>
+
+    <Blade class="absolute bottom-0 right-full" />
+  </div>
+</Layout>
+
+<script>
+  import createInfiniteSlider from '@/lib/create-infinite-slider'
+  import { $ } from '@/lib/dom-selector'
+
+  const slider = $('[data-slider]') as HTMLElement
+  const sliderContent = slider?.firstElementChild as HTMLElement
+  createInfiniteSlider({ slider, sliderContent })
+</script>
