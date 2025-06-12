@@ -1,30 +1,17 @@
 ---
-import Header from '@/sections/Header.astro'
 import Layout from '../layouts/Layout.astro'
 import Hero from '@/sections/Hero.astro'
 import Projects from '@/sections/Projects.astro'
 import CallToAction from '@/sections/CallToAction.astro'
 import ClipPathTecnologies from '@/sections/Skills'
 import BlockDecoration from '@/components/BlockDecoration.astro'
-import Footer from '@/sections/Footer.astro'
 ---
 
-<Layout title='Yangua Ruiz Samir | Designer Front-End Developer'>
-  <Header />
-  <main class='mx-6 md:mx-11 mt-20 2xl:mx-16'>
-    <Hero />
-    <Projects />
-    <ClipPathTecnologies client:load>
-      <BlockDecoration />
-    </ClipPathTecnologies>
-    <CallToAction />
-
-    <Footer />
-  </main>
+<Layout title="Yangua Ruiz Samir | Designer Front-End Developer">
+  <Hero />
+  <Projects />
+  <ClipPathTecnologies client:load>
+    <BlockDecoration />
+  </ClipPathTecnologies>
+  <CallToAction />
 </Layout>
-
-
-<script>
-  import textScramble from '@/lib/text-scramble'
-  textScramble()
-</script>
