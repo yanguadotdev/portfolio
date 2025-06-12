@@ -1,12 +1,40 @@
+---
+import { cva } from 'class-variance-authority'
+
+const buttonWrapper = cva('button-primary-border whitespace-nowrap text-sm', {
+  variants: {
+    variant: {
+      primary: 'bg-primary text-dark',
+      outline: 'bg-primary text-primary',
+    },
+  },
+})
+
+const buttonText = cva(
+  'button-primary-text relative uppercase transition-colors duration-300',
+  {
+    variants: {
+      variant: {
+        primary: 'group-hover:bg-lightgrey bg-primary',
+        outline: 'group-hover:bg-primary bg-lightgrey group-hover:text-dark',
+      },
+    },
+  },
+)
+
+interface ButtonProps {
+  variant?: 'primary' | 'outline'
+}
+
+const { variant = 'primary' }: ButtonProps = Astro.props
+---
+
 <a
-  href='/contact'
-  class='text-dark filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug'
+  href="/contact"
+  class="filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug"
 >
-  <div class='button-primary-border bg-primary'>
-    <div
-      scramble-text
-      class='button-primary-text bg-primary text-14px-size group-hover:bg-lightgrey relative whitespace-nowrap uppercase transition-colors duration-300'
-    >
+  <div class={buttonWrapper({ variant })}>
+    <div scramble-text class={buttonText({ variant })}>
       <slot />
     </div>
   </div>
