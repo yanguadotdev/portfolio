@@ -23,14 +23,17 @@ const buttonText = cva(
 )
 
 interface ButtonProps {
+  href: string
   variant?: 'primary' | 'outline'
+  download?: boolean
 }
 
-const { variant = 'primary' }: ButtonProps = Astro.props
+const { href, download, variant = 'primary' } = Astro.props as ButtonProps
 ---
 
 <a
-  href="/contact"
+  href={href}
+  download={download}
   class="filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug"
 >
   <div class={buttonWrapper({ variant })}>
