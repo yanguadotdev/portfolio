@@ -105,7 +105,6 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
   // When change category
   form?.addEventListener('change', (e) => {
     const target = e.target as HTMLInputElement
-    console.log(target.type)
     if (target.type === 'radio' || target.type === 'select-one') {
       currentCategory = target.value
       filterProjects()
