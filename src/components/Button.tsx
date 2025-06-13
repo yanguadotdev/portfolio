@@ -45,7 +45,7 @@ export default function Button(props: ButtonProps) {
                         className={cn("filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug", className)}
                     >
                         <div className={buttonWrapper({ variant })}>
-                            <div scramble-text={'true'} className={buttonText({ variant })}>
+                            <div data-scramble-text className={buttonText({ variant })}>
                                 {children}
                             </div>
                         </div>
@@ -56,7 +56,7 @@ export default function Button(props: ButtonProps) {
                         className={cn("filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug", className)}
                     >
                         <div className={buttonWrapper({ variant })}>
-                            <div scramble-text={'true'} className={buttonText({ variant })}>
+                            <div data-scramble-text className={buttonText({ variant })}>
                                 {children}
                             </div>
                         </div>
