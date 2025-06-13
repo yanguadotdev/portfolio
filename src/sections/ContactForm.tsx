@@ -19,7 +19,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const services = [
     { id: 'freelance', label: 'Freelance', checked: false },
-    { id: 'laboral', label: 'Laboral', checked: false },
+    { id: 'laboral', label: 'Full-Time', checked: false },
 ]
 
 export default function ContactForm() {
@@ -54,7 +54,7 @@ export default function ContactForm() {
             <fieldset>
                 <legend className='flex items-center gap-3'>
                     <Item value='1.1' />
-                    <span>¿Qué tipo de colaboración estás buscando?</span>
+                    <span className='leading-tight text-sm'>¿Qué tipo de colaboración estás buscando?</span>
                 </legend>
                 <div className='flex gap-6 items-center mt-4'>
                     {
@@ -74,17 +74,17 @@ export default function ContactForm() {
             </fieldset>
 
             <fieldset className='mt-10 grid grid-cols-2 gap-x-6 gap-y-10'>
-                <InputField value='1.2' placeholder='Nombre' label='Tu nombre' register={register('name')} error={errors.name} />
+                <InputField value='1.2' placeholder='David Perez' label='¿Cuál es tu nombre?' register={register('name')} error={errors.name} />
 
-                <InputField value='1.3' placeholder='[david@mail.com]' label='Correo electrónico' register={register('email')} error={errors.email} />
+                <InputField value='1.3' placeholder='[perezdavid@gmail.com]' label='¿A qué correo puedo responderte?' register={register('email')} error={errors.email} />
 
-                <InputField value='1.4' placeholder='Optional' label='Teléfono (opcional)' register={register('phone')} error={errors.phone} />
+                <InputField value='1.4' type='tel' placeholder='Optional' label='¿Quieres dejar tu teléfono?' register={register('phone')} error={errors.phone} />
 
-                <InputField value='1.5' placeholder='Cuentame sobre tu idea' label='Descripción' register={register('description')} error={errors.description} />
+                <InputField value='1.5' placeholder='Cuéntame sobre tu idea o necesidad' label='¿Cómo puedo ayudarte?' register={register('description')} error={errors.description} />
             </fieldset>
 
             <Button className='w-full mt-10' variant='primary' type='submit'>
-                Enviar
+                Hablemos
             </Button>
         </form>
     );
@@ -109,21 +109,22 @@ interface InputFieldProps {
     error: any;
     value: string;
     placeholder?: string;
+    type?: string;
 }
 
 
 const InputField = (props: InputFieldProps) => {
-    const { label, register, error, value, placeholder } = props;
+    const { label, register, error, value, placeholder, type } = props;
     return (
-        <label>
-            <div className='flex gap-3 items-center mb-2'>
+        <label className='flex flex-col gap-2 justify-between'>
+            <div className='flex gap-3 items-center'>
                 <Item value={value} />
-                <span>{label}</span>
+                <span className='leading-tight text-sm'>{label}</span>
             </div>
             <input
                 placeholder={placeholder}
                 className={cn('flex w-full border-b border-b-grey py-3 focus:border-b-dark leading-snug hover:border-b-dark', error && 'border-b-orange-700 focus:border-b-orange-700 hover:border-b-orange-700')}
-                type="text"
+                type={type || 'text'}
                 {...register}
                 autoComplete='off'
             />

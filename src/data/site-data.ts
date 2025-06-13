@@ -4,7 +4,7 @@ import { SiReact, SiTailwindcss, SiNextdotjs, SiGit, SiAstro, SiJavascript, SiFi
 export const heroCopy = {
     slogan: 'Diseño que capta la atención. Desarrollo que retiene.',
     name: 'Samir Yangua ',
-    description: ' ayudo a negocios y productos digitales a destacarse a través de interfaces limpias, modernas y funcionales. Diseño y desarrollo experiencias digitales que comunican con claridad, conectan con tu audiencia y convierten con propósito.',
+    description: ' Impulso productos digitales y negocios a destacar con interfaces limpias, modernas y funcionales. ¿Buscas llevar tu presencia digital al siguiente nivel? Trabajemos juntos para hacerlo realidad.',
     details: [
         {
             label: 'Experiencia',
