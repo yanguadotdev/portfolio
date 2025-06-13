@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions'
 import Analytics from '@vercel/analytics/astro'
 import '@/styles/global.css'
 import BodyLines from '@/components/BodyLines.astro'
@@ -65,8 +64,6 @@ const {
     <meta name="twitter:title" content="Landing Page Title" />
     <meta name="twitter:description" content="Landing page description" />
     <meta name="twitter:image" content="https://www.[dominio].com/og.jpg" />
-
-    <ClientRouter />
     <Analytics />
   </head>
   <body class="flex flex-col">
