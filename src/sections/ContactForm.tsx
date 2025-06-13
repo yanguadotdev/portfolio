@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 const contactSchema = z.object({
     serviceType: z.enum(['freelance', 'laboral'], {
-        required_error: 'Selecciona un tipo de servicio',
+        message: 'Selecciona un tipo de servicio',
     }),
     name: z.string().min(1, 'Nombre requerido'),
     email: z.string().email('Correo inválido'),
@@ -60,7 +60,12 @@ export default function ContactForm() {
                     {
                         services.map((service, i) => {
                             return (
-                                <RadioButton key={i} className='flex-1 text-center' groupName='Services' option={service} />
+                                <RadioButton
+                                    key={i}
+                                    className='flex-1 text-center'
+                                    groupName='Services'
+                                    register={register('serviceType')}
+                                    option={service} />
                             )
                         })
                     }
@@ -118,7 +123,8 @@ const InputField = (props: InputFieldProps) => {
             <input
                 placeholder={placeholder}
                 className={cn('flex w-full border-b border-b-grey py-3 focus:border-b-dark leading-snug hover:border-b-dark', error && 'border-b-orange-700 focus:border-b-orange-700 hover:border-b-orange-700')}
-                type="text" {...register}
+                type="text"
+                {...register}
                 autoComplete='off'
             />
             {error && <p className='text-xs text-orange-700 mt-1'>{error.message}</p>}
