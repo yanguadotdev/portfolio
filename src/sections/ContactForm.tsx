@@ -9,9 +9,19 @@ const contactSchema = z.object({
     serviceType: z.enum(['freelance', 'laboral'], {
         message: 'Selecciona un tipo de servicio',
     }),
-    name: z.string().trim().min(3, 'Nombre requerido'),
-    email: z.string().trim().email('Correo inválido'),
-    description: z.string().trim().min(15, 'Descripción requerida'),
+    name: z
+        .string()
+        .trim()
+        .min(3, 'Nombre requerido')
+        .regex(/^[a-zA-ZÀ-ÿ\s]+$/, 'El nombre solo debe contener letras'),
+    email: z
+        .string()
+        .trim()
+        .email('Correo inválido'),
+    description: z
+        .string()
+        .trim()
+        .min(15, 'Descripción requerida'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -25,7 +35,7 @@ export default function ContactForm() {
     const {
         register,
         handleSubmit,
-        formState: { errors, isSubmitting },
+        formState: { errors },
     } = useForm<ContactFormData>({
         resolver: zodResolver(contactSchema),
     });
