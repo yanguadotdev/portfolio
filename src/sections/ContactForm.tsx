@@ -9,10 +9,9 @@ const contactSchema = z.object({
     serviceType: z.enum(['freelance', 'laboral'], {
         message: 'Selecciona un tipo de servicio',
     }),
-    name: z.string().min(1, 'Nombre requerido'),
-    email: z.string().email('Correo inválido'),
-    phone: z.string().optional(),
-    description: z.string().min(15, 'Descripción requerida'),
+    name: z.string().trim().min(3, 'Nombre requerido'),
+    email: z.string().trim().email('Correo inválido'),
+    description: z.string().trim().min(15, 'Descripción requerida'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -74,16 +73,33 @@ export default function ContactForm() {
             </fieldset>
 
             <fieldset className='mt-10 grid grid-cols-2 gap-x-6 gap-y-10'>
-                <InputField value='1.2' placeholder='David Perez' label='¿Cuál es tu nombre?' register={register('name')} error={errors.name} />
+                <InputField
+                    value='1.2'
+                    placeholder='David Perez'
+                    label='¿Cuál es tu nombre?'
+                    register={register('name')}
+                    error={errors.name}
+                />
 
-                <InputField value='1.3' placeholder='[perezdavid@gmail.com]' label='¿A qué correo puedo responderte?' register={register('email')} error={errors.email} />
+                <InputField
+                    value='1.3'
+                    placeholder='[perezdavid@gmail.com]'
+                    label='¿A qué correo puedo responderte?'
+                    register={register('email')}
+                    error={errors.email}
+                />
 
-                <InputField value='1.4' type='tel' placeholder='Optional' label='¿Quieres dejar tu teléfono?' register={register('phone')} error={errors.phone} />
-
-                <InputField value='1.5' placeholder='Cuéntame sobre tu idea o necesidad' label='¿Cómo puedo ayudarte?' register={register('description')} error={errors.description} />
+                <TextAreaField
+                    className='col-span-2'
+                    value='1.5'
+                    placeholder='Cuéntame sobre tu idea o necesidad'
+                    label='¿Cómo puedo ayudarte?'
+                    register={register('description')}
+                    error={errors.description}
+                />
             </fieldset>
 
-            <Button className='w-full mt-10' variant='primary' type='submit'>
+            <Button className='w-full mt-12' variant='primary' type='submit'>
                 Hablemos
             </Button>
         </form>
@@ -110,25 +126,62 @@ interface InputFieldProps {
     value: string;
     placeholder?: string;
     type?: string;
+    className?: string;
+}
+
+interface WrapperFieldProps {
+    label: string;
+    error: any;
+    value: string;
+    children: React.ReactNode;
+    className?: string;
 }
 
 
+const clNameInputField = 'flex w-full border-b border-b-grey py-3 focus:border-b-dark leading-snug hover:border-b-dark'
+const clNameInputError = 'border-b-orange-700 focus:border-b-orange-700 hover:border-b-orange-700'
+
 const InputField = (props: InputFieldProps) => {
-    const { label, register, error, value, placeholder, type } = props;
+    const { label, register, error, value, placeholder, type, className } = props;
     return (
-        <label className='flex flex-col gap-2 justify-between'>
-            <div className='flex gap-3 items-center'>
-                <Item value={value} />
-                <span className='leading-tight text-sm'>{label}</span>
-            </div>
+        <WrapperField label={label} error={error} value={value} className={className}>
             <input
                 placeholder={placeholder}
-                className={cn('flex w-full border-b border-b-grey py-3 focus:border-b-dark leading-snug hover:border-b-dark', error && 'border-b-orange-700 focus:border-b-orange-700 hover:border-b-orange-700')}
+                className={cn(clNameInputField, error && clNameInputError)}
                 type={type || 'text'}
                 {...register}
                 autoComplete='off'
             />
-            {error && <p className='text-xs text-orange-700 mt-1'>{error.message}</p>}
+        </WrapperField>
+    );
+}
+
+const TextAreaField = (props: InputFieldProps) => {
+    const { label, register, error, value, placeholder, className } = props;
+    return (
+        <WrapperField label={label} error={error} value={value} className={className}>
+            <textarea
+                placeholder={placeholder}
+                className={cn('max-h-24 min-h-min', clNameInputField, error && clNameInputError)}
+                {...register}
+                autoComplete='off'
+                rows={1}
+                maxLength={100}
+            />
+        </WrapperField>
+    );
+}
+
+const WrapperField = (props: WrapperFieldProps) => {
+    const { label, error, value, children, className } = props;
+    return (
+        <label className={cn('flex flex-col gap-2 justify-between relative', className)}>
+            <div className='flex gap-3 items-center'>
+                <Item value={value} />
+                <span className='leading-tight text-sm'>{label}</span>
+            </div>
+            {children}
+            {error && <p className='text-xs text-orange-700 mt-1 absolute top-full'>{error.message}</p>}
         </label>
     );
 }

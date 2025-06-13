@@ -100,6 +100,14 @@ button {
   cursor: pointer;
 }
 
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+textarea {
+  scrollbar-width: none;
+}
+
 html,
 body {
   min-height: 100vh;
