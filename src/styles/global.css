@@ -96,6 +96,10 @@
   background: var(--color-primary);
 }
 
+button {
+  cursor: pointer;
+}
+
 html,
 body {
   min-height: 100vh;
@@ -120,4 +124,20 @@ body {
 
 @utility mask-fade-bottom {
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+@utility clip-path-button-link {
+  -webkit-clip-path: polygon(10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px);
+  clip-path: polygon(10px 0,
+      100% 0,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      0 100%,
+      0 10px);
+  padding: 1.5px;
 }

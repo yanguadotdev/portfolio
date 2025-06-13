@@ -1,11 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Blade from '@/assets/blade.svg'
+import ContactForm from '@/sections/ContactForm'
+import OneIcon from '@/assets/one.svg'
 ---
 
 <Layout title="Cuentame tu idea">
   <!-- Heading -->
-  <div class="border-b-grey relative grid grid-cols-[2fr_1fr_1fr] border-b">
+  <div class="border-b-grey relative border-b grid">
     <div class="relative inline-flex overflow-hidden whitespace-nowrap" data-slider>
       <h1
         data-slider-content
@@ -16,18 +18,22 @@ import Blade from '@/assets/blade.svg'
       </h1>
     </div>
 
+    <Blade class="absolute bottom-0 right-full" />
+  </div>
+
+  <div class="relative grid grid-cols-[1fr_1fr_2fr]">
     <div></div>
 
-    <div class="flex items-center">
-      <div class="2md:p-6 flex gap-4 leading-none">
-        <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
-        <p class="text-18px-size leading-tight">
-          Rellena este breve formulario para contactar&nbsp;conmigo
-        </p>
-      </div>
+    <div class="p-10">
+      <OneIcon class="h-auto w-24" />
+      <p class="text-base text-dark-60 leading-tight mt-4">
+        Rellena este breve formulario para contactar&nbsp;conmigo
+      </p>
     </div>
 
-    <Blade class="absolute bottom-0 right-full" />
+    <div class="bg-lightgrey mx-[1.5px] p-10">
+      <ContactForm client:load />
+    </div>
   </div>
 </Layout>
 

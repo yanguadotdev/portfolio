@@ -2,7 +2,7 @@
 import SearchIcon from '@/assets/search.svg'
 import CloseIcon from '@/assets/close.svg'
 import Select from './Select'
-import RadioButton from './RadioButton.astro'
+import RadioButton from './RadioButton'
 
 const categories = [
   { id: 'all', label: 'All', checked: true },
@@ -26,7 +26,7 @@ const categories = [
       {
         categories.map((category) => {
           return (
-            <RadioButton option={category} />
+            <RadioButton groupName='Categories' option={category} />
           )
         })
       }
