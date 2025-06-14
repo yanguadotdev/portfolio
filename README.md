@@ -1,48 +1,37 @@
-# Astro Starter Kit: Basics
+# ✨ Yangua Samir Portfolio
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+¡Hola! 👋 Soy **Samir**, diseñador y frontend developer. Este es el repositorio de mi portafolio personal, donde muestro mis proyectos, habilidades.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![Screenshot](/public/og.jpg)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🚀 Tecnologías
 
-## 🚀 Project Structure
+Este proyecto está construido con:
 
-Inside of your Astro project, you'll see the following folders and files:
+- 🧑‍🚀 [**Astro**](https://astro.build/) – Sitios rápidos como un rayo, con componentes reactivos cuando se necesitan.
+- ⚛️ **React** – Para componentes dinámicos e interactivos.
+- 🎨 **Tailwind CSS** – Estilos modernos y responsivos.
+- 📜 **Zod + React Hook Form** – Validaciones elegantes en formularios.
+- ✨ Efectos personalizados como `text-scramble`.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📂 Funcionalidades destacadas
 
-## 🧞 Commands
+- 🎭 Animaciones con efecto **text-scramble** al hacer hover sobre botones.
+- 📱 Diseño completamente **responsive** y accesible.
+- 📥 Descarga del portafolio en PDF directamente desde el sitio.
+- 💬 Formulario de contacto con validación real.
 
-All commands are run from the root of the project, from a terminal:
+## 🧠 ¿Por qué Astro?
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Astro permite combinar lo mejor del SSR con la carga progresiva de componentes. Esto significa que tu sitio se carga más rápido ⚡, usa menos JS 💡 y aún puedes usar React para las partes interactivas.
 
-## 👀 Want to learn more?
+## 📩 Contacto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+¿Te gustó el portafolio? ¿Tienes un proyecto o propuesta laboral? 
+💼 [LinkedIn](https://linkedin.com/in/yanguadotdev)
+
+---
+
+> Hecho con ❤️ por **Samir**

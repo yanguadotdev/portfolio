@@ -12,12 +12,7 @@ interface Props {
   robots?: string
 }
 
-const {
-  title = 'Title',
-  description,
-  canonical,
-  robots,
-} = Astro.props
+const { title = 'Title', description, canonical, robots } = Astro.props
 ---
 
 <!doctype html>
@@ -50,25 +45,25 @@ const {
     {robots && <meta name="robots" content={robots} />}
 
     <!-- METATAGS -->
-    <meta property="og:url" content="https://www.yangua.dev" />
+    <meta property="og:url" content="https://yangua.vercel.app" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://www.yangua.dev/og.jpg" />
+    <meta property="og:image" content="https://yangua.vercel.app/og.jpg" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="yangua.dev" />
+    <meta property="og:site_name" content="yangua.vercel.app" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@syangua07" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://www.yangua.dev/og.jpg" />
+    <meta name="twitter:image" content="https://yangua.vercel.app/og.jpg" />
     <Analytics />
   </head>
   <body class="flex flex-col">
     <BodyLines />
     <Header />
-    <div class="mx-6 mt-20 md:mx-11 2xl:mx-16 flex-1 flex flex-col">
+    <div class="mx-6 mt-20 flex flex-1 flex-col md:mx-11 2xl:mx-16">
       <main class="flex-1">
         <slot />
       </main>
