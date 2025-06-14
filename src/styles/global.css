@@ -114,7 +114,6 @@ html,
 body {
   min-height: 100vh;
   font-family: 'Roboto Mono', var(--font-fallback);
-  font-size: calc(14px + 2 * ((100vw - 320px) / 1000));
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -124,6 +123,12 @@ body {
 
 *:focus {
   outline: none;
+}
+
+@media screen and (width > 460px) {
+  html {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 1000));
+  }
 }
 
 @media screen and (width > 1440px) {
