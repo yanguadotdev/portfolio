@@ -65,13 +65,13 @@ export default function ContactForm() {
                     <Item value='1.1' />
                     <span className='leading-tight text-sm'>¿Qué tipo de colaboración estás buscando?</span>
                 </legend>
-                <div className='flex gap-6 items-center mt-4'>
+                <div className='flex flex-wrap gap-6 items-center mt-4'>
                     {
                         services.map((service, i) => {
                             return (
                                 <RadioButton
                                     key={i}
-                                    className='flex-1 text-center'
+                                    className='flex-1 text-center basis-48'
                                     groupName='Services'
                                     register={register('serviceType')}
                                     option={service} />
@@ -82,7 +82,7 @@ export default function ContactForm() {
                 {errors.serviceType && <p className='text-xs text-orange-700 mt-1'>{errors.serviceType.message}</p>}
             </fieldset>
 
-            <fieldset className='mt-10 grid grid-cols-2 gap-x-6 gap-y-10'>
+            <fieldset className='mt-10 grid 1.5xs:grid-cols-2 gap-x-6 gap-y-10'>
                 <InputField
                     value='1.2'
                     placeholder='David Perez'
@@ -100,7 +100,7 @@ export default function ContactForm() {
                 />
 
                 <TextAreaField
-                    className='col-span-2'
+                    className='1.5xs:col-span-2'
                     value='1.5'
                     placeholder='Cuéntame sobre tu idea o necesidad'
                     label='¿Cómo puedo ayudarte?'
@@ -172,7 +172,7 @@ const TextAreaField = (props: InputFieldProps) => {
         <WrapperField label={label} error={error} value={value} className={className}>
             <textarea
                 placeholder={placeholder}
-                className={cn('max-h-24 min-h-min', clNameInputField, error && clNameInputError)}
+                className={cn('max-h-24 min-h-20 1.5xs:min-h-min', clNameInputField, error && clNameInputError)}
                 {...register}
                 autoComplete='off'
                 rows={1}
