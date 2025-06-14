@@ -18,23 +18,10 @@ import Brand from '@/components/Brand.astro'
         <div
           class="header-secondary 2md:border-x-[1.5px] border-x-grey 2md:flex hidden h-full items-center px-4"
         >
-          <!-- <nav class="w-full">
-            <ul class="flex w-full items-center justify-evenly">
-              <li>
-                <a href="#">Proyectos</a>
-              </li>
-              <li>
-                <a href="#">Acerca de mi</a>
-              </li>
-              <li>
-                <a href="#">Contactame</a>
-              </li>
-            </ul>
-          </nav> -->
         </div>
 
         <div class="header-actions flex justify-end">
-          <Button href="/contact"> ¿HABLAMOS? </Button>
+          <Button client:load href="/contact" preventSamePathNavigation> ¿HABLAMOS? </Button>
         </div>
       </div>
     </div>

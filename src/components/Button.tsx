@@ -29,11 +29,22 @@ interface ButtonProps {
     type?: 'button' | 'submit' | 'reset'
     children: React.ReactNode
     className?: string
+    preventSamePathNavigation?: boolean
 }
 
 
 export default function Button(props: ButtonProps) {
-    const { href, variant = 'primary', download, type, children, className } = props
+    const { href, variant = 'primary', download, type, children, className, preventSamePathNavigation } = props
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (
+          preventSamePathNavigation &&
+          typeof window !== 'undefined' &&
+          window.location.pathname === href
+        ) {
+          e.preventDefault()
+        }
+      }
 
     return (
         <>
@@ -43,6 +54,7 @@ export default function Button(props: ButtonProps) {
                         href={href}
                         download={download}
                         className={cn("filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug", className)}
+                        onClick={handleClick}
                     >
                         <div className={buttonWrapper({ variant })}>
                             <div data-scramble-text className={buttonText({ variant })}>
