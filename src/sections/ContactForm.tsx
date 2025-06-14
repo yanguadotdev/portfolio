@@ -148,7 +148,7 @@ interface WrapperFieldProps {
 }
 
 
-const clNameInputField = 'flex w-full border-b border-b-grey py-3 focus:border-b-dark leading-snug hover:border-b-dark'
+const clNameInputField = 'flex w-full border-b border-b-grey py-3 focus:border-b-dark text-base leading-snug hover:border-b-dark'
 const clNameInputError = 'border-b-orange-700 focus:border-b-orange-700 hover:border-b-orange-700'
 
 const InputField = (props: InputFieldProps) => {

@@ -4,6 +4,7 @@ import Arrow from '@/assets/arrow.svg'
 import { heroCopy } from '@/data/site-data'
 import photo from '@/assets/photo.png'
 import DiagonalArrow from '@/assets/diagonalArrow.svg'
+import HoverImageSlider from '@/components/HoverImageSlider'
 
 const { slogan, name, description, details, socialLinks } = heroCopy
 ---
@@ -43,8 +44,14 @@ const { slogan, name, description, details, socialLinks } = heroCopy
       <div
         class="2md:row-start-auto 2md:col-start-2 xs:flex border-t-grey 2md:border-t-0 col-start-1 row-start-2 hidden w-full items-start border-t"
       >
-        <div class="border-grey 2md:border-b relative flex w-full text-lightergrey justify-center border-l p-10">
-          <img src={photo.src} alt="Image" />
+        <div
+          class="border-grey 2md:border-b text-lightergrey relative flex w-full justify-center border-l p-10"
+        >
+          <HoverImageSlider
+            client:only="react"
+            images={['/me/photo_01.webp', '/me/photo_02.webp', '/me/photo_03.webp']}
+            interval={800}
+          />
 
           <BlockDecoration />
         </div>
@@ -52,7 +59,7 @@ const { slogan, name, description, details, socialLinks } = heroCopy
 
       <!-- DESCRIPTION -->
       <div class="2md:col-start-3 2md:col-span-1 col-span-3 col-start-1 row-start-1 flex w-full">
-        <article class="relative mx-[1px] flex flex-col pb-16">
+        <article class="relative mx-[1px] flex flex-col pb-24">
           <div class="bg-light">
             <header
               class="text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none"
