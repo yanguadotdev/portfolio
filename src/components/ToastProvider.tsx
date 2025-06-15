@@ -7,7 +7,7 @@ export default function ToasterProvider() {
             richColors
             toastOptions={{
                 className: 'text-md bg-white border font-inherit font-primary',
-                duration: 1500,
+                duration: 2500,
             }}
         />
     );

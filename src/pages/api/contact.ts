@@ -10,14 +10,12 @@ const ContactFormSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   serviceType: z.string().min(2),
-  description: z.string().min(10),
-  phone: z.string().optional(),
+  description: z.string().min(10)
 })
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json()
   const parse = ContactFormSchema.safeParse(body)
-  console.log(parse.error?.format())
 
   if (!parse.success) {
     return new Response(JSON.stringify({ error: 'Invalid input', details: parse.error.format() }), {
@@ -26,19 +24,21 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const { name, email, serviceType, description } = parse.data
-  console.log(parse.data)
 
   try {
     const data = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'delivered@resend.dev',
-      subject: `Nuevo mensaje de contacto de ${name}`,
+      from: 'Contacto Samir <hey@yangua.dev>',
+      to: 'hey@yangua.dev',
+      subject: `📩 ¡Nuevo mensaje desde tu portafolio! 💼 De parte de ${name}`,
       replyTo: email,
-      text: `
-Nombre: ${name}
-Email: ${email}
-Servicio: ${serviceType}
-Descripción: ${description}
+      text: `Nombre: ${name}\nEmail: ${email}\nServicio: ${serviceType}\nDescripción: ${description}`,
+      html: `
+        <div style="font-family: sans-serif; color: #111; line-height: 1.5;">
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Tipo de servicio:</strong> ${serviceType}</p>
+          <p><strong>Descripción:</strong><br />${description.replace(/\n/g, '<br />')}</p>
+        </div>
       `.trim(),
     })
 
