@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils';
 import { useContactForm } from '@/hooks/useContactForm';
 import Spinner from '@/components/Spinner';
 import { FaWhatsapp } from 'react-icons/fa';
+import { BiMailSend } from "react-icons/bi";
+
 
 const services = [
     { id: 'freelance', label: 'Freelance', checked: false },
@@ -102,7 +104,12 @@ export default function ContactForm() {
                     type='submit'
                     withEffect={false}
                 >
-                    {isSubmitting ? <Spinner size={24} /> : 'Hablemos'}
+                    {isSubmitting
+                        ? <Spinner size={24} />
+                        : <div className='flex items-center gap-2'>
+                            <BiMailSend className="text-xl" />
+                            Hablemos
+                        </div>}
                 </Button>
             </form>
         </section>
