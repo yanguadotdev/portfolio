@@ -23,7 +23,7 @@ export default function ContactForm() {
             <fieldset>
                 <legend className='flex items-center gap-3'>
                     <Item value='1.1' />
-                    <span className='leading-tight text-sm'>¿Qué tipo de colaboración estás buscando?</span>
+                    <span className='leading-tight text-sm'>¿Qué tipo de servicio estás buscando?</span>
                 </legend>
                 <div className='flex flex-wrap gap-6 items-center mt-4'>
                     {
