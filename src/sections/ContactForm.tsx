@@ -3,6 +3,7 @@ import Button from '@/components/Button';
 import { cn } from '@/lib/utils';
 import { useContactForm } from '@/hooks/useContactForm';
 import Spinner from '@/components/Spinner';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const services = [
     { id: 'freelance', label: 'Freelance', checked: false },
@@ -19,61 +20,92 @@ export default function ContactForm() {
     } = useContactForm();
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <fieldset>
-                <legend className='flex items-center gap-3'>
-                    <Item value='1.1' />
-                    <span className='leading-tight text-sm'>¿Qué tipo de servicio estás buscando?</span>
-                </legend>
-                <div className='flex flex-wrap gap-6 items-center mt-4'>
-                    {
-                        services.map((service, i) => {
-                            return (
-                                <RadioButton
-                                    key={i}
-                                    className='flex-1 text-center basis-48'
-                                    groupName='Services'
-                                    register={register('serviceType')}
-                                    option={service}
-                                />
-                            )
-                        })
-                    }
+        <section>
+            <div className="flex flex-col gap-3">
+                <div className='flex items-center gap-3'>
+                    <Item value='1.0' />
+                    <span className='leading-tight text-sm'>¿Cómo quieres que hablemos?</span>
                 </div>
-                {errors.serviceType && <p className='text-xs text-orange-700 mt-1'>{errors.serviceType.message}</p>}
-            </fieldset>
+                <Button
+                    href="/wsp"
+                    target="_blank"
+                    variant="whatsapp"
+                    withEffect={false}
+                >
+                    <div className='flex items-center gap-2'>
+                        <FaWhatsapp className="text-xl" />
+                        Hablemos por WhatsApp
+                    </div>
+                </Button>
+            </div>
 
-            <fieldset className='mt-10 grid 1.5xs:grid-cols-2 gap-x-6 gap-y-10'>
-                <InputField
-                    value='1.2'
-                    placeholder='David Perez'
-                    label='¿Cuál es tu nombre?'
-                    register={register('name')}
-                    error={errors.name}
-                />
+            <div className="relative flex items-center w-full my-4">
+                <div className="flex-grow border-t border-gray-300"></div>
+                <span className="px-4 text-gray-500 text-sm">o llena este formulario</span>
+                <div className="flex-grow border-t border-gray-300"></div>
+            </div>
 
-                <InputField
-                    value='1.3'
-                    placeholder='[perezdavid@gmail.com]'
-                    label='¿A qué correo puedo responderte?'
-                    register={register('email')}
-                    error={errors.email}
-                />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <fieldset>
+                    <legend className='flex items-center gap-3'>
+                        <Item value='1.1' />
+                        <span className='leading-tight text-sm'>¿Qué tipo de servicio estás buscando?</span>
+                    </legend>
+                    <div className='flex flex-wrap gap-6 items-center mt-4'>
+                        {
+                            services.map((service, i) => {
+                                return (
+                                    <RadioButton
+                                        key={i}
+                                        className='flex-1 text-center basis-48'
+                                        groupName='Services'
+                                        register={register('serviceType')}
+                                        option={service}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+                    {errors.serviceType && <p className='text-xs text-orange-700 mt-1'>{errors.serviceType.message}</p>}
+                </fieldset>
 
-                <TextAreaField
-                    className='1.5xs:col-span-2'
-                    value='1.5'
-                    placeholder='Cuéntame sobre tu idea o necesidad'
-                    label='¿Cómo puedo ayudarte?'
-                    register={register('description')}
-                    error={errors.description}
-                />
-            </fieldset>
+                <fieldset className='mt-10 grid 1.5xs:grid-cols-2 gap-x-6 gap-y-10'>
+                    <InputField
+                        value='1.2'
+                        placeholder='David Perez'
+                        label='¿Cuál es tu nombre?'
+                        register={register('name')}
+                        error={errors.name}
+                    />
 
-            <Button className={cn('w-full mt-12 h-12', isSubmitting && 'pointer-events-none')} variant='primary' type='submit'>
-                {isSubmitting ? <Spinner size={24} /> : 'Hablemos'}
-            </Button>
-        </form>
+                    <InputField
+                        value='1.3'
+                        placeholder='[perezdavid@gmail.com]'
+                        label='¿A qué correo puedo responderte?'
+                        register={register('email')}
+                        error={errors.email}
+                    />
+
+                    <TextAreaField
+                        className='1.5xs:col-span-2'
+                        value='1.5'
+                        placeholder='Cuéntame sobre tu idea o necesidad'
+                        label='¿Cómo puedo ayudarte?'
+                        register={register('description')}
+                        error={errors.description}
+                    />
+                </fieldset>
+
+                <Button
+                    className={cn('w-full mt-12 h-12 text-base', isSubmitting && 'pointer-events-none')}
+                    variant='primary'
+                    type='submit'
+                    withEffect={false}
+                >
+                    {isSubmitting ? <Spinner size={24} /> : 'Hablemos'}
+                </Button>
+            </form>
+        </section>
     );
 }
 
