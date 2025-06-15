@@ -29,7 +29,7 @@ export default function ContactForm() {
                     <span className='leading-tight text-sm'>¿Cómo quieres que hablemos?</span>
                 </div>
                 <Button
-                    href="/wsp"
+                    href="https://wa.me/message/HIICFB6TFXL2O1"
                     target="_blank"
                     variant="whatsapp"
                     withEffect={false}
