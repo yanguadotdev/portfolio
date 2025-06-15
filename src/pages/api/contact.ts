@@ -1,21 +1,15 @@
 import { Resend } from 'resend'
 import type { APIRoute } from 'astro'
-import { z } from 'zod'
+import { contactFormSchema } from '@/schemas/contact'
 
 export const prerender = false;
 
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY)
-const ContactFormSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  serviceType: z.string().min(2),
-  description: z.string().min(10)
-})
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json()
-  const parse = ContactFormSchema.safeParse(body)
+  const parse = contactFormSchema.safeParse(body)
 
   if (!parse.success) {
     return new Response(JSON.stringify({ error: 'Invalid input', details: parse.error.format() }), {
