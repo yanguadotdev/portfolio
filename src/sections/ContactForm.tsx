@@ -1,31 +1,8 @@
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
 import RadioButton from '@/components/RadioButton';
 import Button from '@/components/Button';
 import { cn } from '@/lib/utils';
-import { toast } from 'sonner';
-
-const contactSchema = z.object({
-    serviceType: z.enum(['freelance', 'laboral'], {
-        message: 'Selecciona un tipo de servicio',
-    }),
-    name: z
-        .string()
-        .trim()
-        .min(3, 'Nombre requerido')
-        .regex(/^[a-zA-ZÀ-ÿ\s]+$/, 'El nombre solo debe contener letras'),
-    email: z
-        .string()
-        .trim()
-        .email('Correo inválido'),
-    description: z
-        .string()
-        .trim()
-        .min(15, 'Describe con un minimo de 15 caracteres'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { useContactForm } from '@/hooks/useContactForm';
+import { useEffect } from 'react';
 
 const services = [
     { id: 'freelance', label: 'Freelance', checked: false },
@@ -36,30 +13,10 @@ export default function ContactForm() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        reset
-    } = useForm<ContactFormData>({
-        resolver: zodResolver(contactSchema),
-    });
-
-    const onSubmit = async (data: ContactFormData) => {
-        try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (!res.ok) throw new Error('Error al enviar el mensaje');
-            toast.success(`¡Gracias! ${data.name}. Tu mensaje ha sido enviado con éxito.`);
-            reset()
-        } catch (err) {
-            console.error(err);
-            toast.error('Oops... no se pudo enviar tu mensaje. Intenta más tarde, por favor.');
-        }
-    };
+        errors,
+        onSubmit,
+        isSubmitting
+    } = useContactForm();
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -77,7 +34,8 @@ export default function ContactForm() {
                                     className='flex-1 text-center basis-48'
                                     groupName='Services'
                                     register={register('serviceType')}
-                                    option={service} />
+                                    option={service}
+                                />
                             )
                         })
                     }
@@ -113,7 +71,7 @@ export default function ContactForm() {
             </fieldset>
 
             <Button className='w-full mt-12' variant='primary' type='submit'>
-                Hablemos
+                {isSubmitting ? 'Enviando...' : 'Hablemos'}
             </Button>
         </form>
     );

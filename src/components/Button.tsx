@@ -38,13 +38,13 @@ export default function Button(props: ButtonProps) {
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if (
-          preventSamePathNavigation &&
-          typeof window !== 'undefined' &&
-          window.location.pathname === href
+            preventSamePathNavigation &&
+            typeof window !== 'undefined' &&
+            window.location.pathname === href
         ) {
-          e.preventDefault()
+            e.preventDefault()
         }
-      }
+    }
 
     return (
         <>
@@ -68,7 +68,7 @@ export default function Button(props: ButtonProps) {
                         className={cn("filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug", className)}
                     >
                         <div className={buttonWrapper({ variant })}>
-                            <div data-scramble-text className={buttonText({ variant })}>
+                            <div {...(type !== 'submit' && { 'data-scramble-text': true })} className={buttonText({ variant })}>
                                 {children}
                             </div>
                         </div>
