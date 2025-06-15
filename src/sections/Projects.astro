@@ -3,6 +3,7 @@ import BlockDecoration from '@/components/BlockDecoration.astro'
 import FiltersPanel from '@/components/FiltersPanel.astro'
 import { projectsList } from '@/data/site-data'
 import DiagonalArrow from '@/assets/diagonalArrow.svg'
+import { iconNameMap } from '@/components/Icons'
 ---
 
 <section id="projects">
@@ -60,8 +61,8 @@ import DiagonalArrow from '@/assets/diagonalArrow.svg'
                                 return (
                                   <div class="relative">
                                     <Icon className="hover:text-dark text-lg peer" />
-                                    <span class="bg-light text-dark border-lightergrey pointer-events-none absolute bottom-[150%] left-1/2 inline-block -translate-x-1/2 translate-y-2 border px-2 py-1 text-xs uppercase opacity-0 transition-all duration-300 peer-hover:translate-y-0 peer-hover:opacity-100">
-                                      {Icon.name.replace('Si', '')}
+                                    <span class="bg-light whitespace-nowrap text-dark border-lightergrey pointer-events-none absolute bottom-[150%] left-1/2 inline-block -translate-x-1/2 translate-y-2 border px-2 py-1 text-xs uppercase opacity-0 transition-all duration-300 peer-hover:translate-y-0 peer-hover:opacity-100">
+                                      {iconNameMap.get(Icon)}
                                     </span>
                                   </div>
                                 )

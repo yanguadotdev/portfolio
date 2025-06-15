@@ -7,7 +7,8 @@ import {
     SiJavascript,
     SiFigma,
     SiTypescript,
-    SiHtml5
+    SiHtml5,
+    iconNameMap
   } from "@/components/Icons";
   import { useAnimate } from "motion/react";
   import type {ReactNode, MouseEvent } from "react";
@@ -75,6 +76,7 @@ import {
   
   const LinkBox: React.FC<LinkBoxProps> = ({ Icon, children }) => {
     const [scope, animate] = useAnimate();
+    const iconName = iconNameMap.get(Icon)
   
     const getNearestSide = (e: MouseEvent<HTMLDivElement>): string => {
       const box = e.currentTarget.getBoundingClientRect();
@@ -121,7 +123,7 @@ import {
           className="absolute inset-0 flex flex-col gap-1 justify-center items-center bg-dark text-light"
         >
           <Icon className="text-lg sm:text-2xl md:text-3xl" />
-          <p className="text-xs">{Icon.name.replace("Si", "")}</p>
+          <p className="text-xs">{iconName}</p>
         </div>
       </div>
     );

@@ -1,4 +1,15 @@
-import { SiReact, SiTailwindcss, SiNextdotjs, SiGit, SiAstro, SiJavascript, SiFigma, SiTypescript, SiHtml5, SiVite, SiCss3, SiReactrouter } from '@/components/Icons'
+import {
+    SiReact,
+    SiTailwindcss,
+    SiNextdotjs,
+    SiAstro,
+    SiJavascript,
+    SiTypescript,
+    SiHtml5,
+    SiVite,
+    SiCss3,
+    SiReactrouter,
+} from '@/components/Icons'
 
 
 export const heroCopy = {
