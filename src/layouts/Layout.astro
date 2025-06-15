@@ -4,6 +4,7 @@ import '@/styles/global.css'
 import BodyLines from '@/components/BodyLines.astro'
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
+import ToastProvider from '@/components/ToastProvider'
 
 interface Props {
   title: string
@@ -69,6 +70,8 @@ const { title = 'Title', description, canonical, robots } = Astro.props
       </main>
       <Footer />
     </div>
+
+    <ToastProvider client:load />
   </body>
 </html>
 

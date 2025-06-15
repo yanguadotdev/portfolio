@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import RadioButton from '@/components/RadioButton';
 import Button from '@/components/Button';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 const contactSchema = z.object({
     serviceType: z.enum(['freelance', 'laboral'], {
@@ -21,7 +22,7 @@ const contactSchema = z.object({
     description: z
         .string()
         .trim()
-        .min(15, 'Descripción requerida'),
+        .min(15, 'Describe con un minimo de 15 caracteres'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -36,6 +37,7 @@ export default function ContactForm() {
         register,
         handleSubmit,
         formState: { errors },
+        reset
     } = useForm<ContactFormData>({
         resolver: zodResolver(contactSchema),
     });
@@ -51,10 +53,11 @@ export default function ContactForm() {
             });
 
             if (!res.ok) throw new Error('Error al enviar el mensaje');
-            alert('Mensaje enviado correctamente');
+            toast.success(`¡Gracias! ${data.name}. Tu mensaje ha sido enviado con éxito.`);
+            reset()
         } catch (err) {
             console.error(err);
-            alert('Hubo un error al enviar tu mensaje');
+            toast.error('Oops... no se pudo enviar tu mensaje. Intenta más tarde, por favor.');
         }
     };
 
