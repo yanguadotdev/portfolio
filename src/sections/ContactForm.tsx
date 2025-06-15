@@ -2,7 +2,7 @@ import RadioButton from '@/components/RadioButton';
 import Button from '@/components/Button';
 import { cn } from '@/lib/utils';
 import { useContactForm } from '@/hooks/useContactForm';
-import { useEffect } from 'react';
+import Spinner from '@/components/Spinner';
 
 const services = [
     { id: 'freelance', label: 'Freelance', checked: false },
@@ -70,8 +70,8 @@ export default function ContactForm() {
                 />
             </fieldset>
 
-            <Button className='w-full mt-12' variant='primary' type='submit'>
-                {isSubmitting ? 'Enviando...' : 'Hablemos'}
+            <Button className={cn('w-full mt-12 h-12', isSubmitting && 'pointer-events-none')} variant='primary' type='submit'>
+                {isSubmitting ? <Spinner size={24} /> : 'Hablemos'}
             </Button>
         </form>
     );

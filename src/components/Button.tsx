@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { cva } from 'class-variance-authority'
 
-const buttonWrapper = cva('clip-path-button-link whitespace-nowrap text-sm', {
+const buttonWrapper = cva('clip-path-button-link whitespace-nowrap text-sm h-full', {
     variants: {
         variant: {
             primary: 'bg-primary text-dark',
@@ -11,7 +11,7 @@ const buttonWrapper = cva('clip-path-button-link whitespace-nowrap text-sm', {
 })
 
 const buttonText = cva(
-    'clip-path-button-link p-[0.6rem_1.5rem] relative uppercase transition-colors duration-300',
+    'clip-path-button-link p-[0.6rem_1.5rem] relative h-full uppercase transition-colors duration-300 flex items-center justify-center',
     {
         variants: {
             variant: {
