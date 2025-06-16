@@ -3,6 +3,11 @@ import HeaderClip from '@/components/HeaderClip.astro'
 import RoundedCorners from '@/assets/roundedCorners.svg'
 import Button from '@/components/Button'
 import Brand from '@/components/Brand.astro'
+import { cn } from '@/lib/utils'
+
+const {pathname} = Astro.url
+
+const isActive = (path: string) => pathname === path
 ---
 
 <header id="header">
@@ -21,7 +26,7 @@ import Brand from '@/components/Brand.astro'
         </div>
 
         <div class="header-actions flex justify-end">
-          <Button client:load href="/contact" preventSamePathNavigation> ¿HABLAMOS? </Button>
+          <Button href="/contact" className={cn(isActive('/contact') && 'pointer-events-none')}> ¿HABLAMOS? </Button>
         </div>
       </div>
     </div>
