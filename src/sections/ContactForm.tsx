@@ -41,7 +41,7 @@ export default function ContactForm() {
                 </Button>
             </div>
 
-            <div className="relative flex items-center w-full my-4">
+            <div className="relative flex items-center w-full my-8">
                 <div className="flex-grow border-t border-gray-300"></div>
                 <span className="px-4 text-gray-500 text-sm">o llena este formulario</span>
                 <div className="flex-grow border-t border-gray-300"></div>
@@ -85,6 +85,7 @@ export default function ContactForm() {
                         placeholder='[perezdavid@gmail.com]'
                         label='¿A qué correo puedo responderte?'
                         register={register('email')}
+                        type='email'
                         error={errors.email}
                     />
 
