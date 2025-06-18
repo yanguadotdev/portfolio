@@ -98,6 +98,7 @@ import { iconNameMap } from '@/components/Icons'
   const form = $('#filters-form')
   const projectsWrapper = $('#projects-wrapper') as HTMLElement
   const searchInput = $('#search') as HTMLInputElement
+  const resetBtn = $('#resetBtn') as HTMLButtonElement
 
   // Init state of filters
   let currentCategory = 'all'
@@ -120,6 +121,13 @@ import { iconNameMap } from '@/components/Icons'
       filterProjects()
     }, 300),
   )
+
+  resetBtn?.addEventListener('click', (e: Event) => {
+    e.preventDefault()
+    searchInput.value = ''
+    currentSearch = ''
+    filterProjects()
+  })
 
   // La función que aplica ambos filtros
   function filterProjects() {

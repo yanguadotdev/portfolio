@@ -21,18 +21,16 @@ const categories = [
     class="flex items-start justify-between px-10 py-4"
     aria-label="Filter form"
   >
-    <Select client:load className='flex 2lg:hidden min-w-3xs w-max' categories={categories} />
-    <div class="2md:w-max hidden w-full gap-3 2lg:flex">
+    <Select client:load className="2lg:hidden min-w-3xs flex w-max" categories={categories} />
+    <div class="2md:w-max 2lg:flex hidden w-full gap-3">
       {
         categories.map((category) => {
-          return (
-            <RadioButton groupName='Categories' option={category} />
-          )
+          return <RadioButton groupName="Categories" option={category} />
         })
       }
     </div>
 
-    <div class="max-w-2/5 sm:block relative hidden w-full">
+    <div class="max-w-2/5 relative hidden w-full sm:block">
       <!-- Accessible tag but not visible -->
       <label for="search" class="sr-only">Busqueda</label>
       <input
@@ -47,6 +45,7 @@ const categories = [
       />
       <SearchIcon class="absolute inset-y-0 left-3 my-auto size-5 opacity-60" />
       <button
+        id="resetBtn"
         type="reset"
         class="absolute inset-y-0 right-3 my-auto inline-block size-6 cursor-pointer peer-placeholder-shown:pointer-events-none peer-placeholder-shown:invisible peer-placeholder-shown:opacity-0"
       >
