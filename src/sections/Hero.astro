@@ -1,12 +1,17 @@
 ---
 import BlockDecoration from '@/components/BlockDecoration.astro'
 import Arrow from '@/assets/arrow.svg'
-import { heroCopy } from '@/data/site-data'
-import photo from '@/assets/photo.png'
+import { getHeroCopy } from '@/data'
 import DiagonalArrow from '@/assets/diagonalArrow.svg'
 import HoverImageSlider from '@/components/HoverImageSlider'
 
-const { slogan, name, description, details, socialLinks } = heroCopy
+import { translations } from '@/i18n/translations'
+import { type Lang } from '@/types'
+
+const currentLang = (Astro.currentLocale || 'es') as Lang
+const { hero } = translations[currentLang]
+const { description, name, slogan, subProjects, hola } = hero
+const { details, socialLinks } = getHeroCopy(currentLang)
 ---
 
 <section id="hero" class="overflow-hidden">
@@ -31,7 +36,7 @@ const { slogan, name, description, details, socialLinks } = heroCopy
       >
         <div class="2md:p-6 flex gap-4 leading-none">
           <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
-          <p class="text-18px-size leading-tight">Conoce mis proyectos mas&nbsp;recientes</p>
+          <p class="text-18px-size leading-tight">{subProjects}</p>
         </div>
 
         <div class="border-t-grey 2md:border-t 2md:px-6 flex flex-col gap-3 py-4 leading-none">
@@ -85,9 +90,10 @@ const { slogan, name, description, details, socialLinks } = heroCopy
 
           <div class="bg-light h-full px-8 py-10 text-sm leading-normal">
             <p>
-              <span class="text-primary">{slogan}</span> Hola, soy&nbsp;<span class="font-semibold"
-                >{name}</span
-              >y{description}
+              <span class="text-primary">{slogan}</span>
+              {hola}&nbsp;<span class="font-semibold">{name}</span>{currentLang === 'es' ? 'y' : 'and'}{
+                description
+              }
             </p>
           </div>
 

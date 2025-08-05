@@ -1,24 +1,24 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
 interface Props {
- className: string   
+  className: string
 }
 
 const { className } = Astro.props
+const currentLang = Astro.currentLocale || 'es'
 ---
 
-<div id='brandWrap' class={className}>
-  <a href='/' class='flex items-center gap-1 leading-none' aria-label='home'>
-    <img
-      width='auto'
-      height='64'
-      alt=''
-      src='/favicon.svg'
-      loading='lazy'
-      class='h-12'
-    />
-    <div class='text-lg leading-none'>
+<div id="brandWrap" class={className}>
+  <a
+    href={getRelativeLocaleUrl(currentLang, '/')}
+    class="flex items-center gap-1 leading-none"
+    aria-label="home"
+  >
+    <img width="auto" height="64" alt="" src="/favicon.svg" loading="lazy" class="h-12" />
+    <div class="text-lg leading-none">
       Yangua
-      <div class='font-secondary text-3xl'>DEV.</div>
+      <div class="font-secondary text-3xl">DEV.</div>
     </div>
   </a>
 </div>

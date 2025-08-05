@@ -1,0 +1,52 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Blade from '@/assets/blade.svg'
+import ContactForm from '@/sections/ContactForm'
+import OneIcon from '@/assets/one.svg'
+---
+
+<Layout
+  title="Construyamos algo increíble juntos – Contactame"
+  description="Cada gran proyecto comienza con una conversación. Si buscas un diseñador y frontend developer que entienda tu visión, este es el primer paso. Estoy listo para escuchar tu historia."
+  canonical="https://yangua.dev/contact"
+  robots="index, follow"
+>
+  <!-- Heading -->
+  <div class="border-b-grey relative grid border-b">
+    <div class="relative inline-flex overflow-hidden whitespace-nowrap" data-slider>
+      <h1
+        data-slider-content
+        aria-label="Yangua Ruiz Samir Kenyi"
+        class="font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter"
+      >
+        CONTACTAME
+      </h1>
+    </div>
+
+    <Blade class="absolute hidden 2md:block bottom-0 right-full" />
+  </div>
+
+  <div class="relative grid 1.25md:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_1fr_2fr]">
+    <div class="hidden lg:block"></div>
+
+    <div class="p-10 border-r border-r-grey 2md:border-r-0 1.25md:block border-b border-b-grey 1.25md:border-b-0">
+      <OneIcon class="h-auto w-24" />
+      <p class="mt-4 text-base text-dark-60 leading-tight">
+        Rellena este breve formulario para contactar&nbsp;conmigo
+      </p>
+    </div>
+
+    <div class="bg-lightgrey mx-[1.5px] p-10">
+      <ContactForm client:load />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import createInfiniteSlider from '@/lib/create-infinite-slider'
+  import { $ } from '@/lib/dom-selector'
+
+  const slider = $('[data-slider]') as HTMLElement
+  const sliderContent = slider?.firstElementChild as HTMLElement
+  createInfiniteSlider({ slider, sliderContent })
+</script>
