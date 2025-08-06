@@ -1,13 +1,18 @@
 ---
 import BlockDecoration from '@/components/BlockDecoration.astro'
 import FiltersPanel from '@/components/FiltersPanel.astro'
-import { projectsList } from '@/data/site-data'
 import DiagonalArrow from '@/assets/diagonalArrow.svg'
 import { iconNameMap } from '@/components/Icons'
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+import { getProjectsList } from '@/data'
+
+const currentLang = (Astro.currentLocale || 'es') as Lang
+const projectsList = getProjectsList(currentLang)
 ---
 
 <section id="projects">
-  <FiltersPanel />
+  <FiltersPanel lang={currentLang} />
 
   <div class="relative">
     <div id="projects-wrapper" class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10">

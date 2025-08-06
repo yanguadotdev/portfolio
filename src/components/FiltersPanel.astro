@@ -3,14 +3,19 @@ import SearchIcon from '@/assets/search.svg'
 import CloseIcon from '@/assets/close.svg'
 import Select from './Select'
 import RadioButton from './RadioButton'
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
 
 const categories = [
   { id: 'all', label: 'All', checked: true },
   { id: 'landing', label: 'Landing pages' },
   { id: 'webApp', label: 'Web apps' },
   { id: 'clone', label: 'Clones' },
-  { id: 'tool', label: 'Herramientas' },
+  { id: 'tool', label: 'Tools' },
 ]
+
+const { lang } = Astro.props as { lang: Lang }
+const { search } = translations[lang]
 ---
 
 <div class="bg-lightgrey border-b-grey sticky top-[calc(5rem-1px)] z-[1] mx-[1px] border-b">
@@ -32,7 +37,7 @@ const categories = [
 
     <div class="max-w-2/5 relative hidden w-full sm:block">
       <!-- Accessible tag but not visible -->
-      <label for="search" class="sr-only">Busqueda</label>
+      <label for="search" class="sr-only">{search}</label>
       <input
         class="border-grey bg-lightgrey text-dark hover:border-dark focus:border-dark peer w-full border px-11 py-3 text-sm transition-colors duration-300"
         maxlength="25"

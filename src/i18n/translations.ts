@@ -7,6 +7,7 @@ export const translations = {
     cta: 'Ya sea que estés buscando sumar a tu equipo un perfil técnico, o llevar tu presencia digital al siguiente nivel, estoy listo para ayudarte a lograrlo.',
     downloadCv: 'DESCARGAR CV',
     interested: 'ESTOY INTERESADO',
+    search: 'Busqueda',
     skills: 'HABILIDADES',
     hero: {
       hola: 'Hola, soy',
@@ -58,6 +59,7 @@ export const translations = {
     downloadCv: 'DOWNLOAD CV',
     interested: 'I am INTERESTED',
     skills: 'SKILLS',
+    search: 'Search',
     hero: {
       hola: 'Hi, I am',
       slogan: 'Design that grabs attention. Development that retains it.',

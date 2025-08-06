@@ -95,7 +95,7 @@ export const projectsList = [
     id: 'world-pets',
     cover: '/projects/project_03.jpg',
     category: 'webApp',
-    description: 'Used theDOGapi to display pet images.',
+    description: 'Used theDOGapi to display images of pets.',
     stack: [SiJavascript, SiHtml5, SiCss3],
     details: [
       {
@@ -119,7 +119,7 @@ export const projectsList = [
     id: 'spotify-clone',
     cover: '/projects/project_04.jpg',
     category: 'clone',
-    description: 'Clone of the Spotify music app built with React and Tailwind CSS.',
+    description: 'Spotify music app clone built with React and Tailwind CSS.',
     stack: [SiReact, SiVite, SiTailwindcss],
     details: [
       {
@@ -143,7 +143,7 @@ export const projectsList = [
     id: 'brainwave',
     cover: '/projects/project_05.jpg',
     category: 'landing',
-    description: 'Landing page for an AI Chat platform.',
+    description: 'Landing page for an AI-powered chat.',
     stack: [SiAstro, SiTailwindcss, SiTypescript],
     details: [
       {
@@ -191,13 +191,13 @@ export const projectsList = [
     id: 'questions-answers',
     cover: '/projects/project_15.jpg',
     category: 'landing',
-    description: 'Landing page with questions about the "this" keyword in JavaScript.',
+    description: 'Landing page that shows questions about the "this" keyword in JavaScript.',
     stack: [SiJavascript, SiHtml5, SiCss3],
     details: [
       {
         type: 'text',
         label: 'Name',
-        value: 'JS Questions',
+        value: 'JavaScript Questions',
       },
       {
         type: 'link',
@@ -239,7 +239,7 @@ export const projectsList = [
     id: 'layers',
     cover: '/projects/project_09.jpg',
     category: 'landing',
-    description: 'Landing page for a Software as a Service product.',
+    description: 'Landing page for a Software as a Service (SaaS) product.',
     stack: [SiReact, SiNextdotjs, SiTailwindcss, SiTypescript],
     details: [
       {
@@ -311,7 +311,7 @@ export const projectsList = [
     id: 'movies-app',
     cover: '/projects/project_12.jpg',
     category: 'webApp',
-    description: 'Web application to search for movies and TV series by category.',
+    description: 'Web app to search for movies and series across different categories.',
     stack: [SiReact, SiReactrouter, SiVite, SiCss3],
     details: [
       {
@@ -335,7 +335,7 @@ export const projectsList = [
     id: 'hirace',
     cover: '/projects/project_13.jpg',
     category: 'landing',
-    description: 'Landing page for companies connecting employers with candidates.',
+    description: 'Landing page for companies that connect employers with candidates.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
     details: [
       {
@@ -359,7 +359,7 @@ export const projectsList = [
     id: 'barbersteel',
     cover: '/projects/project_14.jpg',
     category: 'landing',
-    description: 'Landing page for a barbershop with a modern design.',
+    description: 'Landing page for a modern-style barbershop.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
     details: [
       {
@@ -380,26 +380,26 @@ export const projectsList = [
     ],
   },
   {
-    id: 'vintage-barbershop',
-    cover: '/projects/project_16.jpg',
+    id: 'fit-life',
+    cover: '/projects/project_07.jpg',
     category: 'landing',
-    description: 'Landing page for a vintage-style barbershop.',
+    description: 'Landing page for a gym with an attractive design.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
     details: [
       {
         type: 'text',
         label: 'Name',
-        value: 'Vintage Barbershop',
+        value: 'Fit and Life',
       },
       {
         type: 'link',
         label: 'Repository',
-        value: 'https://github.com/yanguadotdev/vintage-barbershop',
+        value: 'https://github.com/yanguadotdev/fitandlife',
       },
       {
         type: 'link',
         label: 'Preview',
-        value: 'https://vintage-barbershop.vercel.app/',
+        value: 'https://fitandlife.vercel.app/',
       },
     ],
   },

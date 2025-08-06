@@ -143,7 +143,7 @@ export const projectsList = [
     id: 'brainwave',
     cover: '/projects/project_05.jpg',
     category: 'landing',
-    description: 'Landing page para una Chat con Inteligencia Artificial ',
+    description: 'Landing page para un Chat con Inteligencia Artificial ',
     stack: [SiAstro, SiTailwindcss, SiTypescript],
     details: [
       {
@@ -239,7 +239,7 @@ export const projectsList = [
     id: 'layers',
     cover: '/projects/project_09.jpg',
     category: 'landing',
-    description: 'Landing page para una Software as a Service',
+    description: 'Landing page para un Software as a Service',
     stack: [SiReact, SiNextdotjs, SiTailwindcss, SiTypescript],
     details: [
       {
@@ -287,7 +287,7 @@ export const projectsList = [
     id: 'halloween-hackaton',
     cover: '/projects/project_11.jpg',
     category: 'landing',
-    description: 'Landing page para un promocionar algun evento en particular.',
+    description: 'Landing page para promocionar algun evento en particular.',
     stack: [SiJavascript, SiHtml5, SiCss3],
     details: [
       {
@@ -383,7 +383,7 @@ export const projectsList = [
     id: 'fit-life',
     cover: '/projects/project_07.jpg',
     category: 'landing',
-    description: 'Landing page para una gym con un diseño bastante atractivo.',
+    description: 'Landing page para un gym con un diseño bastante atractivo.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
     details: [
       {
