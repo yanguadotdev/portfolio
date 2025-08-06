@@ -156,3 +156,8 @@ body {
       0 10px);
   padding: 1.5px;
 }
+
+@utility dot-pattern {
+  background-image: radial-gradient(circle, theme(colors.dark-60) 5%, transparent 5%);
+  background-size: 10px 10px;
+}

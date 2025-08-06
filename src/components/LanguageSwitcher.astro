@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n'
-import { IoLanguageOutline } from 'react-icons/io5'
+import USFlagIcon from '@/assets/flags/us.svg'
+import ESFlagIcon from '@/assets/flags/es.svg'
 
 const { pathname } = Astro.url
 const availableLocales = [
@@ -8,15 +9,14 @@ const availableLocales = [
   { code: 'en', label: 'English' },
 ]
 const currentLang = Astro.currentLocale || 'es'
-const targetLocale = currentLang === 'es' ? 'en' : 'es'
-const currentLabel = availableLocales[currentLang === 'en' ? 0 : 1].label
-const href = getRelativeLocaleUrl(targetLocale, pathname.replace(`/${currentLang}`, ''))
+const targetLang = currentLang === 'es' ? 'en' : 'es'
+const href = getRelativeLocaleUrl(targetLang, pathname.replace(`/${currentLang}`, ''))
 ---
 
 <a
   href={href}
-  class="border-grey flex cursor-pointer items-center gap-1 rounded-sm border px-3 py-2 text-sm uppercase hover:bg-slate-50/50"
+  class="flex cursor-pointer items-center gap-1 rounded-sm px-3 py-2 text-sm uppercase hover:underline leading-none"
 >
-  <IoLanguageOutline className="h-auto w-5" />
-  {currentLabel}
+  {targetLang === 'en' ? <USFlagIcon width={20} /> : <ESFlagIcon width={20} />}
+  {targetLang}
 </a>

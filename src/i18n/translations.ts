@@ -64,7 +64,7 @@ export const translations = {
       name: 'Samir Yangua ',
       description:
         ' With my skills in interface design and frontend development, I seek to create digital experiences that provide real value and help brands and businesses gain competitive positioning.',
-      subProjects: 'Learn about my most recent projects',
+      subProjects: 'Meet my most recent projects',
     },
     contact: {
       title: 'Build something incredible together – Contact me',
