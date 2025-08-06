@@ -8,6 +8,7 @@ import { IoCloudDownloadOutline } from '@/components/Icons'
 
 import { translations } from '@/i18n/translations'
 import type { Lang } from '@/types'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const currentLang = (Astro.currentLocale || 'es') as Lang
 const { cta, downloadCv, interested } = translations[currentLang]
@@ -46,7 +47,7 @@ const { cta, downloadCv, interested } = translations[currentLang]
     </div>
 
     <div class="1.5xs:px-18 flex flex-col justify-center gap-6 p-12 px-6 lg:px-7">
-      <Button href="/contact"> {interested} </Button>
+      <Button href={getRelativeLocaleUrl(currentLang, '/contact')}> {interested} </Button>
       <Button withEffect={false} href="/Samir_FrontendUI_CV_2025.pdf" download variant="outline">
         <div class="flex items-center gap-2">
           <IoCloudDownloadOutline className="h-auto w-5" />
