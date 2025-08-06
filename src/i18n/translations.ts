@@ -16,6 +16,24 @@ export const translations = {
         ' Desde mis habilidades en diseño de interfaces y desarrollo frontend, busco crear experiencias digitales que aporten valor real y ayuden al posicionamiento competitivo de marcas y negocios.',
       subProjects: 'Conoce mis proyectos mas recientes',
     },
+    contact: {
+      title: 'Construyamos algo increíble juntos – Contactame',
+      description:
+        'Cada gran proyecto comienza con una conversación. Si buscas un diseñador y frontend developer que entienda tu visión, este es el primer paso. Estoy listo para escuchar tu historia.',
+      fillForm: 'Rellena este breve formulario para contactar conmigo',
+      howWeTalk: '¿Cómo quieres que hablemos?',
+      talkBy: 'Hablemos por WhatsApp',
+      orFillForm: 'o llena este formulario',
+      typeServiceLooking: '¿Qué tipo de servicio estás buscando?',
+      whatIsName: '¿Cuál es tu nombre?',
+      whatIsEmail: '¿A que correo puedo responderte?',
+      howCanHelpYou: '¿Cómo puedo ayudarte?',
+      tellMeMore: 'Cuéntame sobre tu idea o necesidad',
+      messages: {
+        success: '¡Gracias! Tu mensaje ha sido enviado con éxito.',
+        error: 'Oops... no se pudo enviar tu mensaje. Intenta más tarde, por favor.',
+      },
+    },
   },
   en: {
     title: 'Yangua Ruiz Samir · Designer & Frontend Developer',
@@ -33,6 +51,25 @@ export const translations = {
       description:
         ' With my skills in interface design and frontend development, I seek to create digital experiences that provide real value and help brands and businesses gain competitive positioning.',
       subProjects: 'Learn about my most recent projects',
+    },
+    contact: {
+      title: 'Build something incredible together – Contact me',
+      description:
+        'Every great project starts with a conversation. If you are looking for a designer and frontend developer who understands your vision, this is the first step. I am ready to listen to your story.',
+      fillForm: 'Fill out this brief form to contact me',
+      howWeTalk: 'How do you want to talk?',
+      talkBy: "Let's talk by WhatsApp",
+      orFillForm: 'or fill out this form',
+      typeServiceLooking: 'What type of service are you looking for?',
+      whatIsName: 'What is your name?',
+      whatIsEmail: 'To which email can I respond?',
+      howCanHelpYou: 'How can I help you?',
+      tellMeMore: 'Tell me more about your idea or need',
+
+      messages: {
+        success: 'Thank you! Your message has been sent successfully.',
+        error: 'Oops... could not send your message. Try again later, please.',
+      },
     },
   },
 }

@@ -3,11 +3,17 @@ import Layout from '@/layouts/Layout.astro'
 import Blade from '@/assets/blade.svg'
 import ContactForm from '@/sections/ContactForm'
 import OneIcon from '@/assets/one.svg'
+
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+
+const currentLang = (Astro.currentLocale || 'es') as Lang
+const { title, description, fillForm } = translations[currentLang].contact
 ---
 
 <Layout
-  title="Construyamos algo increíble juntos – Contactame"
-  description="Cada gran proyecto comienza con una conversación. Si buscas un diseñador y frontend developer que entienda tu visión, este es el primer paso. Estoy listo para escuchar tu historia."
+  title={title}
+  description={description}
   canonical="https://yangua.dev/contact"
   robots="index, follow"
 >
@@ -23,21 +29,21 @@ import OneIcon from '@/assets/one.svg'
       </h1>
     </div>
 
-    <Blade class="absolute hidden 2md:block bottom-0 right-full" />
+    <Blade class="2md:block absolute bottom-0 right-full hidden" />
   </div>
 
-  <div class="relative grid 1.25md:grid-cols-[1fr_3fr] lg:grid-cols-[1fr_1fr_2fr]">
+  <div class="1.25md:grid-cols-[1fr_3fr] relative grid lg:grid-cols-[1fr_1fr_2fr]">
     <div class="hidden lg:block"></div>
 
-    <div class="p-10 border-r border-r-grey 2md:border-r-0 1.25md:block border-b border-b-grey 1.25md:border-b-0">
+    <div
+      class="border-r-grey 2md:border-r-0 1.25md:block border-b-grey 1.25md:border-b-0 border-b border-r p-10"
+    >
       <OneIcon class="h-auto w-24" />
-      <p class="mt-4 text-base text-dark-60 leading-tight">
-        Rellena este breve formulario para contactar&nbsp;conmigo
-      </p>
+      <p class="text-dark-60 mt-4 text-base leading-tight">{fillForm}</p>
     </div>
 
     <div class="bg-lightgrey mx-[1.5px] p-10">
-      <ContactForm client:load />
+      <ContactForm lang={currentLang} client:load />
     </div>
   </div>
 </Layout>
