@@ -12,7 +12,7 @@ export function useContactForm(lang: Lang) {
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactFormSchema(lang)),
   })
 
   const { success, error } = translations[lang].contact.messages

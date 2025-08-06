@@ -32,6 +32,14 @@ export const translations = {
       messages: {
         success: '¡Gracias! Tu mensaje ha sido enviado con éxito.',
         error: 'Oops... no se pudo enviar tu mensaje. Intenta más tarde, por favor.',
+
+        serviceType: '¿Podrías seleccionar el tipo de servicio que buscas?',
+        name: {
+          min: 'Me encantaría saber tu nombre 🙌',
+          regex: '¿Tu nombre contiene números? Creo que algo no cuadra 🤔',
+        },
+        email: '¿Me compartes un correo válido para responderte? ✉️',
+        description: 'Cuéntame un poco más para poder ayudarte mejor 💬',
       },
     },
   },
@@ -69,6 +77,14 @@ export const translations = {
       messages: {
         success: 'Thank you! Your message has been sent successfully.',
         error: 'Oops... could not send your message. Try again later, please.',
+
+        serviceType: 'Could you select the type of service you are looking for?',
+        name: {
+          min: 'I’d love to know your name 🙌',
+          regex: 'Your name seems to contain numbers, is that right? 🤔',
+        },
+        email: 'Can you provide a valid email so I can get back to you? ✉️',
+        description: 'Tell me a bit more so I can help you better 💬',
       },
     },
   },
