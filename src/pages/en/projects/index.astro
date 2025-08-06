@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Projects from '@/sections/Projects.astro'
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+
+const locale = Astro.currentLocale || 'es'
+const { title, description } = translations[locale as Lang].projects
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical="https://yangua.dev/projects"
+  robots="index, follow"
+>
+  <div class="relative overflow-hidden">
+    <div class="border-b-grey inline-flex overflow-hidden whitespace-nowrap border-b" data-slider>
+      <h1
+        data-slider-content
+        aria-label="Projects"
+        class="font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter"
+      >
+        PROJECTS
+      </h1>
+    </div>
+    <Projects />
+  </div>
+</Layout>
+
+<script>
+  import createInfiniteSlider from '@/lib/create-infinite-slider'
+  import { $ } from '@/lib/dom-selector'
+
+  const slider = $('[data-slider]') as HTMLElement
+  const sliderContent = slider?.firstElementChild as HTMLElement
+  createInfiniteSlider({ slider, sliderContent })
+</script>

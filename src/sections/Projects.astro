@@ -61,7 +61,7 @@ import { iconNameMap } from '@/components/Icons'
                                 return (
                                   <div class="relative">
                                     <Icon className="hover:text-dark text-lg peer" />
-                                    <span class="bg-light whitespace-nowrap text-dark border-lightergrey pointer-events-none absolute bottom-[150%] left-1/2 inline-block -translate-x-1/2 translate-y-2 border px-2 py-1 text-xs uppercase opacity-0 transition-all duration-300 peer-hover:translate-y-0 peer-hover:opacity-100">
+                                    <span class="bg-light text-dark border-lightergrey pointer-events-none absolute bottom-[150%] left-1/2 inline-block -translate-x-1/2 translate-y-2 whitespace-nowrap border px-2 py-1 text-xs uppercase opacity-0 transition-all duration-300 peer-hover:translate-y-0 peer-hover:opacity-100">
                                       {iconNameMap.get(Icon)}
                                     </span>
                                   </div>
@@ -151,7 +151,9 @@ import { iconNameMap } from '@/components/Icons'
   function updateResultsCount() {
     const shown = $$('.project:not(.hidden)')
     const elementTotalProjects = $('#total-projects') as HTMLElement
-    elementTotalProjects.textContent = `${shown.length}`.padStart(2, '0')
+    if (elementTotalProjects) {
+      elementTotalProjects.textContent = `${shown.length}`.padStart(2, '0')
+    }
   }
 
   filterProjects()

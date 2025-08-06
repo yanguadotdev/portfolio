@@ -42,6 +42,12 @@ export const translations = {
         description: 'Cuéntame un poco más para poder ayudarte mejor 💬',
       },
     },
+
+    projects: {
+      title: 'Proyectos de diseño y desarrollo web | Yangua.dev',
+      description:
+        'Explora mis proyectos más recientes de diseño UI y desarrollo frontend. Soluciones creativas construidas con tecnologías modernas como React, Astro y Tailwind.',
+    },
   },
   en: {
     title: 'Yangua Ruiz Samir · Designer & Frontend Developer',
@@ -86,6 +92,12 @@ export const translations = {
         email: 'Can you provide a valid email so I can get back to you? ✉️',
         description: 'Tell me a bit more so I can help you better 💬',
       },
+    },
+
+    projects: {
+      title: 'Web Design & Development Projects | Yangua.dev',
+      description:
+        'Explore my latest UI design and frontend development projects. Creative solutions built with modern technologies like React, Astro, and Tailwind.',
     },
   },
 }
