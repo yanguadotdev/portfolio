@@ -2,14 +2,15 @@ import { Resend } from 'resend'
 import type { APIRoute } from 'astro'
 import { contactFormSchema } from '@/schemas/contact'
 
-export const prerender = false;
-
+export const prerender = false
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY)
+const fromEmail = import.meta.env.RESEND_FROM_EMAIL
+const toEmail = import.meta.env.RESEND_TO_EMAIL
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json()
-  const parse = contactFormSchema.safeParse(body)
+  const parse = contactFormSchema('es').safeParse(body)
 
   if (!parse.success) {
     return new Response(JSON.stringify({ error: 'Invalid input', details: parse.error.format() }), {
@@ -21,8 +22,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const data = await resend.emails.send({
-      from: 'Contacto Samir <hey@yangua.dev>',
-      to: 'hey@yangua.dev',
+      from: `Samir Yangua <${fromEmail}>`,
+      to: toEmail,
       subject: `📩 ¡Nuevo mensaje desde tu portafolio! 💼 De parte de ${name}`,
       replyTo: email,
       text: `Nombre: ${name}\nEmail: ${email}\nServicio: ${serviceType}\nDescripción: ${description}`,
