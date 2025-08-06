@@ -5,7 +5,9 @@ import Button from '@/components/Button'
 import Brand from '@/components/Brand.astro'
 import { cn } from '@/lib/utils'
 import { translations } from '@/i18n/translations'
+import LanguageSwitcher from '@/components/LanguageSwitcher.astro'
 import { type Lang } from '@/types'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const { pathname } = Astro.url
 
@@ -29,10 +31,17 @@ const { talk } = translations[currentLang]
         >
         </div>
 
-        <div class="header-actions flex justify-end">
-          <Button href="/contact" className={cn(isActive('/contact') && 'pointer-events-none')}>
-            {talk}
-          </Button>
+        <div class="flex items-center justify-between pl-4">
+          <LanguageSwitcher locale={currentLang} pathname={pathname} />
+
+          <div class="flex justify-end">
+            <Button
+              href={getRelativeLocaleUrl(currentLang, '/contact')}
+              className={cn(isActive('/contact') && 'pointer-events-none')}
+            >
+              {talk}
+            </Button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,22 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { IoLanguageOutline } from 'react-icons/io5'
+
+const { pathname } = Astro.url
+const availableLocales = [
+  { code: 'es', label: 'Español' },
+  { code: 'en', label: 'English' },
+]
+const currentLang = Astro.currentLocale || 'es'
+const targetLocale = currentLang === 'es' ? 'en' : 'es'
+const currentLabel = availableLocales[currentLang === 'en' ? 0 : 1].label
+const href = getRelativeLocaleUrl(targetLocale, pathname.replace(`/${currentLang}`, ''))
+---
+
+<a
+  href={href}
+  class="border-grey flex cursor-pointer items-center gap-1 rounded-sm border px-3 py-2 text-sm uppercase hover:bg-slate-50/50"
+>
+  <IoLanguageOutline className="h-auto w-5" />
+  {currentLabel}
+</a>
