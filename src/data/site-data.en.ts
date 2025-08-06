@@ -12,10 +12,6 @@ import {
 } from '@/components/Icons'
 
 export const heroCopy = {
-  slogan: 'Design that grabs attention. Development that retains it.',
-  name: 'Samir Yangua',
-  description:
-    ' With my skills in interface design and frontend development, I aim to create digital experiences that provide real value and help brands and businesses gain competitive positioning.',
   details: [
     {
       label: 'Experience',

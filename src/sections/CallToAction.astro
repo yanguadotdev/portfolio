@@ -5,6 +5,12 @@ import ArrowBigIcon from '@/assets/arrowBig.svg'
 import DotIcon from '@/assets/dot.svg'
 import Button from '@/components/Button'
 import { IoCloudDownloadOutline } from '@/components/Icons'
+
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+
+const currentLang = (Astro.currentLocale || 'es') as Lang
+const { cta, downloadCv, interested } = translations[currentLang]
 ---
 
 <section id="call-to-action" class="5xl:mx-0.5 mx-[1px]">
@@ -18,14 +24,15 @@ import { IoCloudDownloadOutline } from '@/components/Icons'
         <h2
           class="relative flex flex-col items-start justify-start gap-2 pl-6 uppercase leading-none"
         >
-          <span>¿Tienes un proyecto o</span>
-          <div class="bg-darklighter text-light px-2 py-1">PROPUESTA LABORAL?</div>
+          <span>{currentLang === 'es' ? '¿Tienes un proyecto o' : 'Do you have a project or'}</span>
+          <div class="bg-darklighter text-light px-2 py-1">
+            {currentLang === 'es' ? 'PROPUESTA LABORAL?' : 'JOB PROPOSAL?'}
+          </div>
           <IndicatorIcon class="absolute left-0 top-1 h-auto w-2" />
         </h2>
 
         <p class="text-dark/85 mt-4 pl-6 text-base">
-          Ya sea que estés buscando sumar a tu equipo un perfil técnico, o llevar tu presencia
-          digital al siguiente nivel, estoy listo para ayudarte a lograrlo.
+          {cta}
         </p>
       </div>
     </div>
@@ -39,11 +46,11 @@ import { IoCloudDownloadOutline } from '@/components/Icons'
     </div>
 
     <div class="1.5xs:px-18 flex flex-col justify-center gap-6 p-12 px-6 lg:px-7">
-      <Button href="/contact"> ESTOY INTERESADO </Button>
+      <Button href="/contact"> {interested} </Button>
       <Button withEffect={false} href="/Samir_FrontendUI_CV_2025.pdf" download variant="outline">
         <div class="flex items-center gap-2">
           <IoCloudDownloadOutline className="h-auto w-5" />
-          DESCARGAR CV
+          {downloadCv}
         </div>
       </Button>
     </div>
