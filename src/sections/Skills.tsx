@@ -114,7 +114,7 @@ const LinkBox: React.FC<LinkBoxProps> = ({ Icon, children }) => {
       className="relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36"
     >
       <Icon className="text-2xl sm:text-3xl lg:text-4xl" />
-      <p className="pointer-coarse:block hidden text-xs">{Icon.name.replace('Si', '')}</p>
+      <p className="pointer-coarse:block hidden text-xs">{iconName}</p>
       <div style={{ ['--separation' as any]: '-.5px' }} className="text-dark absolute inset-0">
         {children}
       </div>
