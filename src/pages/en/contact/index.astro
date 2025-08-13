@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Blade from '@/assets/blade.svg'
-import ContactForm from '@/sections/ContactForm'
+import ContactWrapper from '@/sections/ContactWrapper.astro'
 import OneIcon from '@/assets/one.svg'
 
 import { translations } from '@/i18n/translations'
@@ -43,7 +43,7 @@ const { title, description, fillForm } = translations[currentLang].contact
     </div>
 
     <div class="bg-lightgrey mx-[1.5px] p-10">
-      <ContactForm lang={currentLang} client:load />
+      <ContactWrapper lang={currentLang} />
     </div>
   </div>
 </Layout>

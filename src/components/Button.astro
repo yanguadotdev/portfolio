@@ -1,0 +1,86 @@
+---
+import { cn } from '@/lib/utils'
+import { cva } from 'class-variance-authority'
+
+const buttonWrapper = cva('clip-path-button-link whitespace-nowrap h-full', {
+  variants: {
+    variant: {
+      primary: 'bg-primary text-white',
+      outline: 'bg-primary text-primary',
+      whatsapp: 'bg-green-500 hover:bg-green-600 text-white',
+    },
+  },
+})
+
+const buttonText = cva(
+  'clip-path-button-link p-[0.6rem_1.5rem] relative h-full uppercase transition-colors duration-300 flex items-center justify-center',
+  {
+    variants: {
+      variant: {
+        primary: 'group-hover:bg-lightgrey bg-primary group-hover:text-primary',
+        outline: 'group-hover:bg-primary bg-lightgrey group-hover:text-white',
+        whatsapp: 'group-hover:bg-green-500 hover:bg-green-600 text-white transition-all',
+      },
+    },
+  },
+)
+
+interface Props {
+  withEffect?: boolean
+  href?: string
+  target?: string
+  variant?: 'primary' | 'outline' | 'whatsapp'
+  download?: boolean
+  type?: 'button' | 'submit' | 'reset'
+  className?: string
+}
+
+const {
+  href,
+  target,
+  download,
+  type,
+  variant = 'primary',
+  className,
+  withEffect = true,
+} = Astro.props
+---
+
+{href ? (
+  <a
+    href={href}
+    target={target}
+    download={download}
+    rel="noopener noreferrer"
+    class={cn(
+      'filter-[url(#rounded-corners)] text-sm group relative inline-block text-center leading-snug',
+      className
+    )}
+  >
+    <div class={buttonWrapper({ variant })}>
+      <div
+        class={buttonText({ variant })}
+        {...(withEffect && { 'data-scramble-text': true })}
+      >
+        <slot />
+      </div>
+    </div>
+  </a>
+) : (
+  <button
+    type={type}
+    class={cn(
+      'filter-[url(#rounded-corners)] group relative inline-block text-center leading-snug',
+      className
+    )}
+  >
+    <div class={buttonWrapper({ variant })}>
+      <div
+        class={buttonText({ variant })}
+        {...(withEffect && { 'data-scramble-text': true })}
+      >
+        <slot />
+      </div>
+    </div>
+  </button>
+)}

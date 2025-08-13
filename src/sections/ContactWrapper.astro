@@ -1,0 +1,40 @@
+---
+import Button from '@/components/Button.astro'
+import { FaWhatsapp } from 'react-icons/fa'
+import type { Lang } from '@/types'
+import { translations } from '@/i18n/translations'
+import Item from '@/components/Item'
+import ContactForm from '@/components/ContactForm'
+
+const { lang } = Astro.props as { lang: Lang }
+
+const { howWeTalk, talkBy, orFillForm } = translations[lang].contact
+---
+
+<section>
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center gap-3">
+      <Item value="1.0" />
+      <span class="text-sm leading-tight">{howWeTalk}</span>
+    </div>
+
+    <Button
+      href="https://wa.me/message/HIICFB6TFXL2O1"
+      target="_blank"
+      variant="whatsapp"
+      withEffect={false}
+    >
+      <div class="flex items-center gap-2">
+        <FaWhatsapp className="text-xl" />
+        {talkBy}
+      </div>
+    </Button>
+  </div>
+
+  <div class="relative my-8 flex w-full items-center">
+    <div class="flex-grow border-t border-gray-300"></div>
+    <span class="px-4 text-sm text-gray-500">{orFillForm}</span>
+    <div class="flex-grow border-t border-gray-300"></div>
+  </div>
+  <ContactForm lang={lang} client:load />
+</section>
