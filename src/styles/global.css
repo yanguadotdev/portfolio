@@ -122,13 +122,13 @@ body {
 }
 
 body {
-  cursor: url('/cursor-default.png'), auto;
+  cursor: url('/cursor-default.png') 16 10, auto;
 }
 
 a,
 button,
 [role="button"] {
-  cursor: url('/cursor-pointer.png'), auto;
+  cursor: url('/cursor-pointer.png') 16 10, auto;
 }
 
 *:focus {
@@ -173,5 +173,5 @@ button,
 }
 
 @utility cursor-pointer {
-  cursor: url('/cursor-pointer.png'), auto;
+  cursor: url('/cursor-pointer.png') 16 10, auto;
 }

@@ -9,18 +9,19 @@ const targetLang = currentLang === 'es' ? 'en' : 'es'
 const href = getRelativeLocaleUrl(targetLang, pathname.replace(`/${currentLang}`, ''))
 ---
 
-<label class="rocker rocker-small">
-  <a href={href}>
-    <input type="checkbox" class="hidden" checked={currentLang === 'es'} />
-    <span class="switch-left h-8 w-6">
-      <ESFlagIcon width={20} />
-    </span>
-    <span class="switch-right h-8 w-10">
-      <USFlagIcon width={20} />
-    </span>
-  </a>
-</label>
-
+<div class="rocker rocker-small">
+  <label>
+    <a href={href}>
+      <input type="checkbox" class="hidden" checked={currentLang === 'es'} />
+      <span class="switch-left h-8 w-6">
+        <ESFlagIcon width={20} />
+      </span>
+      <span class="switch-right h-8 w-10">
+        <USFlagIcon width={20} />
+      </span>
+    </a>
+  </label>
+</div>
 <style>
   /* Switch starts here */
   .rocker {
@@ -55,7 +56,6 @@ const href = getRelativeLocaleUrl(targetLang, pathname.replace(`/${currentLang}`
 
   .switch-left,
   .switch-right {
-    cursor: pointer;
     position: absolute;
     display: flex;
     align-items: center;
