@@ -115,10 +115,15 @@ body {
   min-height: 100vh;
   font-family: 'Roboto Mono', var(--font-fallback);
   font-weight: 400;
+  scrollbar-width: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @apply bg-lightgrey text-dark;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {

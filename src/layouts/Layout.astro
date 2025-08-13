@@ -5,6 +5,7 @@ import BodyLines from '@/components/BodyLines.astro'
 import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 import ToastProvider from '@/components/ToastProvider'
+import PixelScreen from '@/components/PixelScreen'
 
 interface Props {
   title: string
@@ -64,6 +65,7 @@ const { title = 'Title', description, canonical, robots } = Astro.props
     <Analytics />
   </head>
   <body class="flex flex-col">
+    <PixelScreen client:load dimensions={{ width: 100, height: 100 }} />
     <BodyLines />
     <Header />
     <div class="mx-6 mt-20 flex flex-1 flex-col md:mx-11 2xl:mx-16">
@@ -72,7 +74,6 @@ const { title = 'Title', description, canonical, robots } = Astro.props
       </main>
       <Footer />
     </div>
-
     <ToastProvider client:load />
   </body>
 </html>
