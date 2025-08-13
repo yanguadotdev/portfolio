@@ -10,11 +10,10 @@ export const translations = {
     search: 'Busqueda',
     skills: 'HABILIDADES',
     hero: {
-      hola: 'Hola, soy',
-      slogan: 'Diseño que capta la atención. Desarrollo que retiene.',
+      slogan: '¿Necesitas llevar tu marca a internet con estilo y rendimiento?',
       name: 'Samir Yangua ',
       description:
-        ' Desde mis habilidades en diseño de interfaces y desarrollo frontend, busco crear experiencias digitales que aporten valor real y ayuden al posicionamiento competitivo de marcas y negocios.',
+        'Hola 👋 soy **Samir Yangua**, y a través de mis habilidades en diseño de interfaces y desarrollo frontend, creo experiencias digitales que fortalecen la presencia de marcas en el mundo online y contribuyen a su posicionamiento competitivo en el mercado.',
       subProjects: 'Conoce mis proyectos mas recientes',
     },
     contact: {
@@ -61,11 +60,10 @@ export const translations = {
     skills: 'SKILLS',
     search: 'Search',
     hero: {
-      hola: 'Hi, I am',
-      slogan: 'Design that grabs attention. Development that retains it.',
+      slogan: 'Need to bring your brand online with style and performance?',
       name: 'Samir Yangua ',
       description:
-        ' With my skills in interface design and frontend development, I seek to create digital experiences that provide real value and help brands and businesses gain competitive positioning.',
+        'Hi 👋 I’m **Samir Yangua**, and through my skills in interface design and frontend development, I create digital experiences that strengthen brands’ presence in the online world and contribute to their competitive positioning in the market.',
       subProjects: 'Meet my most recent projects',
     },
     contact: {

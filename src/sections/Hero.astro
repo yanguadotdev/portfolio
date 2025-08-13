@@ -4,6 +4,7 @@ import Arrow from '@/assets/arrow.svg'
 import { getHeroCopy } from '@/data'
 import DiagonalArrow from '@/assets/diagonalArrow.svg'
 import HoverImageSlider from '@/components/HoverImageSlider'
+import { marked } from 'marked'
 
 import { translations } from '@/i18n/translations'
 import { type Lang } from '@/types'
@@ -12,7 +13,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const currentLang = (Astro.currentLocale || 'es') as Lang
 const { hero, talk } = translations[currentLang]
-const { description, name, slogan, subProjects, hola } = hero
+const { description, slogan, subProjects } = hero
 const { details, socialLinks } = getHeroCopy(currentLang)
 ---
 
@@ -92,10 +93,8 @@ const { details, socialLinks } = getHeroCopy(currentLang)
 
           <div class="bg-light h-full px-8 py-10 text-sm leading-normal">
             <p>
-              <span class="text-primary">{slogan}</span>
-              {hola}&nbsp;<span class="font-semibold">{name}</span>{
-                currentLang === 'es' ? 'y' : 'and'
-              }{description}
+              <span class="text-primary uppercase">{slogan}</span>
+              <span set:html={marked(description)} />
             </p>
           </div>
 
