@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Blade from '@/assets/blade.svg'
-import ContactForm from '@/sections/ContactWrapper.astro'
+import ContactWrapper from '@/sections/ContactWrapper.astro'
 import OneIcon from '@/assets/one.svg'
 
 import { translations } from '@/i18n/translations'
@@ -33,7 +33,7 @@ const { title, description, fillForm } = translations[currentLang].contact
   </div>
 
   <div class="1.25md:grid-cols-[1fr_3fr] relative grid lg:grid-cols-[1fr_1fr_2fr]">
-    <div class="hidden lg:block dot-pattern"></div>
+    <div class="dot-pattern hidden lg:block"></div>
 
     <div
       class="border-r-grey 2md:border-r-0 1.25md:block border-b-grey 1.25md:border-b-0 border-b border-r p-10"
@@ -43,7 +43,7 @@ const { title, description, fillForm } = translations[currentLang].contact
     </div>
 
     <div class="bg-lightgrey mx-[1.5px] p-10">
-      <ContactForm lang={currentLang} client:load />
+      <ContactWrapper lang={currentLang} />
     </div>
   </div>
 </Layout>
