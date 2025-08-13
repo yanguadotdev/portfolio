@@ -1,9 +1,9 @@
 ---
 import SearchIcon from '@/assets/search.svg'
 import CloseIcon from '@/assets/close.svg'
-import Select from './Select'
-import RadioButton from './RadioButton'
+import RadioButton from '@/components/RadioButton'
 import { translations } from '@/i18n/translations'
+import Dropdown from '@/components/Dropdown'
 import type { Lang } from '@/types'
 
 const categories = [
@@ -26,7 +26,15 @@ const { search } = translations[lang]
     class="flex items-start justify-between px-10 py-4"
     aria-label="Filter form"
   >
-    <Select client:load className="2lg:hidden min-w-3xs flex w-max" categories={categories} />
+    <Dropdown
+      label="Categories"
+      id="mobile-categories"
+      items={categories}
+      name="categories"
+      defaultValue="All"
+      className="2lg:hidden"
+      client:load
+    />
     <div class="2md:w-max 2lg:flex hidden w-full gap-3">
       {
         categories.map((category) => {

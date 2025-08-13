@@ -112,7 +112,7 @@ const projectsList = getProjectsList(currentLang)
   // When change category
   form?.addEventListener('change', (e) => {
     const target = e.target as HTMLInputElement
-    if (target.type === 'radio' || target.type === 'select-one') {
+    if (target.type === 'radio' || target.name === 'categories') {
       currentCategory = target.value
       filterProjects()
     }
