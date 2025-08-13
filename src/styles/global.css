@@ -121,6 +121,16 @@ body {
   @apply bg-lightgrey text-dark;
 }
 
+body {
+  cursor: url('/cursor-default.png'), auto;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: url('/cursor-pointer.png'), auto;
+}
+
 *:focus {
   outline: none;
 }
@@ -160,4 +170,8 @@ body {
 @utility dot-pattern {
   background-image: radial-gradient(circle, theme(colors.dark-60) 5%, transparent 5%);
   background-size: 10px 10px;
+}
+
+@utility cursor-pointer {
+  cursor: url('/cursor-pointer.png'), auto;
 }
