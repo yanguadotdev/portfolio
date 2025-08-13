@@ -28,6 +28,8 @@ export default function Dropdown({
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState(defaultValue || '')
   const [display, setDisplay] = useState(defaultValue || label)
+  const [focusedIndex, setFocusedIndex] = useState<number | null>(null)
+
   const dropdownRef = useRef<HTMLDivElement>(null)
   const listOptionsRef = useRef<HTMLUListElement>(null)
   const hiddenInputRef = useRef<HTMLInputElement>(null)
@@ -46,7 +48,6 @@ export default function Dropdown({
           setValue(newValue)
           setDisplay(li.textContent || '')
 
-          // Update hidden input
           if (hiddenInputRef.current) {
             hiddenInputRef.current.value = newValue
             hiddenInputRef.current.dispatchEvent(new Event('change', { bubbles: true }))
@@ -54,21 +55,54 @@ export default function Dropdown({
         }
       }
     }
+
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (!open && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      setOpen(true)
+      setFocusedIndex(0)
+      return
+    }
+
+    if (open) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        setFocusedIndex((prev) => (prev === null || prev === items.length - 1 ? 0 : prev + 1))
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        setFocusedIndex((prev) => (prev === null || prev === 0 ? items.length - 1 : prev - 1))
+      } else if (e.key === 'Enter' && focusedIndex !== null) {
+        e.preventDefault()
+        const selectedItem = items[focusedIndex]
+        setValue(selectedItem.id)
+        setDisplay(selectedItem.label)
+
+        if (hiddenInputRef.current) {
+          hiddenInputRef.current.value = selectedItem.id
+          hiddenInputRef.current.dispatchEvent(new Event('change', { bubbles: true }))
+        }
+
+        setOpen(false)
+      } else if (e.key === 'Escape') {
+        setOpen(false)
+      }
+    }
+  }
+
   return (
     <div className={cn('max-w-3xs relative inline-block w-full', className)} ref={dropdownRef}>
-      {/* Hidden input to expose the value to the DOM */}
       {name && <input ref={hiddenInputRef} type="hidden" name={name} value={value} />}
 
       <button
         type="button"
         id={id}
         onClick={() => setOpen(!open)}
+        onKeyDown={handleKeyDown}
         className={cn(
           'border-grey bg-lightgrey text-dark hover:border-dark focus:border-dark peer flex w-full items-center justify-between border px-4 py-3 text-sm transition-colors duration-300',
           open && 'border-dark',
@@ -91,11 +125,14 @@ export default function Dropdown({
             className="bg-lightgrey border-dark absolute w-full origin-top overflow-hidden border border-t-0"
           >
             <ul ref={listOptionsRef}>
-              {items.map((item) => (
+              {items.map((item, idx) => (
                 <li
                   key={item.id}
                   data-value={item.id}
-                  className="hover:bg-darkgrey/20 cursor-pointer px-4 py-2"
+                  className={cn(
+                    'hover:bg-darkgrey/20 cursor-pointer px-4 py-2',
+                    focusedIndex === idx ? 'bg-darkgrey/30' : '',
+                  )}
                 >
                   {item.label}
                 </li>
