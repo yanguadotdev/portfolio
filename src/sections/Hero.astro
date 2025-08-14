@@ -34,20 +34,25 @@ const { details, socialLinks } = getHeroCopy(currentLang)
 
     <!-- body -->
     <div class="border-b-grey relative grid grid-cols-[1fr_1fr_2fr] border-b">
-      <!-- TOTAL PROJECTS  -->
+      <!-- CTAs -->
       <div
-        class="2md:items-stretch 2md:flex-col 2md:col-start-auto 2md:col-span-1 2md:row-start-auto 2md:border-t-0 border-t-grey 1.5xs:col-span-2 1.5xs:pl-0 1.5xs:pr-0 1.5xs:col-start-2 col-span-3 col-start-1 row-start-2 flex w-full items-center justify-between gap-x-4 border-t pl-4 pr-8"
+        class="2md:items-stretch 2md:justify-between 2md:flex-col 2md:col-start-auto 2md:col-span-1 2md:row-start-auto 2md:border-t-0 border-t-grey 2md:pr-0 2md:py-0 col-span-3 col-start-1 row-start-2 flex w-full items-center justify-center gap-x-4 border-t py-6 pl-10 pr-10 sm:col-span-2 sm:col-start-2 sm:justify-end sm:pl-0"
       >
-        <div class="2md:p-6 leading-none">
-          <div class="flex gap-4">
+        <div class="2md:p-6 leading-none w-full sm:w-auto">
+          <div class="1.5xs:flex hidden gap-4">
             <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
             <p class="text-18px-size leading-tight">{ctaShort}</p>
           </div>
-          <div class="mt-6 flex flex-col gap-4">
-            <Button href={getRelativeLocaleUrl(currentLang, '/projects')} className="w-full">
-              {ctaButton}
+          <div class="mt-6 flex w-full flex-col gap-4">
+            <Button
+              href={getRelativeLocaleUrl(currentLang, '/projects')}
+              className="1.5xs:inline-block hidden w-full"
+            >
+              <div class="whitespace-normal">
+                {ctaButton}
+              </div>
             </Button>
-            <span class="block text-center text-xs opacity-75">{orDownload}</span>
+            <span class="2md:block hidden text-center text-xs opacity-70">{orDownload}</span>
             <Button
               href="/Samir_FrontendUI_CV_2025.pdf"
               download
@@ -64,20 +69,21 @@ const { details, socialLinks } = getHeroCopy(currentLang)
         </div>
 
         <div
-          class="border-t-grey 2md:border-t 2md:px-6 dot-pattern flex flex-col gap-3 py-4 leading-none h-24"
+          class="border-t-grey 2md:border-t 2md:px-6 dot-pattern 2md:flex hidden h-24 flex-col gap-3 py-4 leading-none"
         >
         </div>
       </div>
 
       <!-- IMAGE -->
       <div
-        class="2md:row-start-auto 2md:col-start-2 1.5xs:flex border-t-grey 2md:border-t-0 col-start-1 row-start-2 hidden w-full items-start border-t"
+        class="2md:row-start-auto 2md:col-start-2 border-t-grey 2md:border-t-0 2md:items-start 2md:p-0 col-start-1 row-start-2 hidden w-full items-center border-t p-0.5 sm:flex"
       >
         <div
-          class="border-grey 2md:border-b text-lightergrey relative flex aspect-square w-full justify-center border-l p-7"
+          class="border-grey 2md:border-b text-lightergrey 2md:aspect-square 2md:p-7 2md:h-auto relative flex aspect-auto h-full w-full justify-center border-l"
         >
           <HoverImageSlider
             client:only="react"
+            className="2md:aspect-square aspect-auto size-full"
             images={['/me/photo_01.webp', '/me/photo_02.webp', '/me/photo_03.webp']}
             interval={800}
           />

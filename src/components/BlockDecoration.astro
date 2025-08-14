@@ -1,13 +1,13 @@
 <>
-  <div class="block-decoration decoration-top-left"></div>
-  <div class="block-decoration decoration-top-right"></div>
-  <div class="block-decoration decoration-bottom-left"></div>
-  <div class="block-decoration decoration-bottom-right"></div>
+  <div class="block-decoration sm:border-2 decoration-top-left border"></div>
+  <div class="block-decoration sm:border-2 decoration-top-right border"></div>
+  <div class="block-decoration sm:border-2 decoration-bottom-left border"></div>
+  <div class="block-decoration sm:border-2 decoration-bottom-right border"></div>
 </>
 
 <style>
   .block-decoration {
-    border: 2px solid currentColor;
+    border-color: currentColor;
     width: 0.5rem;
     height: 0.5rem;
     position: absolute;
@@ -15,25 +15,25 @@
   .decoration-top-left {
     border-bottom-width: 0;
     border-right-width: 0;
-    top: var(--separation, .75rem);
-    left: var(--separation, .75rem);
+    top: var(--separation, 0.75rem);
+    left: var(--separation, 0.75rem);
   }
   .decoration-top-right {
     border-bottom-width: 0;
     border-left-width: 0;
-    top: var(--separation, .75rem);
-    right: var(--separation, .75rem);
+    top: var(--separation, 0.75rem);
+    right: var(--separation, 0.75rem);
   }
   .decoration-bottom-left {
     border-top-width: 0;
     border-right-width: 0;
-    bottom: var(--separation, .75rem);
-    left: var(--separation, .75rem);
+    bottom: var(--separation, 0.75rem);
+    left: var(--separation, 0.75rem);
   }
   .decoration-bottom-right {
     border-top-width: 0;
     border-left-width: 0;
-    bottom: var(--separation, .75rem);
-    right: var(--separation, .75rem);
+    bottom: var(--separation, 0.75rem);
+    right: var(--separation, 0.75rem);
   }
 </style>
