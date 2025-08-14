@@ -45,6 +45,8 @@ export const translations = {
       },
     },
 
+    ctaProjects:
+      'Una selección de mis trabajos recientes que muestran mis habilidades de diseño y desarrollo.',
     projects: {
       title: 'Proyectos de diseño y desarrollo web | Yangua.dev',
       description:
@@ -98,6 +100,7 @@ export const translations = {
       },
     },
 
+    ctaProjects: 'A selection of my recent work showcasing design and development skills',
     projects: {
       title: 'Web Design & Development Projects | Yangua.dev',
       description:

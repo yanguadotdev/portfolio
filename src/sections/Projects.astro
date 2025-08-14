@@ -9,13 +9,25 @@ import { getProjectsList } from '@/data'
 
 const currentLang = (Astro.currentLocale || 'es') as Lang
 const projectsList = getProjectsList(currentLang)
+const { ctaProjects } = translations[currentLang]
 ---
 
-<section id="projects">
+<section id="projects" class="relative">
+  <div
+    class="bg-lightgrey border-t-grey mx-[1px] flex flex-col items-center justify-center border-t uppercase"
+  >
+    <h2 class="font-secondary text-[10vw]">
+      {currentLang === 'en' ? 'Projects' : 'Proyectos'}
+    </h2>
+    <p class="-mt-2 pb-8 opacity-75">{ctaProjects}</p>
+  </div>
   <FiltersPanel lang={currentLang} />
 
   <div class="relative">
-    <div id="projects-wrapper" class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10 mb-12">
+    <div
+      id="projects-wrapper"
+      class="2md:gap-x-20 1.5md:grid-cols-2 mb-12 grid gap-x-10 gap-y-12 p-10"
+    >
       {
         projectsList.toReversed().map((project) => {
           const { details, category, cover, description, stack } = project
