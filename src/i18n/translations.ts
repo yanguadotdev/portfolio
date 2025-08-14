@@ -8,6 +8,7 @@ export const translations = {
     downloadCv: 'DESCARGAR CV',
     interested: 'ESTOY INTERESADO',
     ctaButton: 'Trabajemos juntos',
+    ctaSkills: 'Estas son las herramientas que utilizo para dar vida a las ideas.',
     search: 'Busqueda',
     skills: 'HABILIDADES',
     hero: {
@@ -59,6 +60,7 @@ export const translations = {
     downloadCv: 'DOWNLOAD CV',
     interested: 'I am INTERESTED',
     ctaButton: "Let's work together",
+    ctaSkills: 'These are the tools I use to bring ideas to life.',
     skills: 'SKILLS',
     search: 'Search',
     hero: {
