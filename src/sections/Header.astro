@@ -35,18 +35,16 @@ const { talk } = translations[currentLang]
         >
         </div>
 
-        <div class="flex items-center justify-end gap-2">
+        <div class="flex items-center justify-end gap-4">
           <LanguageSwitcher locale={currentLang} pathname={pathname} />
-          <div class="flex justify-end">
+          <div class="1.5xs:flex hidden justify-end">
             <Button
               href={getRelativeLocaleUrl(currentLang, '/contact')}
-              className={cn('1.5xs:block hidden', isActive('contact') && 'pointer-events-none')}
+              className={cn('', isActive('contact') && 'pointer-events-none')}
             >
               {talk}
             </Button>
           </div>
-
-          <ToggleMenu />
         </div>
       </div>
     </div>

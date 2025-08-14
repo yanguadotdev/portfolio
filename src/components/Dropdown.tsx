@@ -95,7 +95,7 @@ export default function Dropdown({
   }
 
   return (
-    <div className={cn('max-w-3xs relative inline-block w-full', className)} ref={dropdownRef}>
+    <div className={cn('relative inline-block w-full', className)} ref={dropdownRef}>
       {name && <input ref={hiddenInputRef} type="hidden" name={name} value={value} />}
 
       <button
@@ -121,7 +121,7 @@ export default function Dropdown({
             initial={{ height: 0 }}
             animate={{ height: 'auto' }}
             exit={{ height: 0 }}
-            transition={{ duration: 0.25, type: 'spring', stiffness: 150 }}
+            transition={{ duration: 0.25, type: 'tween', ease: 'easeInOut' }}
             className="bg-lightgrey border-dark absolute w-full origin-top overflow-hidden border border-t-0"
           >
             <ul ref={listOptionsRef}>

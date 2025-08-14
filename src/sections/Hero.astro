@@ -12,7 +12,7 @@ import Button from '@/components/Button.astro'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const currentLang = (Astro.currentLocale || 'es') as Lang
-const { hero, talk } = translations[currentLang]
+const { hero, ctaButton } = translations[currentLang]
 const { description, slogan, subProjects } = hero
 const { details, socialLinks } = getHeroCopy(currentLang)
 ---
@@ -44,7 +44,7 @@ const { details, socialLinks } = getHeroCopy(currentLang)
 
         <div class="border-t-grey 2md:border-t 2md:px-6 flex flex-col gap-3 py-4 leading-none">
           <h2 class="2md:block hidden">Proyectos</h2>
-          <span id="total-projects" class="font-secondary 2md:pr-0 pr-6 text-6xl">15</span>
+          <span id="total-projects" class="font-secondary 2md:pr-0 1.5xs:pr-10 text-6xl">15</span>
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const { details, socialLinks } = getHeroCopy(currentLang)
         class="2md:row-start-auto 2md:col-start-2 1.5xs:flex border-t-grey 2md:border-t-0 col-start-1 row-start-2 hidden w-full items-start border-t"
       >
         <div
-          class="border-grey 2md:border-b text-lightergrey relative flex aspect-square w-full justify-center border-l p-10"
+          class="border-grey 2md:border-b text-lightergrey relative flex aspect-square w-full justify-center border-l p-7"
         >
           <HoverImageSlider
             client:only="react"
@@ -139,9 +139,12 @@ const { details, socialLinks } = getHeroCopy(currentLang)
             </div>
           </footer>
 
-          <div class="dot-pattern flex h-24 shrink-0 items-center justify-center">
-            <Button href={getRelativeLocaleUrl(currentLang, '/contact')} className="1.5xs:hidden">
-              {talk}
+          <div class="dot-pattern flex h-24 shrink-0 items-center px-10">
+            <Button
+              href={getRelativeLocaleUrl(currentLang, '/contact')}
+              className="1.5xs:hidden w-full"
+            >
+              {ctaButton}
             </Button>
           </div>
         </article>
