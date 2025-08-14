@@ -44,30 +44,6 @@ export const heroCopy = {
 
 export const projectsList = [
   {
-    id: 'css-clamp-visualizer',
-    cover: '/projects/project_01.jpg',
-    category: 'tool',
-    description: 'Un visualizador interactivo de la propiedad CSS clamp().',
-    details: [
-      {
-        type: 'text',
-        label: 'Nombre',
-        value: 'CSS Clamp Visualizer',
-      },
-      {
-        type: 'link',
-        label: 'Respositorio',
-        value: 'https://github.com/yanguadotdev/css-clamp-visualizer',
-      },
-      {
-        type: 'link',
-        label: 'Preview',
-        value: 'https://css-clamp-visualizer.netlify.app/',
-      },
-    ],
-    stack: [SiJavascript, SiHtml5, SiCss3],
-  },
-  {
     id: 'transform-origin-visualizer',
     cover: '/projects/project_02.jpg',
     category: 'tool',
@@ -184,30 +160,6 @@ export const projectsList = [
         type: 'link',
         label: 'Preview',
         value: 'https://tic-tac-toe-full-react.netlify.app/',
-      },
-    ],
-  },
-  {
-    id: 'questions-answers',
-    cover: '/projects/project_15.jpg',
-    category: 'landing',
-    description: 'Landing page que muestra preguntas sobre el objeto this en JavaScript',
-    stack: [SiJavascript, SiHtml5, SiCss3],
-    details: [
-      {
-        type: 'text',
-        label: 'Nombre',
-        value: 'Preguntas sobre JS',
-      },
-      {
-        type: 'link',
-        label: 'Respositorio',
-        value: 'https://github.com/yanguadotdev/javascript-this-exercises',
-      },
-      {
-        type: 'link',
-        label: 'Preview',
-        value: 'https://yanguadotdev.github.io/javascript-this-exercises/',
       },
     ],
   },
@@ -400,6 +352,30 @@ export const projectsList = [
         type: 'link',
         label: 'Preview',
         value: 'https://fitandlife.vercel.app/',
+      },
+    ],
+  },
+  {
+    id: 'pomodoro-timer',
+    cover: '/projects/project_16.jpg',
+    category: 'tool',
+    description: 'App Pomodoro con efectos, intervalos personalizados y animaciones.',
+    stack: [SiReact, SiVite, SiTypescript, SiTailwindcss],
+    details: [
+      {
+        type: 'text',
+        label: 'Nombre',
+        value: 'Pomodoro Timer',
+      },
+      {
+        type: 'link',
+        label: 'Respositorio',
+        value: 'https://github.com/yanguadotdev/pomodoro-app',
+      },
+      {
+        type: 'link',
+        label: 'Preview',
+        value: 'https://focus-pomodoro-zeta.vercel.app/',
       },
     ],
   },
