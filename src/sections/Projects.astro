@@ -15,7 +15,7 @@ const projectsList = getProjectsList(currentLang)
   <FiltersPanel lang={currentLang} />
 
   <div class="relative">
-    <div id="projects-wrapper" class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10">
+    <div id="projects-wrapper" class="2md:gap-x-20 1.5md:grid-cols-2 grid gap-x-10 gap-y-12 p-10 mb-12">
       {
         projectsList.toReversed().map((project) => {
           const { details, category, cover, description, stack } = project

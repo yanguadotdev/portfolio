@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
 import Hero from '@/sections/Hero.astro'
 import Projects from '@/sections/Projects.astro'
 import CallToAction from '@/sections/CallToAction.astro'
@@ -18,11 +18,11 @@ const { title, description } = translations.es
   robots="index, follow"
 >
   <Hero />
-  <Projects />
   <ClipPathTecnologies lang="es" client:load>
     <div style="--separation: 6px; opacity: 0.75">
       <BlockDecoration />
     </div>
   </ClipPathTecnologies>
+  <Projects />
   <CallToAction />
 </Layout>

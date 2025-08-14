@@ -64,7 +64,7 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
         <TextAreaField
           className="1.5xs:col-span-2"
-          value="1.5"
+          value="1.4"
           placeholder={tellMeMore}
           label={howCanHelpYou}
           register={register('description')}

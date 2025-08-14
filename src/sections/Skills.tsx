@@ -23,7 +23,7 @@ interface ClipPathTechnologiesProps {
 export default function ClipPathTecnologies({ lang, children }: ClipPathTechnologiesProps) {
   const { skills } = translations[lang]
   return (
-    <section className="5xl:mx-0.5 border-y-grey xs:border-b relative mx-[1px] my-16 mt-32 overflow-hidden border-y border-b-0">
+    <section className="5xl:mx-0.5 border-y-grey xs:border-b border-t-0 relative mx-[1px] my-16 mt-0 overflow-hidden border-y border-b-0">
       <h2 className="font-secondary bg-lightgrey text-center text-[10vw]">{skills}</h2>
       <div className="divide-grey border-t-grey bg-lightgrey flex flex-col divide-y border-t">
         <div className="divide-grey grid grid-cols-2 divide-x">

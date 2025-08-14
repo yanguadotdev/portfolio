@@ -18,9 +18,11 @@ const { title, description } = translations.en
   robots="index, follow"
 >
   <Hero />
-  <Projects />
   <ClipPathTecnologies lang="en" client:load>
-    <BlockDecoration />
+    <div style="--separation: 6px; opacity: 0.75">
+      <BlockDecoration />
+    </div>
   </ClipPathTecnologies>
+  <Projects />
   <CallToAction />
 </Layout>
