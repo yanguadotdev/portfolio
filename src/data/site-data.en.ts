@@ -45,7 +45,7 @@ export const heroCopy = {
 export const projectsList = [
   {
     id: 'transform-origin-visualizer',
-    cover: '/projects/project_02.jpg',
+    cover: '/projects/project_02.webp',
     category: 'tool',
     description: 'An interactive visualizer for the CSS transform-origin property.',
     stack: [SiJavascript, SiHtml5, SiCss3],
@@ -69,7 +69,7 @@ export const projectsList = [
   },
   {
     id: 'world-pets',
-    cover: '/projects/project_03.jpg',
+    cover: '/projects/project_03.webp',
     category: 'webApp',
     description: 'Used theDOGapi to display images of pets.',
     stack: [SiJavascript, SiHtml5, SiCss3],
@@ -93,7 +93,7 @@ export const projectsList = [
   },
   {
     id: 'spotify-clone',
-    cover: '/projects/project_04.jpg',
+    cover: '/projects/project_04.webp',
     category: 'clone',
     description: 'Spotify music app clone built with React and Tailwind CSS.',
     stack: [SiReact, SiVite, SiTailwindcss],
@@ -117,7 +117,7 @@ export const projectsList = [
   },
   {
     id: 'brainwave',
-    cover: '/projects/project_05.jpg',
+    cover: '/projects/project_05.webp',
     category: 'landing',
     description: 'Landing page for an AI-powered chat.',
     stack: [SiAstro, SiTailwindcss, SiTypescript],
@@ -141,7 +141,7 @@ export const projectsList = [
   },
   {
     id: 'tic-tac-toe',
-    cover: '/projects/project_06.jpg',
+    cover: '/projects/project_06.webp',
     category: 'webApp',
     description: 'Tic-Tac-Toe game built with React and Tailwind CSS.',
     stack: [SiReact, SiVite, SiTailwindcss],
@@ -165,7 +165,7 @@ export const projectsList = [
   },
   {
     id: 'pulse',
-    cover: '/projects/project_08.jpg',
+    cover: '/projects/project_08.webp',
     category: 'landing',
     description: 'Landing page for a motivational sports brand.',
     stack: [SiJavascript, SiHtml5, SiCss3],
@@ -189,7 +189,7 @@ export const projectsList = [
   },
   {
     id: 'layers',
-    cover: '/projects/project_09.jpg',
+    cover: '/projects/project_09.webp',
     category: 'landing',
     description: 'Landing page for a Software as a Service (SaaS) product.',
     stack: [SiReact, SiNextdotjs, SiTailwindcss, SiTypescript],
@@ -213,7 +213,7 @@ export const projectsList = [
   },
   {
     id: 'ecoscrap',
-    cover: '/projects/project_10.jpg',
+    cover: '/projects/project_10.webp',
     category: 'landing',
     description: 'Landing page for a recycling company.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
@@ -237,7 +237,7 @@ export const projectsList = [
   },
   {
     id: 'halloween-hackaton',
-    cover: '/projects/project_11.jpg',
+    cover: '/projects/project_11.webp',
     category: 'landing',
     description: 'Landing page to promote a specific event.',
     stack: [SiJavascript, SiHtml5, SiCss3],
@@ -261,7 +261,7 @@ export const projectsList = [
   },
   {
     id: 'movies-app',
-    cover: '/projects/project_12.jpg',
+    cover: '/projects/project_12.webp',
     category: 'webApp',
     description: 'Web app to search for movies and series across different categories.',
     stack: [SiReact, SiReactrouter, SiVite, SiCss3],
@@ -285,7 +285,7 @@ export const projectsList = [
   },
   {
     id: 'hirace',
-    cover: '/projects/project_13.jpg',
+    cover: '/projects/project_13.webp',
     category: 'landing',
     description: 'Landing page for companies that connect employers with candidates.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
@@ -309,7 +309,7 @@ export const projectsList = [
   },
   {
     id: 'barbersteel',
-    cover: '/projects/project_14.jpg',
+    cover: '/projects/project_14.webp',
     category: 'landing',
     description: 'Landing page for a modern-style barbershop.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
@@ -333,7 +333,7 @@ export const projectsList = [
   },
   {
     id: 'fit-life',
-    cover: '/projects/project_07.jpg',
+    cover: '/projects/project_07.webp',
     category: 'landing',
     description: 'Landing page for a gym with an attractive design.',
     stack: [SiAstro, SiTypescript, SiTailwindcss],
@@ -357,7 +357,7 @@ export const projectsList = [
   },
   {
     id: 'pomodoro-timer',
-    cover: '/projects/project_16.jpg',
+    cover: '/projects/project_16.webp',
     category: 'tool',
     description: 'Pomodoro app with effects, custom intervals, and animations.',
     stack: [SiReact, SiVite, SiTypescript, SiTailwindcss],
