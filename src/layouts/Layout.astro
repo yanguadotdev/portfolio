@@ -63,6 +63,17 @@ const { title = 'Title', description, canonical, robots } = Astro.props
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={description} />
     <meta name='twitter:image' content='https://yangua.dev/og.jpg' />
+
+    <script type='application/ld+json'>
+      {
+        "@context": "https://schema.org",
+        "@type": "person",
+        "name": "Samir Yangua",
+        "url": "https://yangua.dev",
+        "jobTitle": "Designer & Frontend Developer",
+        "sameAs": ["https://github.com/yanguadotdev", "https://www.linkedin.com/in/yanguadotdev"]
+      }
+    </script>
     <Analytics />
   </head>
   <body class='flex flex-col'>
