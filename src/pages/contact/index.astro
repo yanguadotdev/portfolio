@@ -14,38 +14,39 @@ const { title, description, fillForm } = translations[currentLang].contact
 <Layout
   title={title}
   description={description}
-  canonical="https://yangua.dev/contact"
-  robots="index, follow"
+  canonical='https://yangua.dev/contact'
+  robots='index, follow'
 >
   <!-- Heading -->
-  <div class="border-b-grey relative grid border-b">
-    <div class="relative inline-flex overflow-hidden whitespace-nowrap" data-slider>
+  <div class='border-b-grey relative grid border-b'>
+    <div class='relative inline-flex overflow-hidden whitespace-nowrap' data-slider>
       <h1
         data-slider-content
-        aria-label="Yangua Ruiz Samir Kenyi"
-        class="font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter"
+        aria-label='Yangua Ruiz Samir Kenyi'
+        class='font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter'
       >
         CONTACTAME
       </h1>
     </div>
 
-    <Blade class="2md:block absolute bottom-0 right-full hidden" />
+    <Blade class='2md:block absolute bottom-0 right-full hidden' />
   </div>
 
-  <div class="1.25md:grid-cols-[1fr_3fr] relative grid lg:grid-cols-[1fr_1fr_2fr]">
-    <div class="dot-pattern hidden lg:block"></div>
+  <div class='1.25md:grid-cols-[1fr_3fr] relative grid lg:grid-cols-[1fr_1fr_2fr]'>
+    <div class='dot-pattern hidden lg:block'></div>
 
     <div
-      class="border-r-grey 2md:border-r-0 1.25md:block border-b-grey 1.25md:border-b-0 border-b border-r p-10"
+      class='border-r-grey 2md:border-r-0 1.25md:block border-b-grey 1.25md:border-b-0 border-b border-r p-10'
     >
-      <OneIcon class="h-auto w-24" />
-      <p class="text-dark-60 mt-4 text-base leading-tight">{fillForm}</p>
+      <OneIcon class='h-auto w-24' />
+      <p class='text-dark-60 mt-4 text-base leading-tight'>{fillForm}</p>
     </div>
 
-    <div class="bg-lightgrey mx-[1.5px] p-10">
+    <div class='bg-lightgrey mx-[1.5px] p-10'>
       <ContactWrapper lang={currentLang} />
     </div>
   </div>
+  <div class="h-24 border-t border-t-grey"></div>
 </Layout>
 
 <script>

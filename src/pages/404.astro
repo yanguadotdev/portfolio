@@ -1,0 +1,24 @@
+---
+import Button from '@/components/Button.astro'
+import Layout from '@/layouts/Layout.astro'
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+const currentLang = (Astro.currentLocale || 'es') as Lang
+const {
+  404: { copy, backHome },
+} = translations[currentLang]
+---
+
+<Layout title='404'>
+  <div
+    class='relative flex size-full flex-col items-center justify-center text-[20vw] gap-6 my-6 mb-12'
+  >
+    <div class='font-secondary leading-none font-extrabold'>404</div>
+    <p class='font-primary text-center text-xl text-dark-60'>{copy}</p>
+    <Button href={getRelativeLocaleUrl(currentLang, '/')}>
+      {backHome}
+    </Button>
+  </div>
+</Layout>

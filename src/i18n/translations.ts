@@ -3,6 +3,10 @@ export const translations = {
     title: 'Yangua Ruiz Samir · Diseñador y Desarrollador Frontend',
     description: 'Yangua Ruiz Samir | Diseñador y Desarrollador Frontend',
     talk: '¿Hablamos?',
+    404: {
+      copy: 'Oops... esto es un vacío creativo 😅',
+      backHome: 'Salir del vacío',
+    },
     createdBy: 'Portafolio creado por',
     cta: 'Ya sea que estés buscando sumar a tu equipo un perfil técnico, o llevar tu presencia digital al siguiente nivel, estoy listo para ayudarte a lograrlo.',
     downloadCv: 'DESCARGAR CV',
@@ -59,6 +63,10 @@ export const translations = {
     title: 'Yangua Ruiz Samir · Designer & Frontend Developer',
     description: 'Yangua Ruiz Samir | Front-End Developer',
     talk: '¿Talk later?',
+    404: {
+      copy: 'Oops... this is a creative void 😅',
+      backHome: 'Get out of the void',
+    },
     createdBy: 'Portfolio created by',
     cta: "Whether you're looking to add a technical profile to your team or take your digital presence to the next level, I'm ready to help you achieve it.",
     downloadCv: 'DOWNLOAD CV',
