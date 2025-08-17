@@ -6,6 +6,7 @@ import Header from '@/sections/Header.astro'
 import Footer from '@/sections/Footer.astro'
 import ToastProvider from '@/components/ToastProvider'
 import PixelScreen from '@/components/PixelScreen'
+import { type Lang } from '@/types'
 
 interface Props {
   title: string
@@ -13,12 +14,12 @@ interface Props {
   canonical?: string
   robots?: string
 }
-
+const currentLang = (Astro.currentLocale || 'es') as Lang
 const { title = 'Title', description, canonical, robots } = Astro.props
 ---
 
 <!doctype html>
-<html lang='es'>
+<html lang={currentLang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
