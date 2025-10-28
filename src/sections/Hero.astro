@@ -18,14 +18,14 @@ const { description, slogan } = hero
 const { details, socialLinks } = getHeroCopy(currentLang)
 ---
 
-<section id='hero' class='overflow-hidden'>
+<section id="hero" class="overflow-hidden">
   <div>
-    <header class='border-b-grey relative border-b'>
-      <div class='inline-flex overflow-hidden whitespace-nowrap' data-slider>
+    <header class="border-b-grey relative border-b">
+      <div class="inline-flex overflow-hidden whitespace-nowrap" data-slider>
         <h1
           data-slider-content
-          aria-label='Yangua Ruiz Samir Kenyi'
-          class='font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter'
+          aria-label="Yangua Ruiz Samir Kenyi"
+          class="font-secondary 2md:text-[14vw] inline-block flex-none whitespace-nowrap px-6 text-[16vw] tracking-tighter"
         >
           YANGUA SAMIR
         </h1>
@@ -33,35 +33,35 @@ const { details, socialLinks } = getHeroCopy(currentLang)
     </header>
 
     <!-- body -->
-    <div class='border-b-grey relative grid grid-cols-[1fr_1fr_2fr] border-b'>
+    <div class="border-b-grey relative grid grid-cols-[1fr_1fr_2fr] border-b">
       <!-- CTAs -->
       <div
-        class='2md:items-stretch 2md:justify-between 2md:flex-col 2md:col-start-auto 2md:col-span-1 2md:row-start-auto 2md:border-t-0 border-t-grey 2md:pr-0 2md:py-0 col-span-3 col-start-1 row-start-2 flex w-full items-center justify-center gap-x-4 border-t py-6 pl-10 pr-10 sm:col-span-2 sm:col-start-2 sm:justify-end sm:pl-0'
+        class="2md:items-stretch 2md:justify-between 2md:flex-col 2md:col-start-auto 2md:col-span-1 2md:row-start-auto 2md:border-t-0 border-t-grey 2md:pr-0 2md:py-0 col-span-3 col-start-1 row-start-2 flex w-full items-center justify-center gap-x-4 border-t py-6 pl-10 pr-10 sm:col-span-2 sm:col-start-2 sm:justify-end sm:pl-0"
       >
-        <div class='2md:p-6 w-full leading-none sm:w-auto'>
-          <div class='1.5xs:flex hidden gap-4'>
-            <div class='bg-dark size-2 shrink-0 translate-y-full'></div>
-            <p class='text-18px-size leading-tight'>{ctaShort}</p>
+        <div class="2md:p-6 w-full leading-none sm:w-auto">
+          <div class="1.5xs:flex hidden gap-4">
+            <div class="bg-dark size-2 shrink-0 translate-y-full"></div>
+            <p class="text-18px-size leading-tight">{ctaShort}</p>
           </div>
-          <div class='mt-6 flex w-full flex-col gap-4'>
+          <div class="mt-6 flex w-full flex-col gap-4">
             <Button
               href={getRelativeLocaleUrl(currentLang, '/contact')}
-              className='1.5xs:inline-block hidden w-full'
+              className="1.5xs:inline-block hidden w-full"
             >
-              <div class='whitespace-normal'>
+              <div class="whitespace-normal">
                 {ctaButton}
               </div>
             </Button>
-            <span class='2md:block hidden text-center text-xs opacity-70'>{orDownload}</span>
+            <span class="2md:block hidden text-center text-xs opacity-70">{orDownload}</span>
             <Button
-              href='/Samir_FrontendUI_CV_2025.pdf'
+              href="/Samir_FrontendUI_CV_2025.pdf"
               download
-              variant='outline'
-              className='w-full'
+              variant="outline"
+              className="w-full"
               withEffect={false}
             >
-              <div class='flex items-center gap-2'>
-                <IoCloudDownloadOutline className='h-auto w-5' />
+              <div class="flex items-center gap-2">
+                <IoCloudDownloadOutline className="h-auto w-5" />
                 {downloadCv}
               </div>
             </Button>
@@ -69,21 +69,21 @@ const { details, socialLinks } = getHeroCopy(currentLang)
         </div>
 
         <div
-          class='border-t-grey 2md:border-t 2md:px-6 dot-pattern 2md:flex hidden h-24 flex-col gap-3 py-4 leading-none'
+          class="border-t-grey 2md:border-t 2md:px-6 dot-pattern 2md:flex hidden h-24 flex-col gap-3 py-4 leading-none"
         >
         </div>
       </div>
 
       <!-- IMAGE -->
       <div
-        class='2md:row-start-auto 2md:col-start-2 border-t-grey 2md:border-t-0 2md:items-start 2md:p-0 col-start-1 row-start-2 hidden w-full items-center border-t p-0.5 sm:flex'
+        class="2md:row-start-auto 2md:col-start-2 border-t-grey 2md:border-t-0 2md:items-start 2md:p-0 col-start-1 row-start-2 hidden w-full items-center border-t p-0.5 sm:flex"
       >
         <div
-          class='border-grey 2md:border-b text-lightergrey 2md:aspect-square 2md:p-7 2md:h-auto relative flex aspect-auto h-full w-full justify-center border-l'
+          class="border-grey 2md:border-b text-lightergrey 2md:aspect-square 2md:p-7 2md:h-auto relative flex aspect-auto h-full w-full justify-center border-l"
         >
           <HoverImageSlider
-            client:only='react'
-            className='2md:aspect-square aspect-auto size-full'
+            client:only="react"
+            className="2md:aspect-square aspect-auto size-full"
             images={['/me/photo_01.webp', '/me/photo_02.webp', '/me/photo_03.webp']}
             interval={800}
           />
@@ -93,24 +93,24 @@ const { details, socialLinks } = getHeroCopy(currentLang)
       </div>
 
       <!-- DESCRIPTION -->
-      <div class='2md:col-start-3 2md:col-span-1 col-span-3 col-start-1 row-start-1 flex w-full'>
-        <article class='relative mx-[1px] flex flex-col'>
-          <div class='bg-light'>
+      <div class="2md:col-start-3 2md:col-span-1 col-span-3 col-start-1 row-start-1 flex w-full">
+        <article class="relative mx-[1px] flex flex-col">
+          <div class="bg-light">
             <header
-              class='text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none'
+              class="text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none"
             >
-              <span class='bg-primary border-primary inline-block border px-3 py-1.5'>RR.SS</span>
+              <span class="bg-primary border-primary inline-block border px-3 py-1.5">RR.SS</span>
               {
                 socialLinks.map((link) => {
                   return (
                     <a
-                      class='border-grey group inline-flex items-center gap-2 border-b px-3 py-1.5'
+                      class="border-grey group inline-flex items-center gap-2 border-b px-3 py-1.5"
                       href={link.url}
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span>{link.label}</span>
-                      <DiagonalArrow class='h-auto w-2 transition-transform duration-200 ease-linear group-hover:-translate-y-0.5 group-hover:translate-x-0.5' />
+                      <DiagonalArrow class="h-auto w-2 transition-transform duration-200 ease-linear group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </a>
                   )
                 })
@@ -118,24 +118,24 @@ const { details, socialLinks } = getHeroCopy(currentLang)
             </header>
           </div>
 
-          <div class='bg-light h-full px-8 py-10 text-sm leading-normal'>
+          <div class="bg-light h-full px-8 py-10 text-sm leading-normal">
             <p>
-              <span class='text-primary uppercase'>{slogan}</span>
+              <span class="text-primary uppercase">{slogan}</span>
               <span set:html={marked(description)} />
             </p>
           </div>
 
-          <footer class='border-y-grey bg-light flex border-y'>
-            <div class='relative flex-1'>
+          <footer class="border-y-grey bg-light flex border-y">
+            <div class="relative flex-1">
               <div
-                class='divide-grey grid grid-cols-2 grid-rows-2 px-4 leading-none xl:grid-cols-4 xl:grid-rows-1 xl:divide-x'
+                class="divide-grey grid grid-cols-2 grid-rows-2 px-4 leading-none xl:grid-cols-4 xl:grid-rows-1 xl:divide-x"
               >
                 {
                   details.map((detail) => {
                     return (
-                      <div class='flex flex-col gap-2 whitespace-nowrap px-4 py-6'>
-                        <span>{detail.value}</span>
-                        <span class='text-dark-60 text-sm'>{detail.label}</span>
+                      <div class="flex flex-col gap-2 whitespace-nowrap px-4 py-6">
+                        <span class="text-sm uppercase">{detail.value}</span>
+                        <span class="text-dark-60 text-sm">{detail.label}</span>
                       </div>
                     )
                   })
@@ -143,35 +143,35 @@ const { details, socialLinks } = getHeroCopy(currentLang)
               </div>
               <!-- Lines -->
               <div
-                aria-hidden='true'
-                class='pointer-events-none absolute inset-0 flex w-full justify-center xl:hidden'
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 flex w-full justify-center xl:hidden"
               >
-                <div class='bg-grey absolute inset-y-0 top-0 w-[1px]'></div>
-                <div class='bg-grey absolute inset-x-0 left-0 top-1/2 h-[1px]'></div>
+                <div class="bg-grey absolute inset-y-0 top-0 w-[1px]"></div>
+                <div class="bg-grey absolute inset-x-0 left-0 top-1/2 h-[1px]"></div>
               </div>
             </div>
 
             <!-- LINK ITEM -->
             <a
               href={getRelativeLocaleUrl(currentLang, '/contact')}
-              class='peer absolute inset-0 bottom-24 top-7 z-10'></a>
+              class="peer absolute inset-0 bottom-24 top-7 z-10"></a>
 
             <div
-              class='border-l-grey peer-hover:bg-primary relative flex w-24 items-center justify-center overflow-hidden border-l transition-colors duration-500 peer-hover:[&>:nth-child(1)]:-translate-x-1/2 peer-hover:[&>:nth-child(2)]:translate-x-32'
+              class="border-l-grey peer-hover:bg-primary relative flex w-24 items-center justify-center overflow-hidden border-l transition-colors duration-500 peer-hover:[&>:nth-child(1)]:-translate-x-1/2 peer-hover:[&>:nth-child(2)]:translate-x-32"
             >
               <Arrow
-                class='-translate-1/2 absolute inset-1/2 h-auto w-6 -translate-x-32 transition-transform duration-500'
+                class="-translate-1/2 absolute inset-1/2 h-auto w-6 -translate-x-32 transition-transform duration-500"
               />
               <Arrow
-                class='-translate-1/2 absolute inset-1/2 h-auto w-6 transition-transform duration-500'
+                class="-translate-1/2 absolute inset-1/2 h-auto w-6 transition-transform duration-500"
               />
             </div>
           </footer>
 
-          <div class='dot-pattern flex h-24 shrink-0 items-center px-10'>
+          <div class="dot-pattern flex h-24 shrink-0 items-center px-10">
             <Button
               href={getRelativeLocaleUrl(currentLang, '/contact')}
-              className='1.5xs:hidden w-full'
+              className="1.5xs:hidden w-full"
             >
               {ctaButton}
             </Button>
