@@ -43,36 +43,34 @@
 
   @keyframes marquee {
     to {
-      transform: translateX(-100%)
+      transform: translateX(-100%);
     }
   }
 }
 
 @layer base {
-
   /* Webkit Browsers (Chrome, Safari, Edge) */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: ;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ;
     border-radius: 5px;
     border: 2px solid oklch(67.65% 0.1539 329.18 / 0.4);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: ;
+    background-color:;
     /* Efecto hover */
   }
 
   /* Firefox */
   * {
-    scrollbar-color: ;
+    scrollbar-color:;
     scrollbar-width: thin;
   }
 }
@@ -127,13 +125,17 @@ body::-webkit-scrollbar {
 }
 
 body {
-  cursor: url('/cursor-default.png') 16 10, auto;
+  cursor:
+    url('/cursor-default.png') 16 10,
+    auto;
 }
 
 a,
 button,
-[role="button"] {
-  cursor: url('/cursor-pointer.png') 16 10, auto;
+[role='button'] {
+  cursor:
+    url('/cursor-pointer.png') 16 10,
+    auto;
 }
 
 *:focus {
@@ -157,18 +159,22 @@ button,
 }
 
 @utility clip-path-button-link {
-  -webkit-clip-path: polygon(10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px);
-  clip-path: polygon(10px 0,
-      100% 0,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      0 100%,
-      0 10px);
+  -webkit-clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 10px
+  );
+  clip-path: polygon(
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%,
+    0 10px
+  );
   padding: 1.5px;
 }
 
@@ -178,5 +184,7 @@ button,
 }
 
 @utility cursor-pointer {
-  cursor: url('/cursor-pointer.png') 16 10, auto;
+  cursor:
+    url('/cursor-pointer.png') 16 10,
+    auto;
 }
