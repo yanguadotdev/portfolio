@@ -73,14 +73,14 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       </fieldset>
 
       <SubmitButton
-        className={cn('mt-12 h-12 w-full text-base', isSubmitting && 'pointer-events-none')}
+        className={cn('mt-12 h-12 w-full text-sm', isSubmitting && 'pointer-events-none')}
       >
         {isSubmitting ? (
           <Spinner size={24} />
         ) : (
           <div className="flex items-center gap-2">
             <BiMailSend className="text-xl" />
-            {lang === 'es' ? 'Hablemos' : "Let's talk"}
+            {lang === 'es' ? 'Hablemos de tu proyecto' : "Let's talk about your project"}
           </div>
         )}
       </SubmitButton>
