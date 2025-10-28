@@ -18,12 +18,12 @@ export const heroCopy = {
       value: '+01',
     },
     {
-      label: 'Specialty',
-      value: 'Front-End',
+      label: 'Focus',
+      value: 'Frontend',
     },
     {
-      label: 'Current Age',
-      value: '22',
+      label: 'Languages',
+      value: 'ES/EN',
     },
     {
       label: 'Country',
