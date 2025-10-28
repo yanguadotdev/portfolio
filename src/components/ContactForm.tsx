@@ -2,7 +2,6 @@ import RadioButton from '@/components/RadioButton'
 import SubmitButton from '@/components/SubmitButton'
 import Spinner from '@/components/Spinner'
 import { translations } from '@/i18n/translations'
-import { BiMailSend } from 'react-icons/bi'
 import type { Lang } from '@/types'
 import { useContactForm } from '@/hooks/useContactForm'
 import { cn } from '@/lib/utils'
@@ -73,13 +72,15 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       </fieldset>
 
       <SubmitButton
-        className={cn('mt-12 h-12 w-full text-sm', isSubmitting && 'pointer-events-none')}
+        className={cn(
+          'xs:text-sm mt-12 h-12 w-full text-xs',
+          isSubmitting && 'pointer-events-none',
+        )}
       >
         {isSubmitting ? (
           <Spinner size={24} />
         ) : (
-          <div className="flex items-center gap-2">
-            <BiMailSend className="text-xl" />
+          <div className="flex items-center gap-2 whitespace-normal text-wrap">
             {lang === 'es' ? 'Hablemos de tu proyecto' : "Let's talk about your project"}
           </div>
         )}

@@ -97,7 +97,7 @@ const { details, socialLinks } = getHeroCopy(currentLang)
         <article class="relative mx-[1px] flex flex-col">
           <div class="bg-light">
             <header
-              class="text-12px-size divide-grey border-r-grey flex max-w-max divide-x border-r leading-none"
+              class="divide-grey border-r-grey flex max-w-max divide-x border-r text-sm leading-none"
             >
               <span class="bg-primary border-primary inline-block border px-3 py-1.5">RR.SS</span>
               {
@@ -118,7 +118,7 @@ const { details, socialLinks } = getHeroCopy(currentLang)
             </header>
           </div>
 
-          <div class="bg-light h-full px-8 py-10 text-sm leading-normal">
+          <div class="bg-light 1.5xs:text-base h-full px-8 py-10 text-sm leading-normal">
             <p>
               <span class="text-primary uppercase">{slogan}</span>
               <span set:html={marked(description)} />
@@ -133,7 +133,7 @@ const { details, socialLinks } = getHeroCopy(currentLang)
                 {
                   details.map((detail) => {
                     return (
-                      <div class="flex flex-col gap-2 whitespace-nowrap px-4 py-6">
+                      <div class="xs:!pl-4 nth-1:pl-0 nth-3:pl-0 flex flex-col gap-2 whitespace-nowrap px-4 py-6">
                         <span class="text-sm uppercase">{detail.value}</span>
                         <span class="text-dark-60 text-sm">{detail.label}</span>
                       </div>
