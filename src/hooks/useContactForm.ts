@@ -1,3 +1,4 @@
+import confetti from 'canvas-confetti'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
@@ -30,6 +31,12 @@ export function useContactForm(lang: Lang) {
       if (!res.ok) throw new Error('Error al enviar el mensaje')
       toast.success(success)
       reset()
+      confetti({
+        particleCount: 150,
+        spread: 85,
+        colors: ['#ff7120', '#05df72', '#F2E30A'],
+        origin: { y: 0.6 },
+      })
     } catch (err) {
       toast.error(error)
     }
