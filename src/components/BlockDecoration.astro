@@ -1,15 +1,15 @@
 <>
-  <div class="block-decoration sm:border-2 decoration-top-left border"></div>
-  <div class="block-decoration sm:border-2 decoration-top-right border"></div>
-  <div class="block-decoration sm:border-2 decoration-bottom-left border"></div>
-  <div class="block-decoration sm:border-2 decoration-bottom-right border"></div>
+  <div class="block-decoration decoration-top-left border sm:border-2"></div>
+  <div class="block-decoration decoration-top-right border sm:border-2"></div>
+  <div class="block-decoration decoration-bottom-left border sm:border-2"></div>
+  <div class="block-decoration decoration-bottom-right border sm:border-2"></div>
 </>
 
 <style>
   .block-decoration {
     border-color: currentColor;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: var(--size, 0.5rem);
+    height: var(--size, 0.5rem);
     position: absolute;
   }
   .decoration-top-left {
