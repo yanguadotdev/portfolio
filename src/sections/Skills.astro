@@ -9,7 +9,6 @@ import {
   SiFigma,
   SiTypescript,
   SiHtml5,
-  SiVsco,
   SiVercel,
   SiNotion,
   SiPrisma,
@@ -25,7 +24,7 @@ interface Props {
   lang: Lang
 }
 
-const { lang } = Astro.props
+const { lang }: { lang: Lang } = Astro.props
 const { skills } = translations[lang]
 
 const techIcons = [
@@ -61,6 +60,7 @@ const techIcons = [
 ---
 
 <section
+  id="skills"
   class="5xl:mx-0.5 border-y-grey bg-lightgrey lines-pattern relative mx-[1px] my-16 overflow-hidden border-y py-16"
 >
   <div class="bg-lightgrey border-t-grey flex items-center border-t pb-6">
@@ -73,14 +73,15 @@ const techIcons = [
     </p>
   </div>
 
+  <!-- Primera fila -->
   <div
-    class="divide-grey/60 border-y-grey/60 bg-lightgrey flex w-max divide-x-[0.5px] border-y-[0.5px]"
+    class="tech-row-1 divide-grey/60 border-y-grey/60 bg-lightgrey flex w-max divide-x-[0.5px] border-y-[0.5px]"
   >
     {
       techIcons.map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
-          <div class="group relative flex aspect-square h-24 w-full flex-1 shrink-0 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+          <div class="group relative flex aspect-square h-24 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
             <div class="text-dark absolute inset-0">
               <slot />
             </div>
@@ -96,11 +97,13 @@ const techIcons = [
       })
     }
   </div>
+
+  <!-- Segunda fila -->
   <div
-    class="divide-grey/60 border-b-grey/60 bg-lightgrey flex w-max -translate-x-1/2 divide-x-[0.5px] border-b-[0.5px]"
+    class="tech-row-2 divide-grey/60 border-b-grey/60 bg-lightgrey flex w-max -translate-x-1/2 divide-x-[0.5px] border-b-[0.5px]"
   >
     {
-      techIcons.reverse().map((Icon) => {
+      [...techIcons].reverse().map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
           <div class="group relative flex aspect-square h-24 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
@@ -120,3 +123,35 @@ const techIcons = [
     }
   </div>
 </section>
+
+<!-- 🚀 Script GSAP -->
+<script>
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const section = document.querySelector('#skills') as HTMLElement
+  const row1 = section.querySelector('.tech-row-1') as HTMLDivElement
+  const row2 = section.querySelector('.tech-row-2') as HTMLDivElement
+
+  gsap.to(row1, {
+    xPercent: -15,
+    scrollTrigger: {
+      trigger: section,
+      start: 'center bottom',
+      end: 'bottom center',
+      scrub: true,
+    },
+  })
+
+  gsap.to(row2, {
+    xPercent: 0.2,
+    scrollTrigger: {
+      trigger: section,
+      start: 'center bottom',
+      end: 'bottom center',
+      scrub: true,
+    },
+  })
+</script>
