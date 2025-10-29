@@ -3,7 +3,7 @@ import Layout from '@/layouts/Layout.astro'
 import Hero from '@/sections/Hero.astro'
 import Projects from '@/sections/Projects.astro'
 import CallToAction from '@/sections/CallToAction.astro'
-import ClipPathTecnologies from '@/sections/Skills'
+import Skills from '@/sections/Skills.astro'
 import BlockDecoration from '@/components/BlockDecoration.astro'
 
 import { translations } from '@/i18n/translations'
@@ -18,11 +18,11 @@ const { title, description } = translations.es
   robots="index, follow"
 >
   <Hero />
-  <ClipPathTecnologies lang="es" client:load>
+  <Skills lang="es" client:load>
     <div style="--separation: -1px;">
       <BlockDecoration />
     </div>
-  </ClipPathTecnologies>
+  </Skills>
   <Projects />
   <CallToAction />
 </Layout>

@@ -1,0 +1,68 @@
+---
+import {
+  SiReact,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiGit,
+  SiAstro,
+  SiJavascript,
+  SiFigma,
+  SiTypescript,
+  SiHtml5,
+  iconNameMap,
+} from '@/components/Icons'
+import { translations } from '@/i18n/translations'
+import type { Lang } from '@/types'
+
+interface Props {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+const { skills } = translations[lang]
+
+const techIcons = [
+  SiAstro,
+  SiReact,
+  SiTailwindcss,
+  SiJavascript,
+  SiNextdotjs,
+  SiFigma,
+  SiHtml5,
+  SiTypescript,
+  SiGit,
+]
+---
+
+<section class="5xl:mx-0.5 border-t-grey relative mx-[1px] my-16 overflow-hidden border-t">
+  <div class="bg-lightgrey flex items-center pb-6">
+    <h2 class="sr-only">{skills}</h2>
+    <p
+      class="border-lightergrey rounded-xs inline-block border border-l-0 border-t-0 px-1.5 py-0.5 text-center text-sm uppercase"
+    >
+      <span>Tech Stack</span>
+    </p>
+  </div>
+
+  <div
+    class="divide-grey/60 border-y-grey/60 bg-lightgrey flex divide-x-[0.5px] border-y-[0.5px] [&>*]:flex-1"
+  >
+    {
+      techIcons.map((Icon) => {
+        const iconName = iconNameMap.get(Icon)
+        return (
+          <div class="group relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+            <div class="text-dark absolute inset-0">
+              <slot />
+            </div>
+            <div class="text-light absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
+              <Icon className="text-dark group-hover:text-light relative text-2xl sm:text-3xl lg:text-4xl" />
+              <p class="bg-primary relative px-0.5 text-xs">{iconName}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+</section>
