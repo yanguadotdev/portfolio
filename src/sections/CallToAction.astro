@@ -14,25 +14,28 @@ const currentLang = (Astro.currentLocale || 'es') as Lang
 const { cta, downloadCv, interested } = translations[currentLang]
 ---
 
-<section id='call-to-action' class='5xl:mx-0.5 mx-[1px]'>
+<section
+  id="call-to-action"
+  class="5xl:mx-0.5 border-t-grey bg-lightgrey lines-pattern relative mx-[1px] border-t pt-20"
+>
   <div
-    class='border-grey grid grid-rows-[1fr_auto_auto] border-y lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-1 mb-24'
+    class="border-grey mb-24 grid grid-rows-[1fr_auto_auto] border-y lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-1"
   >
     <!-- COPY INTRO -->
-    <div class='py-18 1.5xs:p-18 bg-lightgrey relative px-6 text-lg'>
-      <BladeIcon class='absolute -left-[1px] -top-[1px] h-auto w-11' />
+    <div class="py-18 1.5xs:p-18 bg-lightgrey relative px-6 text-lg">
+      <BladeIcon class="absolute -left-[1px] -top-[1px] h-auto w-11" />
       <div>
         <h2
-          class='relative flex flex-col items-start justify-start gap-2 pl-6 uppercase leading-none'
+          class="relative flex flex-col items-start justify-start gap-2 pl-6 uppercase leading-none"
         >
           <span>{currentLang === 'es' ? '¿Tienes un proyecto o' : 'Do you have a project or'}</span>
-          <div class='bg-darklighter text-light px-2 py-1'>
+          <div class="bg-darklighter text-light px-2 py-1">
             {currentLang === 'es' ? 'PROPUESTA LABORAL?' : 'JOB PROPOSAL?'}
           </div>
-          <IndicatorIcon class='absolute left-0 top-1 h-auto w-2' />
+          <IndicatorIcon class="absolute left-0 top-1 h-auto w-2" />
         </h2>
 
-        <p class='text-dark/85 mt-4 pl-6 text-base'>
+        <p class="text-dark/85 mt-4 pl-6 text-base">
           {cta}
         </p>
       </div>
@@ -40,17 +43,17 @@ const { cta, downloadCv, interested } = translations[currentLang]
 
     <!-- ILLUSTRATIONS -->
     <div
-      class='bg-lightgrey border-y-grey relative flex items-center justify-center border-y p-12 lg:border-y-0 lg:bg-transparent lg:p-8'
+      class="bg-lightgrey border-y-grey border-x-grey relative flex items-center justify-center border-y p-12 lg:border-x lg:border-y-0 lg:p-8"
     >
-      <DotIcon class='absolute -bottom-[1px] left-0 h-auto w-11' />
-      <ArrowBigIcon class='h-auto w-36 rotate-90 lg:rotate-0' />
+      <DotIcon class="absolute -bottom-[1px] left-0 h-auto w-11" />
+      <ArrowBigIcon class="h-auto w-36 rotate-90 lg:rotate-0" />
     </div>
 
-    <div class='1.5xs:px-18 flex flex-col justify-center gap-6 p-12 px-6 lg:px-7'>
+    <div class="1.5xs:px-18 bg-lightgrey flex flex-col justify-center gap-6 p-12 px-6 lg:px-7">
       <Button href={getRelativeLocaleUrl(currentLang, '/contact')}> {interested} </Button>
-      <Button withEffect={false} href='/Samir_FrontendUI_CV_2025.pdf' download variant='outline'>
-        <div class='flex items-center gap-2'>
-          <IoCloudDownloadOutline className='h-auto w-5' />
+      <Button withEffect={false} href="/Samir_FrontendUI_CV_2025.pdf" download variant="outline">
+        <div class="flex items-center gap-2">
+          <IoCloudDownloadOutline className="h-auto w-5" />
           {downloadCv}
         </div>
       </Button>
