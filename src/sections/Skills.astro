@@ -35,8 +35,10 @@ const techIcons = [
 ]
 ---
 
-<section class="5xl:mx-0.5 border-t-grey relative mx-[1px] my-16 overflow-hidden border-t">
-  <div class="bg-lightgrey flex items-center pb-6">
+<section
+  class="5xl:mx-0.5 border-y-grey bg-lightgrey lines-pattern relative mx-[1px] my-16 overflow-hidden border-y py-16"
+>
+  <div class="bg-lightgrey flex items-center pb-6 border-t border-t-grey">
     <h2 class="sr-only">{skills}</h2>
     <p
       class="border-grey rounded-br-xs inline-flex items-center gap-1 border border-l-0 border-t-0 px-1.5 py-0.5 text-center text-sm uppercase"
@@ -51,6 +53,27 @@ const techIcons = [
   >
     {
       techIcons.map((Icon) => {
+        const iconName = iconNameMap.get(Icon)
+        return (
+          <div class="group relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+            <div class="text-dark absolute inset-0">
+              <slot />
+            </div>
+            <div class="text-light absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
+              <Icon className="text-dark group-hover:text-light relative text-2xl sm:text-3xl lg:text-4xl" />
+              <p class="text-dark group-hover:text-light relative px-0.5 text-xs">{iconName}</p>
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+  <div
+    class="divide-grey/60 border-b-grey/60 bg-lightgrey flex divide-x-[0.5px] border-b-[0.5px] [&>*]:flex-1"
+  >
+    {
+      techIcons.reverse().map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
           <div class="group relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
