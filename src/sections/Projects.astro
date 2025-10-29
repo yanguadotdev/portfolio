@@ -6,16 +6,23 @@ import { iconNameMap } from '@/components/Icons'
 import { translations } from '@/i18n/translations'
 import type { Lang } from '@/types'
 import { getProjectsList } from '@/data'
-import SectionTitle from '@/components/SectionTitle.astro'
+import BusinessIcon from '@/assets/business.svg'
 
 const currentLang = (Astro.currentLocale || 'es') as Lang
 const projectsList = getProjectsList(currentLang)
 const { ctaProjects } = translations[currentLang]
-const title = currentLang === 'en' ? 'Projects' : 'Proyectos'
+const title = currentLang === 'en' ? 'Featured Projects' : 'Proyectos Destacados'
 ---
 
 <section id="projects" class="relative">
-  <SectionTitle title={title} subtititle={ctaProjects} />
+  <div class="bg-lightgrey border-t-grey mx-[1px] border-t">
+    <p
+      class="border-grey text-dark-60 rounded-br-xs mb-6 inline-flex items-center gap-1 border border-l-0 border-t-0 px-1.5 py-0.5 text-center text-sm uppercase"
+    >
+      <BusinessIcon class="inline-block h-4" />
+      <span>{title}</span>
+    </p>
+  </div>
   <FiltersPanel lang={currentLang} />
 
   <div class="relative">
