@@ -141,6 +141,17 @@ body {
   font-family: 'Roboto Mono', var(--font-fallback);
   font-weight: 400;
   scrollbar-width: none;
+  background-size: 6px 6px;
+  background-image: linear-gradient(
+    -135deg,
+    theme(colors.lightergrey/.5) 25%,
+    transparent 25%,
+    transparent 50%,
+    theme(colors.lightergrey/.5) 50%,
+    theme(colors.lightergrey/.5) 75%,
+    transparent 75%,
+    transparent
+  ) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

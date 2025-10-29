@@ -23,9 +23,11 @@ export default function ClipPathTecnologies({ lang, children }: ClipPathTechnolo
   const { skills, ctaSkills } = translations[lang]
   return (
     <section className="5xl:mx-0.5 border-t-grey relative mx-[1px] my-16 overflow-hidden border-t">
-      <div className="bg-lightgrey flex flex-col items-center justify-center px-4">
-        <h2 className="font-secondary text-[10vw]">{skills}</h2>
-        <p className="-mt-2 px-10 pb-8 text-center uppercase opacity-75">{ctaSkills}</p>
+      <div className="bg-lightgrey flex items-center pb-6">
+        <h2 className="sr-only">{skills}</h2>
+        <p className="border-lightergrey rounded-xs inline-block border border-l-0 border-t-0 px-1.5 py-0.5 text-center text-sm uppercase">
+          <span>Tech Stack</span>
+        </p>
       </div>
       <div className="divide-grey/60 border-y-grey/60 bg-lightgrey flex divide-x-[0.5px] border-y-[0.5px] [&>*]:flex-1">
         <LinkBox Icon={SiAstro}>{children}</LinkBox>
