@@ -9,6 +9,12 @@ import {
   SiFigma,
   SiTypescript,
   SiHtml5,
+  SiVsco,
+  SiVercel,
+  SiNotion,
+  SiPrisma,
+  SiCss3,
+  SiReactrouter,
   iconNameMap,
 } from '@/components/Icons'
 import { translations } from '@/i18n/translations'
@@ -32,13 +38,32 @@ const techIcons = [
   SiHtml5,
   SiTypescript,
   SiGit,
+  SiVercel,
+  SiNotion,
+  SiPrisma,
+  SiCss3,
+  SiReactrouter,
+  SiAstro,
+  SiReact,
+  SiTailwindcss,
+  SiJavascript,
+  SiNextdotjs,
+  SiFigma,
+  SiHtml5,
+  SiTypescript,
+  SiGit,
+  SiVercel,
+  SiNotion,
+  SiPrisma,
+  SiCss3,
+  SiReactrouter,
 ]
 ---
 
 <section
   class="5xl:mx-0.5 border-y-grey bg-lightgrey lines-pattern relative mx-[1px] my-16 overflow-hidden border-y py-16"
 >
-  <div class="bg-lightgrey flex items-center pb-6 border-t border-t-grey">
+  <div class="bg-lightgrey border-t-grey flex items-center border-t pb-6">
     <h2 class="sr-only">{skills}</h2>
     <p
       class="border-grey rounded-br-xs inline-flex items-center gap-1 border border-l-0 border-t-0 px-1.5 py-0.5 text-center text-sm uppercase"
@@ -48,42 +73,42 @@ const techIcons = [
     </p>
   </div>
 
-  <div
-    class="divide-grey/60 border-y-grey/60 bg-lightgrey flex divide-x-[0.5px] border-y-[0.5px] [&>*]:flex-1"
-  >
+  <div class="divide-grey/60 border-y-grey/60 bg-lightgrey flex divide-x-[0.5px] border-y-[0.5px]">
     {
       techIcons.map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
-          <div class="group relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+          <div class="group relative flex aspect-square h-24 w-full flex-1 shrink-0 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
             <div class="text-dark absolute inset-0">
               <slot />
             </div>
             <div class="text-light absolute inset-0 flex flex-col items-center justify-center gap-2">
               <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
               <Icon className="text-dark group-hover:text-light relative text-2xl sm:text-3xl lg:text-4xl" />
-              <p class="text-dark group-hover:text-light relative px-0.5 text-xs">{iconName}</p>
+              <p class="text-dark group-hover:text-light relative px-0.5 text-center text-xs">
+                {iconName}
+              </p>
             </div>
           </div>
         )
       })
     }
   </div>
-  <div
-    class="divide-grey/60 border-b-grey/60 bg-lightgrey flex divide-x-[0.5px] border-b-[0.5px] [&>*]:flex-1"
-  >
+  <div class="divide-grey/60 border-b-grey/60 bg-lightgrey flex divide-x-[0.5px] border-b-[0.5px]">
     {
       techIcons.reverse().map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
-          <div class="group relative flex h-20 w-full cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+          <div class="group relative flex aspect-square h-24 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
             <div class="text-dark absolute inset-0">
               <slot />
             </div>
             <div class="text-light absolute inset-0 flex flex-col items-center justify-center gap-2">
               <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
               <Icon className="text-dark group-hover:text-light relative text-2xl sm:text-3xl lg:text-4xl" />
-              <p class="text-dark group-hover:text-light relative px-0.5 text-xs">{iconName}</p>
+              <p class="text-dark group-hover:text-light relative px-0.5 text-center text-xs">
+                {iconName}
+              </p>
             </div>
           </div>
         )

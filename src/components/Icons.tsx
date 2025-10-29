@@ -11,6 +11,10 @@ import {
   SiVite,
   SiCss3,
   SiReactrouter,
+  SiVsco,
+  SiVercel,
+  SiNotion,
+  SiPrisma,
 } from 'react-icons/si'
 import { IoCloudDownloadOutline } from 'react-icons/io5'
 
@@ -26,6 +30,10 @@ const iconNameMap = new Map([
   [SiHtml5, 'HTML5'],
   [SiVite, 'Vite'],
   [SiCss3, 'CSS3'],
+  [SiVsco, 'VsCode'],
+  [SiVercel, 'Vercel'],
+  [SiNotion, 'Notion'],
+  [SiPrisma, 'Prisma'],
   [SiReactrouter, 'React Router'],
   [IoCloudDownloadOutline, 'Download'],
 ])
@@ -43,6 +51,10 @@ export {
   SiVite,
   SiCss3,
   SiReactrouter,
+  SiVsco,
+  SiVercel,
+  SiNotion,
+  SiPrisma,
   IoCloudDownloadOutline,
   iconNameMap,
 }
