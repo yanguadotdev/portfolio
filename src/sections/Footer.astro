@@ -2,27 +2,90 @@
 import BlockDecoration from '@/components/BlockDecoration.astro'
 import { translations } from '@/i18n/translations'
 import type { Lang } from '@/types'
+import Instagram from '@/assets/rrss/instagram.svg'
+import Github from '@/assets/rrss/github.svg'
+import Linkedin from '@/assets/rrss/linkedin.svg'
 
-const currentLang = (Astro.currentLocale || 'es') as Lang
+const currentLang: Lang = Astro.currentLocale || 'es'
 const { createdBy } = translations[currentLang]
+
+const rrss = [
+  {
+    text: {
+      en: 'Discover my latest work and insights across social media.',
+      es: 'Descubre mis últimos trabajos en redes sociales.',
+    },
+  },
+  {
+    Icon: Instagram,
+    url: 'https://www.instagram.com/yanguadotdev/',
+    text: {
+      en: 'Designs & daily dev shots',
+      es: 'Diseño y proceso diario',
+    },
+  },
+  {
+    Icon: Linkedin,
+    url: 'https://www.linkedin.com/in/yanguadotdev/',
+    text: {
+      en: 'Work updates & insights',
+      es: 'Actualizaciones y logros',
+    },
+  },
+  {
+    Icon: Github,
+    url: 'https://github.com/yanguadotdev',
+    text: {
+      en: 'Code & open-source work',
+      es: 'Código y proyectos open-source',
+    },
+  },
+]
 ---
 
-<footer id="footer" class="justify-self-end">
-  <div
-    class="text-dark-60 border-t-grey bg-lightgrey relative border-t py-12 text-center text-sm uppercase"
+<footer id="footer" class="relative justify-self-end">
+  <ul
+    class="border-t-grey divide-grey 1.5md:grid-cols-4 mx-[1px] grid grid-cols-2 divide-x border-t"
   >
-    <div class="font-secondary text-xl opacity-90">© {new Date().getFullYear()}</div>
-    <div class="">
-      {createdBy}
-      <a
-        data-scramble-text
-        class="hover:text-primary font-semibold transition-colors"
-        href="https://www.linkedin.com/in/yanguadotdev/">YANGUA.DEV</a
-      >
-    </div>
+    {
+      rrss.map(({ Icon, url, text }) => {
+        if (!Icon) {
+          return (
+            <div class="bg-lightergrey/10 border-b-grey 1.5md:border-b-0 h-full border-b p-6 md:aspect-square md:h-64">
+              <h3 class="mb-4 text-base font-semibold uppercase">Stay in the know</h3>
+              <p class="text-xs">{text[currentLang]}</p>
+            </div>
+          )
+        }
 
-    <div style="--separation: 0px; --b-w: 2px;">
-      <BlockDecoration />
-    </div>
-  </div>
+        return (
+          <a
+            href={url}
+            class="text-dark hover:text-light bg-lightgrey group relative flex aspect-square flex-col justify-between gap-16 p-6 md:h-64 md:gap-0"
+          >
+            <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
+            <Icon class="relative size-10" />
+            <span class="relative text-xs">{text[currentLang]}</span>
+          </a>
+        )
+      })
+    }
+  </ul>
 </footer>
+<div
+  class="text-dark-60 border-t-grey bg-lightgrey relative border-t py-12 text-center text-sm uppercase"
+>
+  <div class="font-secondary text-xl opacity-90">© {new Date().getFullYear()}</div>
+  <div class="">
+    {createdBy}
+    <a
+      data-scramble-text
+      class="hover:text-primary font-semibold transition-colors"
+      href="https://www.linkedin.com/in/yanguadotdev/">YANGUA.DEV</a
+    >
+  </div>
+
+  <div style="--separation: 0px; --b-w: 2px;">
+    <BlockDecoration />
+  </div>
+</div>
