@@ -51,8 +51,10 @@ const rrss = [
       rrss.map(({ Icon, url, text }) => {
         if (!Icon) {
           return (
-            <div class="bg-lightergrey/10 border-b-grey 1.5md:border-b-0 h-full border-b p-6 md:aspect-square md:h-64">
-              <h3 class="mb-4 text-base font-semibold uppercase">Stay in the know</h3>
+            <div class="bg-lightergrey/15 border-b-grey 1.5md:border-b-0 2lg:aspect-square 2lg:h-64 w-full border-b p-6">
+              <h3 class="mb-4 text-base font-semibold uppercase leading-none">
+                Stay in the&nbsp;know
+              </h3>
               <p class="text-xs">{text[currentLang]}</p>
             </div>
           )
@@ -61,7 +63,7 @@ const rrss = [
         return (
           <a
             href={url}
-            class="text-dark hover:text-light bg-lightgrey group relative flex aspect-square flex-col justify-between gap-16 p-6 md:h-64 md:gap-0"
+            class="text-dark hover:text-light bg-lightgrey last:border-t-grey 1.5md:last:border-t-0 2lg:h-64 2lg:gap-0 2lg:aspect-square group relative flex w-full flex-col justify-between gap-16 p-6 last:border-t"
           >
             <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
             <Icon class="relative size-10" />
