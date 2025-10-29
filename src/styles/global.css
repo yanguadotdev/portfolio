@@ -46,6 +46,33 @@
       transform: translateX(-100%);
     }
   }
+
+  --animate-opacity: opacity 0.35s ease-in-out forwards;
+  --animate-blink: blink 0.35s ease-in-out forwards;
+
+  @keyframes opacity {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    20% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.7;
+    }
+    60% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 0.35;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {
