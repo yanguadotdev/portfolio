@@ -73,7 +73,9 @@ const techIcons = [
     </p>
   </div>
 
-  <div class="divide-grey/60 border-y-grey/60 bg-lightgrey flex divide-x-[0.5px] border-y-[0.5px]">
+  <div
+    class="divide-grey/60 border-y-grey/60 bg-lightgrey flex w-max divide-x-[0.5px] border-y-[0.5px]"
+  >
     {
       techIcons.map((Icon) => {
         const iconName = iconNameMap.get(Icon)
@@ -94,7 +96,9 @@ const techIcons = [
       })
     }
   </div>
-  <div class="divide-grey/60 border-b-grey/60 bg-lightgrey flex divide-x-[0.5px] border-b-[0.5px]">
+  <div
+    class="divide-grey/60 border-b-grey/60 bg-lightgrey flex w-max -translate-x-1/2 divide-x-[0.5px] border-b-[0.5px]"
+  >
     {
       techIcons.reverse().map((Icon) => {
         const iconName = iconNameMap.get(Icon)
