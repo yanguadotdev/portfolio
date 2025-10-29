@@ -94,5 +94,9 @@ const { title = 'Title', description, canonical, robots } = Astro.props
 
 <script>
   import textScramble from '@/lib/text-scramble'
+  import { lenis } from '@/lib/lenis-config'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+
+  lenis.on('scroll', ScrollTrigger.update)
   textScramble()
 </script>

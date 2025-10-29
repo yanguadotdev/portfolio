@@ -81,7 +81,7 @@ const techIcons = [
       techIcons.map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
-          <div class="group relative flex aspect-square h-24 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+          <div class="group relative flex aspect-square h-28 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 md:h-36">
             <div class="text-dark absolute inset-0">
               <slot />
             </div>
@@ -98,7 +98,6 @@ const techIcons = [
     }
   </div>
 
-  <!-- Segunda fila -->
   <div
     class="tech-row-2 divide-grey/60 border-b-grey/60 bg-lightgrey flex w-max -translate-x-1/2 divide-x-[0.5px] border-b-[0.5px]"
   >
@@ -106,7 +105,7 @@ const techIcons = [
       [...techIcons].reverse().map((Icon) => {
         const iconName = iconNameMap.get(Icon)
         return (
-          <div class="group relative flex aspect-square h-24 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 sm:h-28 md:h-36">
+          <div class="group relative flex aspect-square h-28 w-full flex-1 cursor-default flex-col items-center justify-center gap-1 md:h-36">
             <div class="text-dark absolute inset-0">
               <slot />
             </div>
@@ -124,7 +123,6 @@ const techIcons = [
   </div>
 </section>
 
-<!-- 🚀 Script GSAP -->
 <script>
   import gsap from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -136,11 +134,11 @@ const techIcons = [
   const row2 = section.querySelector('.tech-row-2') as HTMLDivElement
 
   gsap.to(row1, {
-    xPercent: -10,
+    xPercent: -30,
     scrollTrigger: {
       trigger: section,
       start: 'center bottom',
-      end: 'bottom center',
+      end: 'bottom top',
       scrub: true,
     },
   })
@@ -150,7 +148,7 @@ const techIcons = [
     scrollTrigger: {
       trigger: section,
       start: 'center bottom',
-      end: 'bottom center',
+      end: 'bottom top',
       scrub: true,
     },
   })
