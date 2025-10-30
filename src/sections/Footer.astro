@@ -19,7 +19,7 @@ const rrss = [
   },
   {
     Icon: Instagram,
-    url: 'https://www.instagram.com/yanguadotdev/',
+    url: 'https://www.instagram.com/samiryangua/',
     text: {
       en: 'Designs & daily dev shots',
       es: 'Diseño y proceso diario',
@@ -65,6 +65,8 @@ const rrss = [
           return (
             <a
               href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               class="text-dark hover:text-light bg-lightgrey last:border-t-grey 1.5md:last:border-t-0 2lg:h-64 2lg:gap-0 2lg:aspect-square group relative flex w-full flex-col justify-between gap-16 p-6 last:border-t"
             >
               <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
@@ -81,7 +83,7 @@ const rrss = [
   >
     <div class="font-secondary text-xl opacity-90">© {new Date().getFullYear()}</div>
     <div class="">
-      {createdBy}
+      {createdBy}{' '}
       <a
         data-scramble-text
         class="hover:text-primary font-semibold transition-colors"
