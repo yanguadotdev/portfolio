@@ -81,12 +81,15 @@ const { details, socialLinks } = getHeroCopy(currentLang)
         <div
           class="border-grey 2md:border-b text-lightergrey 2md:aspect-square 2md:p-7 2md:h-auto relative flex aspect-auto h-full w-full justify-center border-l"
         >
-          <HoverImageSlider
-            client:only="react"
-            className="2md:aspect-square aspect-auto size-full"
-            images={['/me/photo_01.webp', '/me/photo_02.webp', '/me/photo_03.webp']}
-            interval={800}
-          />
+          <div
+            class="2md:aspect-square lines-pattern border-grey/50 hover:border-primary group aspect-auto size-full overflow-hidden border p-2"
+          >
+            <img
+              src="/me/photo_01.webp"
+              alt="Profile image"
+              class="border-primary group-hover:scale-120 size-full border-2 object-cover transition-transform duration-500 ease-in-out group-hover:rotate-6"
+            />
+          </div>
 
           <div style="--b-w: 2px;">
             <BlockDecoration />
