@@ -8,6 +8,7 @@ import Linkedin from '@/assets/rrss/linkedin.svg'
 
 const currentLang: Lang = Astro.currentLocale || 'es'
 const { createdBy } = translations[currentLang]
+const subtToRRSS = currentLang === 'es' ? 'Mantente informado' : 'Stay in the know'
 
 const rrss = [
   {
@@ -43,51 +44,53 @@ const rrss = [
 ]
 ---
 
-<footer id="footer" class="relative justify-self-end">
-  <ul
-    class="border-t-grey divide-grey 1.5md:grid-cols-4 mx-[1px] grid grid-cols-2 divide-x border-t"
-  >
-    {
-      rrss.map(({ Icon, url, text }) => {
-        if (!Icon) {
-          return (
-            <div class="bg-lightergrey/15 border-b-grey 1.5md:border-b-0 2lg:aspect-square 2lg:h-64 w-full border-b p-6">
-              <h3 class="mb-4 text-base font-semibold uppercase leading-none">
-                Stay in the&nbsp;know
-              </h3>
-              <p class="text-xs">{text[currentLang]}</p>
-            </div>
-          )
-        }
-
-        return (
-          <a
-            href={url}
-            class="text-dark hover:text-light bg-lightgrey last:border-t-grey 1.5md:last:border-t-0 2lg:h-64 2lg:gap-0 2lg:aspect-square group relative flex w-full flex-col justify-between gap-16 p-6 last:border-t"
-          >
-            <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
-            <Icon class="relative size-10" />
-            <span class="relative text-xs">{text[currentLang]}</span>
-          </a>
-        )
-      })
-    }
-  </ul>
-</footer>
-<div
-  class="text-dark-60 border-t-grey bg-lightgrey relative border-t py-12 text-center text-sm uppercase"
->
-  <div class="font-secondary text-xl opacity-90">© {new Date().getFullYear()}</div>
-  <div class="">
-    {createdBy}
-    <a
-      data-scramble-text
-      class="hover:text-primary font-semibold transition-colors"
-      href="https://www.linkedin.com/in/yanguadotdev/">YANGUA.DEV</a
+<>
+  <footer id="footer" class="relative justify-self-end">
+    <ul
+      class="border-t-grey divide-grey 1.5md:grid-cols-4 mx-[1px] grid grid-cols-2 divide-x border-t"
     >
-  </div>
+      {
+        rrss.map(({ Icon, url, text }) => {
+          if (!Icon) {
+            return (
+              <div class="bg-lightergrey/15 border-b-grey 1.5md:border-b-0 2lg:aspect-square 2lg:h-64 w-full border-b p-6">
+                <h3 class="mb-4 text-balance text-base font-semibold uppercase leading-none">
+                  {subtToRRSS}
+                </h3>
+                <p class="text-xs">{text[currentLang]}</p>
+              </div>
+            )
+          }
 
-  <div style="--separation: 0px; --b-w: 2px;">
-    <BlockDecoration />
+          return (
+            <a
+              href={url}
+              class="text-dark hover:text-light bg-lightgrey last:border-t-grey 1.5md:last:border-t-0 2lg:h-64 2lg:gap-0 2lg:aspect-square group relative flex w-full flex-col justify-between gap-16 p-6 last:border-t"
+            >
+              <div class="bg-dark not-group-hover:animate-blink group-hover:animate-opacity absolute inset-0 opacity-0" />
+              <Icon class="relative size-10" />
+              <span class="relative text-xs">{text[currentLang]}</span>
+            </a>
+          )
+        })
+      }
+    </ul>
+  </footer>
+  <div
+    class="text-dark-60 border-t-grey bg-lightgrey relative border-t py-12 text-center text-sm uppercase"
+  >
+    <div class="font-secondary text-xl opacity-90">© {new Date().getFullYear()}</div>
+    <div class="">
+      {createdBy}
+      <a
+        data-scramble-text
+        class="hover:text-primary font-semibold transition-colors"
+        href="https://www.linkedin.com/in/yanguadotdev/">YANGUA.DEV</a
+      >
+    </div>
+
+    <div style="--separation: 0px; --b-w: 2px;">
+      <BlockDecoration />
+    </div>
   </div>
-</div>
+</>
