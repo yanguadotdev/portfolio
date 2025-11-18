@@ -21,7 +21,7 @@ export const translations = {
       slogan: '¿Necesitas llevar tu marca a internet con estilo y rendimiento?',
       name: 'Samir Yangua ',
       description:
-        'Hola 👋 soy **Samir Yangua**, y a través de mis habilidades en diseño de interfaces y desarrollo frontend, creo experiencias digitales que fortalecen la presencia de marcas en el mundo online y contribuyen a su posicionamiento competitivo en el mercado.',
+        'Hola 👋 soy **Samir Yangua**, Ayudo a profesionales, marcas personales y pequeñas empresas a tener una presencia digital sólida con un diseño visual cuidado y una experiencia simple que conecta con el usuario, reforzando su credibilidad y mejorando la manera en que comunican su valor.',
       subProjects: 'Conoce mis proyectos mas recientes',
     },
     contact: {
@@ -81,8 +81,7 @@ export const translations = {
       slogan: 'Need to bring your brand online with style and performance?',
       name: 'Samir Yangua ',
       description:
-        'Hi 👋 I’m **Samir Yangua**, and through my skills in interface design and frontend development, I create digital experiences that strengthen brands’ presence in the online world and contribute to their competitive positioning in the market.',
-      subProjects: 'Meet my most recent projects',
+        'Hi 👋 I’m **Samir Yangua**, I help professionals, personal brands, and small businesses build a solid digital presence through thoughtful visual design and a simple, intuitive experience that connects with users, reinforces their credibility, and enhances how they communicate their value.',
     },
     contact: {
       title: 'Build something incredible together – Contact me',
