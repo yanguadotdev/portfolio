@@ -18,7 +18,12 @@ const { howWeTalk, talkBy, orFillForm } = translations[lang].contact
       <span class="text-sm leading-tight">{howWeTalk}</span>
     </div>
 
-    <Button href="/api/whatsapp" target="_blank" variant="whatsapp" withEffect={false}>
+    <Button
+      href="https://api.whatsapp.com/send?phone=51936489602&text=He%20visto%20tu%20portafolio%20y%20me%20interesa%20trabajar%20contigo"
+      target="_blank"
+      variant="whatsapp"
+      withEffect={false}
+    >
       <div class="1.5xs:text-sm flex items-center gap-2 text-xs">
         <FaWhatsapp className="text-xl" />
         {talkBy}
